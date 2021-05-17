@@ -25,11 +25,12 @@ Partial Class FrmMenuPrincipal
         Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GbMenu = New System.Windows.Forms.GroupBox()
-        Me.BtnProducto = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.lbHora = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnProducto = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BtnCerrarSesion = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -58,23 +59,14 @@ Partial Class FrmMenuPrincipal
         Me.GbMenu.TabStop = False
         Me.GbMenu.Text = "Menu"
         '
-        'BtnProducto
+        'lbHora
         '
-        Me.BtnProducto.Location = New System.Drawing.Point(25, 139)
-        Me.BtnProducto.Name = "BtnProducto"
-        Me.BtnProducto.Size = New System.Drawing.Size(75, 23)
-        Me.BtnProducto.TabIndex = 1
-        Me.BtnProducto.Text = "Producto"
-        Me.BtnProducto.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(25, 168)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Ciudad"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.lbHora.AutoSize = True
+        Me.lbHora.Location = New System.Drawing.Point(6, 367)
+        Me.lbHora.Name = "lbHora"
+        Me.lbHora.Size = New System.Drawing.Size(39, 13)
+        Me.lbHora.TabIndex = 4
+        Me.lbHora.Text = "Label1"
         '
         'Button3
         '
@@ -85,25 +77,44 @@ Partial Class FrmMenuPrincipal
         Me.Button3.Text = "Usuarios"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'lbHora
+        'Button2
         '
-        Me.lbHora.AutoSize = True
-        Me.lbHora.Location = New System.Drawing.Point(6, 367)
-        Me.lbHora.Name = "lbHora"
-        Me.lbHora.Size = New System.Drawing.Size(39, 13)
-        Me.lbHora.TabIndex = 4
-        Me.lbHora.Text = "Label1"
+        Me.Button2.Location = New System.Drawing.Point(25, 168)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Ciudad"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'BtnProducto
+        '
+        Me.BtnProducto.Location = New System.Drawing.Point(25, 139)
+        Me.BtnProducto.Name = "BtnProducto"
+        Me.BtnProducto.Size = New System.Drawing.Size(75, 23)
+        Me.BtnProducto.TabIndex = 1
+        Me.BtnProducto.Text = "Producto"
+        Me.BtnProducto.UseVisualStyleBackColor = True
         '
         'Timer1
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'BtnCerrarSesion
+        '
+        Me.BtnCerrarSesion.Location = New System.Drawing.Point(667, 388)
+        Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
+        Me.BtnCerrarSesion.Size = New System.Drawing.Size(106, 23)
+        Me.BtnCerrarSesion.TabIndex = 2
+        Me.BtnCerrarSesion.Text = "Salir de la Sesion"
+        Me.BtnCerrarSesion.UseVisualStyleBackColor = True
+        '
         'FrmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(785, 423)
+        Me.Controls.Add(Me.BtnCerrarSesion)
         Me.Controls.Add(Me.GbMenu)
         Me.Name = "FrmMenuPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -122,4 +133,5 @@ Partial Class FrmMenuPrincipal
     Friend WithEvents BtnProducto As Button
     Friend WithEvents lbHora As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents BtnCerrarSesion As Button
 End Class

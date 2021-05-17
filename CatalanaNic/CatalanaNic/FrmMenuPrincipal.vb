@@ -26,4 +26,9 @@
     Private Sub lbHora_Click(sender As Object, e As EventArgs) Handles lbHora.Click
 
     End Sub
+
+    Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
+        Me.Close()
+        FrmInicioSesion.Show()
+    End Sub
 End Class
