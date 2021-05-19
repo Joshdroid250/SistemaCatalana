@@ -58,7 +58,7 @@ SELECT idCiudad, nombreCiudad, estadoCiudad FROM ciudad WHERE (idCiudad = @idCiu
               <Mapping SourceColumn="estadoCiudad" DataSetColumn="estadoCiudad" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarCiudad" Modifier="Public" Name="ActualizarCiudad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ActualizarCiudad">
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarCiudad" Modifier="Public" Name="ActualizarCiudad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarCiudad">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[ciudad] SET [nombreCiudad] = @nombreCiudad, [estadoCiudad] = @estadoCiudad WHERE ([idCiudad] = @Original_idCiudad) </CommandText>
@@ -70,7 +70,7 @@ SELECT idCiudad, nombreCiudad, estadoCiudad FROM ciudad WHERE (idCiudad = @idCiu
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AgregarCiudad" Modifier="Public" Name="AgregarCiudad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="AgregarCiudad">
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AgregarCiudad" Modifier="Public" Name="AgregarCiudad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="AgregarCiudad">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[ciudad] ([nombreCiudad], [estadoCiudad]) VALUES (@nombreCiudad, @estadoCiudad);
@@ -82,7 +82,7 @@ SELECT idCiudad, nombreCiudad, estadoCiudad FROM ciudad WHERE (idCiudad = SCOPE_
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrarCiudad" Modifier="Public" Name="BorrarCiudad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BorrarCiudad">
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrarCiudad" Modifier="Public" Name="BorrarCiudad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="BorrarCiudad">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM ciudad
@@ -600,7 +600,7 @@ WHERE        (idUsuario = @Param1)</CommandText>
   <xs:element name="CatalanaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CatalanaDataSet" msprop:Generator_UserDSName="CatalanaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ciudad" msprop:Generator_TableClassName="ciudadDataTable" msprop:Generator_TableVarName="tableciudad" msprop:Generator_RowChangedName="ciudadRowChanged" msprop:Generator_TablePropName="ciudad" msprop:Generator_RowDeletingName="ciudadRowDeleting" msprop:Generator_RowChangingName="ciudadRowChanging" msprop:Generator_RowEvHandlerName="ciudadRowChangeEventHandler" msprop:Generator_RowDeletedName="ciudadRowDeleted" msprop:Generator_RowClassName="ciudadRow" msprop:Generator_UserTableName="ciudad" msprop:Generator_RowEvArgName="ciudadRowChangeEvent">
+        <xs:element name="ciudad" msprop:Generator_TableClassName="ciudadDataTable" msprop:Generator_TableVarName="tableciudad" msprop:Generator_TablePropName="ciudad" msprop:Generator_RowDeletingName="ciudadRowDeleting" msprop:Generator_RowChangingName="ciudadRowChanging" msprop:Generator_RowEvHandlerName="ciudadRowChangeEventHandler" msprop:Generator_RowDeletedName="ciudadRowDeleted" msprop:Generator_UserTableName="ciudad" msprop:Generator_RowChangedName="ciudadRowChanged" msprop:Generator_RowEvArgName="ciudadRowChangeEvent" msprop:Generator_RowClassName="ciudadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCiudad" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCiudad" msprop:Generator_ColumnPropNameInRow="idCiudad" msprop:Generator_ColumnPropNameInTable="idCiudadColumn" msprop:Generator_UserColumnName="idCiudad" type="xs:int" />
@@ -615,7 +615,7 @@ WHERE        (idUsuario = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_RowClassName="ClienteRow" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowEvArgName="ClienteRowChangeEvent">
+        <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_RowEvArgName="ClienteRowChangeEvent" msprop:Generator_RowClassName="ClienteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:int" />
@@ -676,7 +676,7 @@ WHERE        (idUsuario = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DetFactu" msprop:Generator_TableClassName="DetFactuDataTable" msprop:Generator_TableVarName="tableDetFactu" msprop:Generator_RowChangedName="DetFactuRowChanged" msprop:Generator_TablePropName="DetFactu" msprop:Generator_RowDeletingName="DetFactuRowDeleting" msprop:Generator_RowChangingName="DetFactuRowChanging" msprop:Generator_RowEvHandlerName="DetFactuRowChangeEventHandler" msprop:Generator_RowDeletedName="DetFactuRowDeleted" msprop:Generator_RowClassName="DetFactuRow" msprop:Generator_UserTableName="DetFactu" msprop:Generator_RowEvArgName="DetFactuRowChangeEvent">
+        <xs:element name="DetFactu" msprop:Generator_TableClassName="DetFactuDataTable" msprop:Generator_TableVarName="tableDetFactu" msprop:Generator_TablePropName="DetFactu" msprop:Generator_RowDeletingName="DetFactuRowDeleting" msprop:Generator_RowChangingName="DetFactuRowChanging" msprop:Generator_RowEvHandlerName="DetFactuRowChangeEventHandler" msprop:Generator_RowDeletedName="DetFactuRowDeleted" msprop:Generator_UserTableName="DetFactu" msprop:Generator_RowChangedName="DetFactuRowChanged" msprop:Generator_RowEvArgName="DetFactuRowChangeEvent" msprop:Generator_RowClassName="DetFactuRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />
@@ -688,7 +688,7 @@ WHERE        (idUsuario = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_RowClassName="FacturaRow" msprop:Generator_UserTableName="Factura" msprop:Generator_RowEvArgName="FacturaRowChangeEvent">
+        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_UserTableName="Factura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_RowEvArgName="FacturaRowChangeEvent" msprop:Generator_RowClassName="FacturaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFactura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFactura" msprop:Generator_ColumnPropNameInRow="idFactura" msprop:Generator_ColumnPropNameInTable="idFacturaColumn" msprop:Generator_UserColumnName="idFactura" type="xs:int" />
@@ -698,7 +698,7 @@ WHERE        (idUsuario = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="producto" msprop:Generator_TableClassName="productoDataTable" msprop:Generator_TableVarName="tableproducto" msprop:Generator_RowChangedName="productoRowChanged" msprop:Generator_TablePropName="producto" msprop:Generator_RowDeletingName="productoRowDeleting" msprop:Generator_RowChangingName="productoRowChanging" msprop:Generator_RowEvHandlerName="productoRowChangeEventHandler" msprop:Generator_RowDeletedName="productoRowDeleted" msprop:Generator_RowClassName="productoRow" msprop:Generator_UserTableName="producto" msprop:Generator_RowEvArgName="productoRowChangeEvent">
+        <xs:element name="producto" msprop:Generator_TableClassName="productoDataTable" msprop:Generator_TableVarName="tableproducto" msprop:Generator_TablePropName="producto" msprop:Generator_RowDeletingName="productoRowDeleting" msprop:Generator_RowChangingName="productoRowChanging" msprop:Generator_RowEvHandlerName="productoRowChangeEventHandler" msprop:Generator_RowDeletedName="productoRowDeleted" msprop:Generator_UserTableName="producto" msprop:Generator_RowChangedName="productoRowChanged" msprop:Generator_RowEvArgName="productoRowChangeEvent" msprop:Generator_RowClassName="productoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
@@ -721,7 +721,7 @@ WHERE        (idUsuario = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_RowClassName="UsuarioRow" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent">
+        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent" msprop:Generator_RowClassName="UsuarioRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
@@ -771,13 +771,36 @@ WHERE        (idUsuario = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ReportPro" msprop:Generator_TableClassName="ReportProDataTable" msprop:Generator_TableVarName="tableReportPro" msprop:Generator_TablePropName="ReportPro" msprop:Generator_RowDeletingName="ReportProRowDeleting" msprop:Generator_RowChangingName="ReportProRowChanging" msprop:Generator_RowEvHandlerName="ReportProRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportProRowDeleted" msprop:Generator_UserTableName="ReportPro" msprop:Generator_RowChangedName="ReportProRowChanged" msprop:Generator_RowEvArgName="ReportProRowChangeEvent" msprop:Generator_RowClassName="ReportProRow">
+        <xs:element name="ReportPro" msprop:Generator_TableClassName="ReportProDataTable" msprop:Generator_TableVarName="tableReportPro" msprop:Generator_RowChangedName="ReportProRowChanged" msprop:Generator_TablePropName="ReportPro" msprop:Generator_RowDeletingName="ReportProRowDeleting" msprop:Generator_RowChangingName="ReportProRowChanging" msprop:Generator_RowEvHandlerName="ReportProRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportProRowDeleted" msprop:Generator_RowClassName="ReportProRow" msprop:Generator_UserTableName="ReportPro" msprop:Generator_RowEvArgName="ReportProRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
               <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
               <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:int" minOccurs="0" />
               <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReporteCiudad" msprop:Generator_TableClassName="ReporteCiudadDataTable" msprop:Generator_TableVarName="tableReporteCiudad" msprop:Generator_TablePropName="ReporteCiudad" msprop:Generator_RowDeletingName="ReporteCiudadRowDeleting" msprop:Generator_RowChangingName="ReporteCiudadRowChanging" msprop:Generator_RowEvHandlerName="ReporteCiudadRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteCiudadRowDeleted" msprop:Generator_UserTableName="ReporteCiudad" msprop:Generator_RowChangedName="ReporteCiudadRowChanged" msprop:Generator_RowEvArgName="ReporteCiudadRowChangeEvent" msprop:Generator_RowClassName="ReporteCiudadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Ciudad" msprop:Generator_ColumnVarNameInTable="columnCiudad" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_UserColumnName="Ciudad" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rptUsuario" msprop:Generator_TableClassName="rptUsuarioDataTable" msprop:Generator_TableVarName="tablerptUsuario" msprop:Generator_TablePropName="rptUsuario" msprop:Generator_RowDeletingName="rptUsuarioRowDeleting" msprop:Generator_RowChangingName="rptUsuarioRowChanging" msprop:Generator_RowEvHandlerName="rptUsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="rptUsuarioRowDeleted" msprop:Generator_UserTableName="rptUsuario" msprop:Generator_RowChangedName="rptUsuarioRowChanged" msprop:Generator_RowEvArgName="rptUsuarioRowChangeEvent" msprop:Generator_RowClassName="rptUsuarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="Apellido" msprop:Generator_ColumnVarNameInTable="columnApellido" msprop:Generator_ColumnPropNameInRow="Apellido" msprop:Generator_ColumnPropNameInTable="ApellidoColumn" msprop:Generator_UserColumnName="Apellido" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundoApellido" msprop:Generator_ColumnVarNameInTable="columnSegundoApellido" msprop:Generator_ColumnPropNameInRow="SegundoApellido" msprop:Generator_ColumnPropNameInTable="SegundoApellidoColumn" msprop:Generator_UserColumnName="SegundoApellido" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="Contraseña" msprop:Generator_ColumnVarNameInTable="columnContraseña" msprop:Generator_ColumnPropNameInRow="Contraseña" msprop:Generator_ColumnPropNameInTable="ContraseñaColumn" msprop:Generator_UserColumnName="Contraseña" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
               <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -811,11 +834,11 @@ WHERE        (idUsuario = @Param1)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Refciudad2" msdata:parent="ciudad" msdata:child="Cliente" msdata:parentkey="idCiudad" msdata:childkey="idCiudad" msprop:Generator_UserChildTable="Cliente" msprop:Generator_ChildPropName="GetClienteRows" msprop:Generator_UserRelationName="Refciudad2" msprop:Generator_RelationVarName="relationRefciudad2" msprop:Generator_UserParentTable="ciudad" msprop:Generator_ParentPropName="ciudadRow" />
-      <msdata:Relationship name="RefFactura8" msdata:parent="Factura" msdata:child="DetFactu" msdata:parentkey="idFactura" msdata:childkey="idFactura" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="RefFactura8" msprop:Generator_ParentPropName="FacturaRow" msprop:Generator_RelationVarName="relationRefFactura8" msprop:Generator_UserParentTable="Factura" />
-      <msdata:Relationship name="Refproducto11" msdata:parent="producto" msdata:child="DetFactu" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="Refproducto11" msprop:Generator_ParentPropName="productoRow" msprop:Generator_RelationVarName="relationRefproducto11" msprop:Generator_UserParentTable="producto" />
-      <msdata:Relationship name="RefCliente4" msdata:parent="Cliente" msdata:child="Factura" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefCliente4" msprop:Generator_RelationVarName="relationRefCliente4" msprop:Generator_UserParentTable="Cliente" msprop:Generator_ParentPropName="ClienteRow" />
-      <msdata:Relationship name="RefUsuario3" msdata:parent="Usuario" msdata:child="Factura" msdata:parentkey="idUsuario" msdata:childkey="idUsuario" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefUsuario3" msprop:Generator_ParentPropName="UsuarioRow" msprop:Generator_RelationVarName="relationRefUsuario3" msprop:Generator_UserParentTable="Usuario" />
+      <msdata:Relationship name="Refciudad2" msdata:parent="ciudad" msdata:child="Cliente" msdata:parentkey="idCiudad" msdata:childkey="idCiudad" msprop:Generator_UserChildTable="Cliente" msprop:Generator_ChildPropName="GetClienteRows" msprop:Generator_UserRelationName="Refciudad2" msprop:Generator_ParentPropName="ciudadRow" msprop:Generator_RelationVarName="relationRefciudad2" msprop:Generator_UserParentTable="ciudad" />
+      <msdata:Relationship name="RefFactura8" msdata:parent="Factura" msdata:child="DetFactu" msdata:parentkey="idFactura" msdata:childkey="idFactura" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="RefFactura8" msprop:Generator_RelationVarName="relationRefFactura8" msprop:Generator_UserParentTable="Factura" msprop:Generator_ParentPropName="FacturaRow" />
+      <msdata:Relationship name="Refproducto11" msdata:parent="producto" msdata:child="DetFactu" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="Refproducto11" msprop:Generator_RelationVarName="relationRefproducto11" msprop:Generator_UserParentTable="producto" msprop:Generator_ParentPropName="productoRow" />
+      <msdata:Relationship name="RefCliente4" msdata:parent="Cliente" msdata:child="Factura" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefCliente4" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationRefCliente4" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="RefUsuario3" msdata:parent="Usuario" msdata:child="Factura" msdata:parentkey="idUsuario" msdata:childkey="idUsuario" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefUsuario3" msprop:Generator_RelationVarName="relationRefUsuario3" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -1,12 +1,11 @@
 ﻿Public Class FrmMenuPrincipal
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
-        Me.Close()
         FrmInicioSesion.Show()
-
+        Me.Close()
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
-        Me.Close()
+        Me.Hide()
         FrmProducto1.Show()
     End Sub
 

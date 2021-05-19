@@ -31,17 +31,19 @@ Partial Class FrmVista
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.ReportViewer1.Size = New System.Drawing.Size(662, 422)
         Me.ReportViewer1.TabIndex = 0
         '
         'FrmVista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(662, 422)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmVista"
-        Me.Text = "FrmVista"
+        Me.Text = "Reporte de Productos"
         Me.ResumeLayout(False)
 
     End Sub

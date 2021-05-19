@@ -1,4 +1,7 @@
-﻿Public Class FrmCiudad
+﻿Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WinForms
+
+Public Class FrmCiudad
     Private Sub FrmCiudad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet.ciudad' Puede moverla o quitarla según sea necesario.
         Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
@@ -68,4 +71,39 @@
         Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
     End Sub
 
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Try
+            Dim tSql As String = "SELECT idCiudad as 'ID', nombreCiudad as 'Ciudad', estadoCiudad as 'Estado'
+            FROM  ciudad"
+            Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
+            Dim da As New SqlDataAdapter(tSql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            verReporte(t, "dataCiudad", "C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\Reportes\RptCiudad.rdlc")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
+    End Sub
+    Sub verReporte(ByVal t As DataTable, ByVal ds As String, ByVal nompreRpt As String)
+        Try
+            Dim rpt As New ReportDataSource(ds, t)
+
+            FrmVista.ReportViewer1.LocalReport.DataSources.Clear()
+            FrmVista.ReportViewer1.LocalReport.DataSources.Add(rpt)
+            FrmVista.ReportViewer1.LocalReport.ReportPath = nompreRpt
+            FrmVista.Show()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de reporte")
+        End Try
+    End Sub
+
+    Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
+        Me.Close()
+        FrmMenuPrincipal.Show()
+    End Sub
+
+    Private Sub FrmCiudad_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        FrmMenuPrincipal.Show()
+    End Sub
 End Class

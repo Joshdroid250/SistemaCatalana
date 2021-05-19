@@ -1,4 +1,7 @@
-﻿Public Class FrmUsuario
+﻿Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WinForms
+
+Public Class FrmUsuario
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet.Usuario' Puede moverla o quitarla según sea necesario.
         Me.UsuarioTableAdapter.Fill(Me.CatalanaDataSet.Usuario)
@@ -99,5 +102,37 @@
 
         End Try
 
+    End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Try
+            Dim tSql As String = "SELECT        idUsuario as 'ID', primerNombre as 'Nombre', primerApellido as 'Apellido', segundoApellido as 'SegundoApellido', userName 'UserName', userPwd as 'Contraseña', email as 'Email', estado as 'Estado'
+            FROM   Usuario"
+            Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
+            Dim da As New SqlDataAdapter(tSql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            verReporte(t, "dataUsuario", "C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\Reportes\RptUsuario.rdlc")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
+    End Sub
+    Sub verReporte(ByVal t As DataTable, ByVal ds As String, ByVal nompreRpt As String)
+        Try
+            Dim rpt As New ReportDataSource(ds, t)
+
+            FrmVista.ReportViewer1.LocalReport.DataSources.Clear()
+            FrmVista.ReportViewer1.LocalReport.DataSources.Add(rpt)
+            FrmVista.ReportViewer1.LocalReport.ReportPath = nompreRpt
+            FrmVista.Show()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de reporte")
+        End Try
+    End Sub
+
+    Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
+        Me.Close()
+        FrmMenuPrincipal.Show()
     End Sub
 End Class

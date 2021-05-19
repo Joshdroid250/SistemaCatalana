@@ -24,14 +24,13 @@ Partial Class FrmProducto1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GbProducto = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtEstado = New System.Windows.Forms.TextBox()
-        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.txtDescripcionPro = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -43,21 +42,22 @@ Partial Class FrmProducto1
         Me.lbID = New System.Windows.Forms.Label()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnMenuPrin = New System.Windows.Forms.Button()
+        Me.BtnReporte = New System.Windows.Forms.Button()
         Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.ProductoTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.productoTableAdapter()
-        Me.btnMenuPrin = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.BtnReporte = New System.Windows.Forms.Button()
         Me.GbProducto.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbProductos.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbProducto
@@ -84,6 +84,15 @@ Partial Class FrmProducto1
         Me.GbProducto.TabIndex = 0
         Me.GbProducto.TabStop = False
         Me.GbProducto.Text = "Registro de productos"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(87, 403)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(154, 23)
+        Me.btnBuscar.TabIndex = 15
+        Me.btnBuscar.Text = "Buscar por ID"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -138,16 +147,6 @@ Partial Class FrmProducto1
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(100, 20)
         Me.txtEstado.TabIndex = 9
-        '
-        'ProductoBindingSource
-        '
-        Me.ProductoBindingSource.DataMember = "producto"
-        Me.ProductoBindingSource.DataSource = Me.CatalanaDataSet
-        '
-        'CatalanaDataSet
-        '
-        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtDescripcionPro
         '
@@ -251,6 +250,24 @@ Partial Class FrmProducto1
         Me.DataGridView1.Size = New System.Drawing.Size(517, 373)
         Me.DataGridView1.TabIndex = 0
         '
+        'btnMenuPrin
+        '
+        Me.btnMenuPrin.Location = New System.Drawing.Point(677, 23)
+        Me.btnMenuPrin.Name = "btnMenuPrin"
+        Me.btnMenuPrin.Size = New System.Drawing.Size(108, 23)
+        Me.btnMenuPrin.TabIndex = 2
+        Me.btnMenuPrin.Text = "Menu Principal"
+        Me.btnMenuPrin.UseVisualStyleBackColor = True
+        '
+        'BtnReporte
+        '
+        Me.BtnReporte.Location = New System.Drawing.Point(677, 52)
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(108, 23)
+        Me.BtnReporte.TabIndex = 3
+        Me.BtnReporte.Text = "Reporte"
+        Me.BtnReporte.UseVisualStyleBackColor = True
+        '
         'IdProductoDataGridViewTextBoxColumn
         '
         Me.IdProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto"
@@ -286,36 +303,19 @@ Partial Class FrmProducto1
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'ProductoBindingSource
+        '
+        Me.ProductoBindingSource.DataMember = "producto"
+        Me.ProductoBindingSource.DataSource = Me.CatalanaDataSet
+        '
+        'CatalanaDataSet
+        '
+        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ProductoTableAdapter
         '
         Me.ProductoTableAdapter.ClearBeforeFill = True
-        '
-        'btnMenuPrin
-        '
-        Me.btnMenuPrin.Location = New System.Drawing.Point(677, 12)
-        Me.btnMenuPrin.Name = "btnMenuPrin"
-        Me.btnMenuPrin.Size = New System.Drawing.Size(108, 23)
-        Me.btnMenuPrin.TabIndex = 2
-        Me.btnMenuPrin.Text = "Menu Principal"
-        Me.btnMenuPrin.UseVisualStyleBackColor = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(87, 403)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(154, 23)
-        Me.btnBuscar.TabIndex = 15
-        Me.btnBuscar.Text = "Buscar por ID"
-        Me.btnBuscar.UseVisualStyleBackColor = True
-        '
-        'BtnReporte
-        '
-        Me.BtnReporte.Location = New System.Drawing.Point(677, 52)
-        Me.BtnReporte.Name = "BtnReporte"
-        Me.BtnReporte.Size = New System.Drawing.Size(108, 23)
-        Me.BtnReporte.TabIndex = 3
-        Me.BtnReporte.Text = "Reporte"
-        Me.BtnReporte.UseVisualStyleBackColor = True
         '
         'FrmProducto1
         '
@@ -327,14 +327,14 @@ Partial Class FrmProducto1
         Me.Controls.Add(Me.GbProductos)
         Me.Controls.Add(Me.GbProducto)
         Me.Name = "FrmProducto1"
-        Me.Text = "FrmProducto1"
+        Me.Text = "Producto"
         Me.GbProducto.ResumeLayout(False)
         Me.GbProducto.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbProductos.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

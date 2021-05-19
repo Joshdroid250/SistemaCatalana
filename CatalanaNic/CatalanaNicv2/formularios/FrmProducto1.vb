@@ -90,7 +90,7 @@ Public Class FrmProducto1
             Dim da As New SqlDataAdapter(tSql, conex)
             Dim t As New DataTable
             da.Fill(t)
-            verReporte(t, "RptProducto", "C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\Reportes\RptProducto.rdlc")
+            verReporte(t, "Producto", "C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\Reportes\RptProducto.rdlc")
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")

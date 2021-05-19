@@ -30,7 +30,6 @@ Partial Class FrmCiudad
         Me.EstadoCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CiudadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
-        Me.CiudadTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ciudadTableAdapter()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -44,6 +43,9 @@ Partial Class FrmCiudad
         Me.lbEstado = New System.Windows.Forms.Label()
         Me.tlbNombre = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnReporte = New System.Windows.Forms.Button()
+        Me.CiudadTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ciudadTableAdapter()
+        Me.btnMenu = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,10 +109,6 @@ Partial Class FrmCiudad
         '
         Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
         Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CiudadTableAdapter
-        '
-        Me.CiudadTableAdapter.ClearBeforeFill = True
         '
         'PictureBox1
         '
@@ -236,13 +234,39 @@ Partial Class FrmCiudad
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "ID"
         '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(513, 87)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(102, 23)
+        Me.btnReporte.TabIndex = 2
+        Me.btnReporte.Text = "Reporte"
+        Me.btnReporte.UseVisualStyleBackColor = True
+        '
+        'CiudadTableAdapter
+        '
+        Me.CiudadTableAdapter.ClearBeforeFill = True
+        '
+        'btnMenu
+        '
+        Me.btnMenu.Location = New System.Drawing.Point(513, 54)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(102, 23)
+        Me.btnMenu.TabIndex = 3
+        Me.btnMenu.Text = "Menu Principal"
+        Me.btnMenu.UseVisualStyleBackColor = True
+        '
         'FrmCiudad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(627, 525)
+        Me.Controls.Add(Me.btnMenu)
+        Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GbCiudad)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmCiudad"
         Me.Text = "Ciudad"
         Me.GroupBox2.ResumeLayout(False)
@@ -276,4 +300,6 @@ Partial Class FrmCiudad
     Friend WithEvents tlbNombre As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnReporte As Button
+    Friend WithEvents btnMenu As Button
 End Class

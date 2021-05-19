@@ -59,6 +59,8 @@ Partial Class FrmUsuario
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
+        Me.btnReporte = New System.Windows.Forms.Button()
+        Me.btnMenu = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -385,11 +387,31 @@ Partial Class FrmUsuario
         '
         Me.UsuarioTableAdapter.ClearBeforeFill = True
         '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(683, 42)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(102, 23)
+        Me.btnReporte.TabIndex = 2
+        Me.btnReporte.Text = "Reporte Usuario"
+        Me.btnReporte.UseVisualStyleBackColor = True
+        '
+        'btnMenu
+        '
+        Me.btnMenu.Location = New System.Drawing.Point(683, 13)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(105, 23)
+        Me.btnMenu.TabIndex = 3
+        Me.btnMenu.Text = "Menu Principal"
+        Me.btnMenu.UseVisualStyleBackColor = True
+        '
         'FrmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 582)
+        Me.Controls.Add(Me.btnMenu)
+        Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.GbUsuario)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
@@ -443,4 +465,6 @@ Partial Class FrmUsuario
     Friend WithEvents txtID As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnReporte As Button
+    Friend WithEvents btnMenu As Button
 End Class
