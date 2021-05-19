@@ -16,6 +16,8 @@ Public Class FrmInicioSesion
         Else
             MsgBox("Intente Nuevamente")
         End If
+        cn.Close()
+
     End Sub
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click

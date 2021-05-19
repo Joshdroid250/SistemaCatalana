@@ -607,6 +607,7 @@
                   <Value>Reporte Usuarios</Value>
                   <Style>
                     <FontSize>20pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>

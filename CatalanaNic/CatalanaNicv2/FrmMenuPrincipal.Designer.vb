@@ -22,18 +22,22 @@ Partial Class FrmMenuPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GbMenuPrincipal = New System.Windows.Forms.GroupBox()
         Me.btnCiudad = New System.Windows.Forms.Button()
         Me.btnUsuario = New System.Windows.Forms.Button()
         Me.btnProducto = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
+        Me.lbHora = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GbMenuPrincipal.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbMenuPrincipal
         '
+        Me.GbMenuPrincipal.Controls.Add(Me.lbHora)
         Me.GbMenuPrincipal.Controls.Add(Me.btnCiudad)
         Me.GbMenuPrincipal.Controls.Add(Me.btnUsuario)
         Me.GbMenuPrincipal.Controls.Add(Me.btnProducto)
@@ -91,6 +95,20 @@ Partial Class FrmMenuPrincipal
         Me.btnCerrarSesion.Text = "Cerrar Sesion"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
+        'lbHora
+        '
+        Me.lbHora.AutoSize = True
+        Me.lbHora.Location = New System.Drawing.Point(33, 364)
+        Me.lbHora.Name = "lbHora"
+        Me.lbHora.Size = New System.Drawing.Size(34, 13)
+        Me.lbHora.TabIndex = 4
+        Me.lbHora.Text = "Clock"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'FrmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -101,8 +119,9 @@ Partial Class FrmMenuPrincipal
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmMenuPrincipal"
-        Me.Text = "FrmMenuPrincipal"
+        Me.Text = "Menu Principal"
         Me.GbMenuPrincipal.ResumeLayout(False)
+        Me.GbMenuPrincipal.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -114,4 +133,6 @@ Partial Class FrmMenuPrincipal
     Friend WithEvents btnUsuario As Button
     Friend WithEvents btnProducto As Button
     Friend WithEvents btnCerrarSesion As Button
+    Friend WithEvents lbHora As Label
+    Friend WithEvents Timer1 As Timer
 End Class
