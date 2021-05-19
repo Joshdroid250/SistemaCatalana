@@ -1,8 +1,25 @@
-﻿Public Class FrmInicioSesion
-    Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
-        Me.Hide()
-        FrmMenuPrincipal.Show()
+﻿Imports System.Data
+Imports System.Data.SqlClient
+Public Class FrmInicioSesion
+    Dim cn As New SqlConnection("Server = DESKTOP-29CHVVG; database=Catalana; uid=sa;pwd=123")
+    Private Sub Inicio()
+        Dim sql As String
+        sql = "Select *from Usuario where userName= '" & txtUserName.Text & "' and userPwd = '" & txtPassword.Text & "' "
+        Dim cmd As New SqlCommand(sql, cn)
+        Dim dr As SqlDataReader
+        cn.Open()
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            MsgBox("Bienvendido")
+            FrmMenuPrincipal.Show()
+            Me.Hide()
+        Else
+            MsgBox("Intente Nuevamente")
+        End If
+    End Sub
 
+    Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+        Inicio()
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
