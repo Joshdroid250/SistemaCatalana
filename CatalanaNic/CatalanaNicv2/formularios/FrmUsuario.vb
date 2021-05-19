@@ -106,7 +106,7 @@ Public Class FrmUsuario
 
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
         Try
-            Dim tSql As String = "SELECT        idUsuario as 'ID', primerNombre as 'Nombre', primerApellido as 'Apellido', segundoApellido as 'SegundoApellido', userName 'UserName', userPwd as 'Contraseña', email as 'Email', estado as 'Estado'
+            Dim tSql As String = "SELECT   idUsuario as 'ID', primerNombre as 'Nombre', primerApellido as 'Apellido', segundoApellido as 'SegundoApellido', userName 'UserName', email as 'Email', estado as 'Estado'
             FROM   Usuario"
             Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
             Dim da As New SqlDataAdapter(tSql, conex)

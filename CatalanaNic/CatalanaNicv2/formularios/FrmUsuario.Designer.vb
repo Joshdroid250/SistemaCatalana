@@ -38,8 +38,6 @@ Partial Class FrmUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbIdUsuario = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.txtPWD = New System.Windows.Forms.TextBox()
         Me.txtUserName = New System.Windows.Forms.TextBox()
@@ -50,23 +48,25 @@ Partial Class FrmUsuario
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GbUsuario = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnReporte = New System.Windows.Forms.Button()
+        Me.btnMenu = New System.Windows.Forms.Button()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
+        Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimerNombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimerApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SegundoApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UserPwdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.userPwd = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
-        Me.btnReporte = New System.Windows.Forms.Button()
-        Me.btnMenu = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbUsuario.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -225,16 +225,6 @@ Partial Class FrmUsuario
         Me.txtEstado.Size = New System.Drawing.Size(100, 20)
         Me.txtEstado.TabIndex = 8
         '
-        'UsuarioBindingSource
-        '
-        Me.UsuarioBindingSource.DataMember = "Usuario"
-        Me.UsuarioBindingSource.DataSource = Me.CatalanaDataSet
-        '
-        'CatalanaDataSet
-        '
-        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'txtCorreo
         '
         Me.txtCorreo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource, "email", True))
@@ -318,7 +308,7 @@ Partial Class FrmUsuario
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.UserPwdDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.userPwd, Me.EmailDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.UsuarioBindingSource
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
@@ -326,6 +316,38 @@ Partial Class FrmUsuario
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(515, 480)
         Me.DataGridView1.TabIndex = 0
+        '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(683, 42)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(102, 23)
+        Me.btnReporte.TabIndex = 2
+        Me.btnReporte.Text = "Reporte Usuario"
+        Me.btnReporte.UseVisualStyleBackColor = True
+        '
+        'btnMenu
+        '
+        Me.btnMenu.Location = New System.Drawing.Point(683, 13)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(105, 23)
+        Me.btnMenu.TabIndex = 3
+        Me.btnMenu.Text = "Menu Principal"
+        Me.btnMenu.UseVisualStyleBackColor = True
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataMember = "Usuario"
+        Me.UsuarioBindingSource.DataSource = Me.CatalanaDataSet
+        '
+        'CatalanaDataSet
+        '
+        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UsuarioTableAdapter
+        '
+        Me.UsuarioTableAdapter.ClearBeforeFill = True
         '
         'IdUsuarioDataGridViewTextBoxColumn
         '
@@ -362,12 +384,12 @@ Partial Class FrmUsuario
         Me.UserNameDataGridViewTextBoxColumn.Name = "UserNameDataGridViewTextBoxColumn"
         Me.UserNameDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'UserPwdDataGridViewTextBoxColumn
+        'userPwd
         '
-        Me.UserPwdDataGridViewTextBoxColumn.DataPropertyName = "userPwd"
-        Me.UserPwdDataGridViewTextBoxColumn.HeaderText = "userPwd"
-        Me.UserPwdDataGridViewTextBoxColumn.Name = "UserPwdDataGridViewTextBoxColumn"
-        Me.UserPwdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.userPwd.DataPropertyName = "userPwd"
+        Me.userPwd.HeaderText = "userPwd"
+        Me.userPwd.Name = "userPwd"
+        Me.userPwd.ReadOnly = True
         '
         'EmailDataGridViewTextBoxColumn
         '
@@ -382,28 +404,6 @@ Partial Class FrmUsuario
         Me.EstadoDataGridViewTextBoxColumn.HeaderText = "estado"
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UsuarioTableAdapter
-        '
-        Me.UsuarioTableAdapter.ClearBeforeFill = True
-        '
-        'btnReporte
-        '
-        Me.btnReporte.Location = New System.Drawing.Point(683, 42)
-        Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(102, 23)
-        Me.btnReporte.TabIndex = 2
-        Me.btnReporte.Text = "Reporte Usuario"
-        Me.btnReporte.UseVisualStyleBackColor = True
-        '
-        'btnMenu
-        '
-        Me.btnMenu.Location = New System.Drawing.Point(683, 13)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(105, 23)
-        Me.btnMenu.TabIndex = 3
-        Me.btnMenu.Text = "Menu Principal"
-        Me.btnMenu.UseVisualStyleBackColor = True
         '
         'FrmUsuario
         '
@@ -420,11 +420,11 @@ Partial Class FrmUsuario
         Me.Text = "Usuario"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbUsuario.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -435,14 +435,6 @@ Partial Class FrmUsuario
     Friend WithEvents CatalanaDataSet As CatalanaDataSet
     Friend WithEvents UsuarioBindingSource As BindingSource
     Friend WithEvents UsuarioTableAdapter As CatalanaDataSetTableAdapters.UsuarioTableAdapter
-    Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PrimerNombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PrimerApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SegundoApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents UserNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents UserPwdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnBorrar As Button
     Friend WithEvents btnAgregar As Button
@@ -467,4 +459,12 @@ Partial Class FrmUsuario
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnReporte As Button
     Friend WithEvents btnMenu As Button
+    Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrimerNombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrimerApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SegundoApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UserNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents userPwd As DataGridViewTextBoxColumn
+    Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
