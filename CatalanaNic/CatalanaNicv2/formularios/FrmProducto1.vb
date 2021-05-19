@@ -1,4 +1,6 @@
 ﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WinForms
 
 Public Class FrmProducto1
     Private Sub FrmProducto1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -66,5 +68,45 @@ Public Class FrmProducto1
 
     Private Sub FrmProducto1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         FrmMenuPrincipal.Show()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim bus As New Producto
+        Try
+            bus.IdPro = CInt(txtID.Text)
+            Me.ProductoTableAdapter.BuscarProducto(CatalanaDataSet.producto, bus.IdPro)
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar")
+        End Try
+
+    End Sub
+
+    Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+        Try
+            Dim tSql As String = "SELECT  idProducto as 'ID',  nombreProd as 'Nombre', PrecioProd as 'Precio', descripPro as 'Descripcion', estado as 'Estado'
+            FROM  producto"
+            Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
+            Dim da As New SqlDataAdapter(tSql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            verReporte(t, "RptProducto", "C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\Reportes\RptProducto.rdlc")
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
+    End Sub
+    Sub verReporte(ByVal t As DataTable, ByVal ds As String, ByVal nompreRpt As String)
+        Try
+            Dim rpt As New ReportDataSource(ds, t)
+
+            FrmVista.ReportViewer1.LocalReport.DataSources.Clear()
+            FrmVista.ReportViewer1.LocalReport.DataSources.Add(rpt)
+            FrmVista.ReportViewer1.LocalReport.ReportPath = nompreRpt
+            FrmVista.Show()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de reporte")
+        End Try
     End Sub
 End Class

@@ -98,6 +98,8 @@ Partial Class FrmMenuPrincipal
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.GbMenuPrincipal)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmMenuPrincipal"
         Me.Text = "FrmMenuPrincipal"
         Me.GbMenuPrincipal.ResumeLayout(False)

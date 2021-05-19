@@ -50,6 +50,8 @@ Partial Class FrmProducto1
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductoTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.productoTableAdapter()
         Me.btnMenuPrin = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.BtnReporte = New System.Windows.Forms.Button()
         Me.GbProducto.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +62,7 @@ Partial Class FrmProducto1
         '
         'GbProducto
         '
+        Me.GbProducto.Controls.Add(Me.btnBuscar)
         Me.GbProducto.Controls.Add(Me.PictureBox1)
         Me.GbProducto.Controls.Add(Me.btnNuevo)
         Me.GbProducto.Controls.Add(Me.btnEditar)
@@ -296,11 +299,30 @@ Partial Class FrmProducto1
         Me.btnMenuPrin.Text = "Menu Principal"
         Me.btnMenuPrin.UseVisualStyleBackColor = True
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(87, 403)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(154, 23)
+        Me.btnBuscar.TabIndex = 15
+        Me.btnBuscar.Text = "Buscar por ID"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'BtnReporte
+        '
+        Me.BtnReporte.Location = New System.Drawing.Point(677, 52)
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(108, 23)
+        Me.BtnReporte.TabIndex = 3
+        Me.BtnReporte.Text = "Reporte"
+        Me.BtnReporte.UseVisualStyleBackColor = True
+        '
         'FrmProducto1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 491)
+        Me.Controls.Add(Me.BtnReporte)
         Me.Controls.Add(Me.btnMenuPrin)
         Me.Controls.Add(Me.GbProductos)
         Me.Controls.Add(Me.GbProducto)
@@ -344,4 +366,6 @@ Partial Class FrmProducto1
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnEditar As Button
     Friend WithEvents btnMenuPrin As Button
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents BtnReporte As Button
 End Class
