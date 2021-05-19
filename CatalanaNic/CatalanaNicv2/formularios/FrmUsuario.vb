@@ -82,9 +82,8 @@ Public Class FrmUsuario
                 up.SegundoApellido,
                 up.UserName,
                 up.UserPwd,
-                up.UserPwd,
                 up.Email,
-                up.Estado)
+                up.Estado, up.IdUsuario)
             Me.UsuarioTableAdapter.Fill(Me.CatalanaDataSet.Usuario)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de actualizacion de datos")

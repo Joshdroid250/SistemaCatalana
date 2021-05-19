@@ -58,7 +58,6 @@ Partial Class FrmUsuario
         Me.PrimerApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SegundoApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.userPwd = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
@@ -238,6 +237,7 @@ Partial Class FrmUsuario
         Me.txtPWD.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource, "userPwd", True))
         Me.txtPWD.Location = New System.Drawing.Point(103, 338)
         Me.txtPWD.Name = "txtPWD"
+        Me.txtPWD.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPWD.Size = New System.Drawing.Size(100, 20)
         Me.txtPWD.TabIndex = 6
         '
@@ -308,7 +308,7 @@ Partial Class FrmUsuario
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.userPwd, Me.EmailDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.UsuarioBindingSource
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
@@ -384,13 +384,6 @@ Partial Class FrmUsuario
         Me.UserNameDataGridViewTextBoxColumn.Name = "UserNameDataGridViewTextBoxColumn"
         Me.UserNameDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'userPwd
-        '
-        Me.userPwd.DataPropertyName = "userPwd"
-        Me.userPwd.HeaderText = "userPwd"
-        Me.userPwd.Name = "userPwd"
-        Me.userPwd.ReadOnly = True
-        '
         'EmailDataGridViewTextBoxColumn
         '
         Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
@@ -464,7 +457,6 @@ Partial Class FrmUsuario
     Friend WithEvents PrimerApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SegundoApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UserNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents userPwd As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
