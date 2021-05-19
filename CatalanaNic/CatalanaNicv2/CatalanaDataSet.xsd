@@ -356,7 +356,7 @@ SELECT idProducto, nombreProd, PrecioProd, descripPro, estado FROM producto WHER
               <Mapping SourceColumn="estado" DataSetColumn="estado" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarProducto" Modifier="Public" Name="ActualizarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ActualizarProducto">
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarProducto" Modifier="Public" Name="ActualizarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarProducto">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[producto] SET [nombreProd] = @nombreProd, [PrecioProd] = @PrecioProd, [descripPro] = @descripPro, [estado] = @estado WHERE ([idProducto] = @Original_idProducto)</CommandText>
@@ -370,7 +370,7 @@ SELECT idProducto, nombreProd, PrecioProd, descripPro, estado FROM producto WHER
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AgregarProductos" Modifier="Public" Name="AgregarProductos" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="AgregarProductos">
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AgregarProductos" Modifier="Public" Name="AgregarProductos" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="AgregarProductos">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[producto] ([nombreProd], [PrecioProd], [descripPro], [estado]) VALUES (@nombreProd, @PrecioProd, @descripPro, @estado);
@@ -384,7 +384,7 @@ SELECT idProducto, nombreProd, PrecioProd, descripPro, estado FROM producto WHER
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrarProducto" Modifier="Public" Name="BorrarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BorrarProducto">
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrarProducto" Modifier="Public" Name="BorrarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="BorrarProducto">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM producto
@@ -394,6 +394,18 @@ WHERE        (idProducto = @Original_idProducto)</CommandText>
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="Catalana.dbo.producto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="BuscarProducto" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="BuscarProducto" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="BuscarProducto">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idProducto, nombreProd, PrecioProd, descripPro, estado
+FROM            producto
+WHERE        (idProducto = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="idProducto" DataSourceName="Catalana.dbo.producto" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -472,7 +484,65 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
               <Mapping SourceColumn="email" DataSetColumn="email" />
               <Mapping SourceColumn="estado" DataSetColumn="estado" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarUsuario" Modifier="Public" Name="ActualizarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ActualizarUsuario">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Usuario] SET [primerNombre] = @primerNombre, [primerApellido] = @primerApellido, [segundoApellido] = @segundoApellido, [userName] = @userName, [userPwd] = @userPwd, [email] = @email, [estado] = @estado WHERE ([idUsuario] = @Original_idUsuario)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="primerNombre" ColumnName="primerNombre" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@primerNombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="primerNombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="primerApellido" ColumnName="primerApellido" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@primerApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="primerApellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="segundoApellido" ColumnName="segundoApellido" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@segundoApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="segundoApellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="userName" ColumnName="userName" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@userName" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="userName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="userPwd" ColumnName="userPwd" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@userPwd" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="userPwd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="email" ColumnName="email" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(30)" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="30" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="estado" ColumnName="estado" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_idUsuario" ColumnName="idUsuario" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_idUsuario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AgregarUsuario" Modifier="Public" Name="AgregarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="AgregarUsuario">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[Usuario] ([primerNombre], [primerApellido], [segundoApellido], [userName], [userPwd], [email], [estado]) VALUES (@primerNombre, @primerApellido, @segundoApellido, @userName, @userPwd, @email, @estado);
+SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userPwd, email, estado FROM Usuario WHERE (idUsuario = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="primerNombre" ColumnName="primerNombre" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@primerNombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="primerNombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="primerApellido" ColumnName="primerApellido" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@primerApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="primerApellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="segundoApellido" ColumnName="segundoApellido" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@segundoApellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="segundoApellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="userName" ColumnName="userName" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@userName" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="userName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="userPwd" ColumnName="userPwd" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@userPwd" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="userPwd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="email" ColumnName="email" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="nvarchar(30)" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="30" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="estado" ColumnName="estado" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BorrarUsuario" Modifier="Public" Name="BorrarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BorrarUsuario">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM Usuario
+WHERE        (idUsuario = @Original_idUsuario)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_idUsuario" ColumnName="idUsuario" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_idUsuario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CatalanaConnectionString (MySettings)" DbObjectName="Catalana.dbo.Usuario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="BuscarUsuario" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="BuscarUsuario" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="BuscarUsuario">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idUsuario, primerNombre, primerApellido, segundoApellido, userName, userPwd, email, estado
+FROM            Usuario
+WHERE        (idUsuario = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="idUsuario" DataSourceName="Catalana.dbo.Usuario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -482,7 +552,7 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
   <xs:element name="CatalanaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CatalanaDataSet" msprop:Generator_UserDSName="CatalanaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ciudad" msprop:Generator_TableClassName="ciudadDataTable" msprop:Generator_TableVarName="tableciudad" msprop:Generator_RowChangedName="ciudadRowChanged" msprop:Generator_TablePropName="ciudad" msprop:Generator_RowDeletingName="ciudadRowDeleting" msprop:Generator_RowChangingName="ciudadRowChanging" msprop:Generator_RowEvHandlerName="ciudadRowChangeEventHandler" msprop:Generator_RowDeletedName="ciudadRowDeleted" msprop:Generator_RowClassName="ciudadRow" msprop:Generator_UserTableName="ciudad" msprop:Generator_RowEvArgName="ciudadRowChangeEvent">
+        <xs:element name="ciudad" msprop:Generator_TableClassName="ciudadDataTable" msprop:Generator_TableVarName="tableciudad" msprop:Generator_TablePropName="ciudad" msprop:Generator_RowDeletingName="ciudadRowDeleting" msprop:Generator_RowChangingName="ciudadRowChanging" msprop:Generator_RowEvHandlerName="ciudadRowChangeEventHandler" msprop:Generator_RowDeletedName="ciudadRowDeleted" msprop:Generator_UserTableName="ciudad" msprop:Generator_RowChangedName="ciudadRowChanged" msprop:Generator_RowEvArgName="ciudadRowChangeEvent" msprop:Generator_RowClassName="ciudadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCiudad" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCiudad" msprop:Generator_ColumnPropNameInRow="idCiudad" msprop:Generator_ColumnPropNameInTable="idCiudadColumn" msprop:Generator_UserColumnName="idCiudad" type="xs:int" />
@@ -497,7 +567,7 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_RowClassName="ClienteRow" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowEvArgName="ClienteRowChangeEvent">
+        <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_RowEvArgName="ClienteRowChangeEvent" msprop:Generator_RowClassName="ClienteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:int" />
@@ -558,7 +628,7 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DetFactu" msprop:Generator_TableClassName="DetFactuDataTable" msprop:Generator_TableVarName="tableDetFactu" msprop:Generator_RowChangedName="DetFactuRowChanged" msprop:Generator_TablePropName="DetFactu" msprop:Generator_RowDeletingName="DetFactuRowDeleting" msprop:Generator_RowChangingName="DetFactuRowChanging" msprop:Generator_RowEvHandlerName="DetFactuRowChangeEventHandler" msprop:Generator_RowDeletedName="DetFactuRowDeleted" msprop:Generator_RowClassName="DetFactuRow" msprop:Generator_UserTableName="DetFactu" msprop:Generator_RowEvArgName="DetFactuRowChangeEvent">
+        <xs:element name="DetFactu" msprop:Generator_TableClassName="DetFactuDataTable" msprop:Generator_TableVarName="tableDetFactu" msprop:Generator_TablePropName="DetFactu" msprop:Generator_RowDeletingName="DetFactuRowDeleting" msprop:Generator_RowChangingName="DetFactuRowChanging" msprop:Generator_RowEvHandlerName="DetFactuRowChangeEventHandler" msprop:Generator_RowDeletedName="DetFactuRowDeleted" msprop:Generator_UserTableName="DetFactu" msprop:Generator_RowChangedName="DetFactuRowChanged" msprop:Generator_RowEvArgName="DetFactuRowChangeEvent" msprop:Generator_RowClassName="DetFactuRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />
@@ -570,7 +640,7 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_RowClassName="FacturaRow" msprop:Generator_UserTableName="Factura" msprop:Generator_RowEvArgName="FacturaRowChangeEvent">
+        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_UserTableName="Factura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_RowEvArgName="FacturaRowChangeEvent" msprop:Generator_RowClassName="FacturaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFactura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFactura" msprop:Generator_ColumnPropNameInRow="idFactura" msprop:Generator_ColumnPropNameInTable="idFacturaColumn" msprop:Generator_UserColumnName="idFactura" type="xs:int" />
@@ -580,7 +650,7 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="producto" msprop:Generator_TableClassName="productoDataTable" msprop:Generator_TableVarName="tableproducto" msprop:Generator_RowChangedName="productoRowChanged" msprop:Generator_TablePropName="producto" msprop:Generator_RowDeletingName="productoRowDeleting" msprop:Generator_RowChangingName="productoRowChanging" msprop:Generator_RowEvHandlerName="productoRowChangeEventHandler" msprop:Generator_RowDeletedName="productoRowDeleted" msprop:Generator_RowClassName="productoRow" msprop:Generator_UserTableName="producto" msprop:Generator_RowEvArgName="productoRowChangeEvent">
+        <xs:element name="producto" msprop:Generator_TableClassName="productoDataTable" msprop:Generator_TableVarName="tableproducto" msprop:Generator_TablePropName="producto" msprop:Generator_RowDeletingName="productoRowDeleting" msprop:Generator_RowChangingName="productoRowChanging" msprop:Generator_RowEvHandlerName="productoRowChangeEventHandler" msprop:Generator_RowDeletedName="productoRowDeleted" msprop:Generator_UserTableName="producto" msprop:Generator_RowChangedName="productoRowChanged" msprop:Generator_RowEvArgName="productoRowChangeEvent" msprop:Generator_RowClassName="productoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
@@ -603,7 +673,7 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_RowClassName="UsuarioRow" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent">
+        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent" msprop:Generator_RowClassName="UsuarioRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
@@ -682,11 +752,11 @@ SELECT idUsuario, primerNombre, primerApellido, segundoApellido, userName, userP
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Refciudad2" msdata:parent="ciudad" msdata:child="Cliente" msdata:parentkey="idCiudad" msdata:childkey="idCiudad" msprop:Generator_UserChildTable="Cliente" msprop:Generator_ChildPropName="GetClienteRows" msprop:Generator_UserRelationName="Refciudad2" msprop:Generator_RelationVarName="relationRefciudad2" msprop:Generator_UserParentTable="ciudad" msprop:Generator_ParentPropName="ciudadRow" />
-      <msdata:Relationship name="RefFactura8" msdata:parent="Factura" msdata:child="DetFactu" msdata:parentkey="idFactura" msdata:childkey="idFactura" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="RefFactura8" msprop:Generator_ParentPropName="FacturaRow" msprop:Generator_RelationVarName="relationRefFactura8" msprop:Generator_UserParentTable="Factura" />
-      <msdata:Relationship name="Refproducto11" msdata:parent="producto" msdata:child="DetFactu" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="Refproducto11" msprop:Generator_ParentPropName="productoRow" msprop:Generator_RelationVarName="relationRefproducto11" msprop:Generator_UserParentTable="producto" />
-      <msdata:Relationship name="RefCliente4" msdata:parent="Cliente" msdata:child="Factura" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefCliente4" msprop:Generator_RelationVarName="relationRefCliente4" msprop:Generator_UserParentTable="Cliente" msprop:Generator_ParentPropName="ClienteRow" />
-      <msdata:Relationship name="RefUsuario3" msdata:parent="Usuario" msdata:child="Factura" msdata:parentkey="idUsuario" msdata:childkey="idUsuario" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefUsuario3" msprop:Generator_ParentPropName="UsuarioRow" msprop:Generator_RelationVarName="relationRefUsuario3" msprop:Generator_UserParentTable="Usuario" />
+      <msdata:Relationship name="Refciudad2" msdata:parent="ciudad" msdata:child="Cliente" msdata:parentkey="idCiudad" msdata:childkey="idCiudad" msprop:Generator_UserChildTable="Cliente" msprop:Generator_ChildPropName="GetClienteRows" msprop:Generator_UserRelationName="Refciudad2" msprop:Generator_ParentPropName="ciudadRow" msprop:Generator_RelationVarName="relationRefciudad2" msprop:Generator_UserParentTable="ciudad" />
+      <msdata:Relationship name="RefFactura8" msdata:parent="Factura" msdata:child="DetFactu" msdata:parentkey="idFactura" msdata:childkey="idFactura" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="RefFactura8" msprop:Generator_RelationVarName="relationRefFactura8" msprop:Generator_UserParentTable="Factura" msprop:Generator_ParentPropName="FacturaRow" />
+      <msdata:Relationship name="Refproducto11" msdata:parent="producto" msdata:child="DetFactu" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserChildTable="DetFactu" msprop:Generator_ChildPropName="GetDetFactuRows" msprop:Generator_UserRelationName="Refproducto11" msprop:Generator_RelationVarName="relationRefproducto11" msprop:Generator_UserParentTable="producto" msprop:Generator_ParentPropName="productoRow" />
+      <msdata:Relationship name="RefCliente4" msdata:parent="Cliente" msdata:child="Factura" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefCliente4" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationRefCliente4" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="RefUsuario3" msdata:parent="Usuario" msdata:child="Factura" msdata:parentkey="idUsuario" msdata:childkey="idUsuario" msprop:Generator_UserChildTable="Factura" msprop:Generator_ChildPropName="GetFacturaRows" msprop:Generator_UserRelationName="RefUsuario3" msprop:Generator_RelationVarName="relationRefUsuario3" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -23,10 +23,10 @@ Partial Class FrmMenuPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GbMenuPrincipal = New System.Windows.Forms.GroupBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnProducto = New System.Windows.Forms.Button()
-        Me.btnUsuario = New System.Windows.Forms.Button()
         Me.btnCiudad = New System.Windows.Forms.Button()
+        Me.btnUsuario = New System.Windows.Forms.Button()
+        Me.btnProducto = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.GbMenuPrincipal.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,24 +45,14 @@ Partial Class FrmMenuPrincipal
         Me.GbMenuPrincipal.TabStop = False
         Me.GbMenuPrincipal.Text = "Menu"
         '
-        'PictureBox1
+        'btnCiudad
         '
-        Me.PictureBox1.Image = Global.CatalanaNicv2.My.Resources.Resources.Icon_catalana
-        Me.PictureBox1.Location = New System.Drawing.Point(19, 19)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(135, 136)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'btnProducto
-        '
-        Me.btnProducto.Location = New System.Drawing.Point(48, 161)
-        Me.btnProducto.Name = "btnProducto"
-        Me.btnProducto.Size = New System.Drawing.Size(75, 23)
-        Me.btnProducto.TabIndex = 1
-        Me.btnProducto.Text = "Productos"
-        Me.btnProducto.UseVisualStyleBackColor = True
+        Me.btnCiudad.Location = New System.Drawing.Point(48, 219)
+        Me.btnCiudad.Name = "btnCiudad"
+        Me.btnCiudad.Size = New System.Drawing.Size(75, 23)
+        Me.btnCiudad.TabIndex = 3
+        Me.btnCiudad.Text = "Ciudad"
+        Me.btnCiudad.UseVisualStyleBackColor = True
         '
         'btnUsuario
         '
@@ -73,14 +63,24 @@ Partial Class FrmMenuPrincipal
         Me.btnUsuario.Text = "Usuarios"
         Me.btnUsuario.UseVisualStyleBackColor = True
         '
-        'btnCiudad
+        'btnProducto
         '
-        Me.btnCiudad.Location = New System.Drawing.Point(48, 219)
-        Me.btnCiudad.Name = "btnCiudad"
-        Me.btnCiudad.Size = New System.Drawing.Size(75, 23)
-        Me.btnCiudad.TabIndex = 3
-        Me.btnCiudad.Text = "Ciudad"
-        Me.btnCiudad.UseVisualStyleBackColor = True
+        Me.btnProducto.Location = New System.Drawing.Point(48, 161)
+        Me.btnProducto.Name = "btnProducto"
+        Me.btnProducto.Size = New System.Drawing.Size(75, 23)
+        Me.btnProducto.TabIndex = 1
+        Me.btnProducto.Text = "Productos"
+        Me.btnProducto.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CatalanaNicv2.My.Resources.Resources.Icon_catalana
+        Me.PictureBox1.Location = New System.Drawing.Point(19, 19)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(135, 136)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'btnCerrarSesion
         '

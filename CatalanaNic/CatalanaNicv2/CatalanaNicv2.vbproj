@@ -78,10 +78,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CatalanaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CatalanaDataSet.vb">
+      <DependentUpon>CatalanaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\FrmCliente.Designer.vb">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\FrmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\FrmProducto1.Designer.vb">
       <DependentUpon>FrmProducto1.vb</DependentUpon>
     </Compile>
     <Compile Include="formularios\FrmProducto1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\FrmUsuario.Designer.vb">
+      <DependentUpon>FrmUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\FrmUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmInicioSesion.vb">
@@ -118,8 +133,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formularios\FrmCliente.resx">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\FrmProducto1.resx">
       <DependentUpon>FrmProducto1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.vb</DependentUpon>
