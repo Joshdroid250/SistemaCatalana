@@ -99,9 +99,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CatalanaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CatalanaDataSet.vb">
-      <DependentUpon>CatalanaDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="formularios\FrmCiudad.Designer.vb">
       <DependentUpon>FrmCiudad.vb</DependentUpon>
     </Compile>

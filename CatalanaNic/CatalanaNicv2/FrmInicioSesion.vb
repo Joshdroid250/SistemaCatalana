@@ -10,7 +10,6 @@ Public Class FrmInicioSesion
         cn.Open()
         dr = cmd.ExecuteReader
         If dr.Read = True Then
-            MsgBox("Bienvendido")
             FrmMenuPrincipal.Show()
             Me.Hide()
         Else
