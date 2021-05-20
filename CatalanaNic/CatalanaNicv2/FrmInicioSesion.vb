@@ -15,7 +15,7 @@ Public Class FrmInicioSesion
         Else
             MsgBox("Intente Nuevamente")
         End If
-        cn.Close()
+
 
     End Sub
 
