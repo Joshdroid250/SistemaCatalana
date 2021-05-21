@@ -9,10 +9,6 @@
         FrmProducto1.Show()
     End Sub
 
-    Private Sub FrmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub FrmMenuPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 
         FrmInicioSesion.Show()
@@ -34,5 +30,9 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lbHora.Text = DateTime.Now()
+    End Sub
+
+    Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles lbNombre.Click
+        lbNombre.Text = Names.name
     End Sub
 End Class

@@ -21,6 +21,7 @@ Public Class FrmInicioSesion
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
         Inicio()
+        Names.name = txtUserName.Text
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -29,5 +30,8 @@ Public Class FrmInicioSesion
 
     Private Sub FrmInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+    Sub CapturarName(ByVal name As String)
+        txtUserName.Text = name
     End Sub
 End Class
