@@ -24,12 +24,12 @@ Partial Class FrmMenuPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GbMenuPrincipal = New System.Windows.Forms.GroupBox()
+        Me.lbHora = New System.Windows.Forms.Label()
         Me.btnCiudad = New System.Windows.Forms.Button()
         Me.btnUsuario = New System.Windows.Forms.Button()
         Me.btnProducto = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.lbHora = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GbMenuPrincipal.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,6 +48,15 @@ Partial Class FrmMenuPrincipal
         Me.GbMenuPrincipal.TabIndex = 0
         Me.GbMenuPrincipal.TabStop = False
         Me.GbMenuPrincipal.Text = "Menu"
+        '
+        'lbHora
+        '
+        Me.lbHora.AutoSize = True
+        Me.lbHora.Location = New System.Drawing.Point(33, 364)
+        Me.lbHora.Name = "lbHora"
+        Me.lbHora.Size = New System.Drawing.Size(34, 13)
+        Me.lbHora.TabIndex = 4
+        Me.lbHora.Text = "Clock"
         '
         'btnCiudad
         '
@@ -94,15 +103,6 @@ Partial Class FrmMenuPrincipal
         Me.btnCerrarSesion.TabIndex = 1
         Me.btnCerrarSesion.Text = "Cerrar Sesion"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
-        '
-        'lbHora
-        '
-        Me.lbHora.AutoSize = True
-        Me.lbHora.Location = New System.Drawing.Point(33, 364)
-        Me.lbHora.Name = "lbHora"
-        Me.lbHora.Size = New System.Drawing.Size(34, 13)
-        Me.lbHora.TabIndex = 4
-        Me.lbHora.Text = "Clock"
         '
         'Timer1
         '

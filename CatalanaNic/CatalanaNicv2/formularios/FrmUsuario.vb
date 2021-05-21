@@ -104,6 +104,7 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Dim ver As New VerReportes
         Try
             Dim tSql As String = "SELECT   idUsuario as 'ID', primerNombre as 'Nombre', primerApellido as 'Apellido', segundoApellido as 'SegundoApellido', userName 'UserName', email as 'Email', estado as 'Estado'
             FROM   Usuario"
@@ -111,22 +112,9 @@ Public Class FrmUsuario
             Dim da As New SqlDataAdapter(tSql, conex)
             Dim t As New DataTable
             da.Fill(t)
-            verReporte(t, "dataUsuario", "C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\Reportes\RptUsuario.rdlc")
+            ver.verReporte(t, "dataUsuario", "Reportes\RptUsuario.rdlc")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
-        End Try
-    End Sub
-    Sub verReporte(ByVal t As DataTable, ByVal ds As String, ByVal nompreRpt As String)
-        Try
-            Dim rpt As New ReportDataSource(ds, t)
-
-            FrmVista.ReportViewer1.LocalReport.DataSources.Clear()
-            FrmVista.ReportViewer1.LocalReport.DataSources.Add(rpt)
-            FrmVista.ReportViewer1.LocalReport.ReportPath = nompreRpt
-            FrmVista.Show()
-
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de reporte")
         End Try
     End Sub
 
