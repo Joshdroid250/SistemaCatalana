@@ -35,4 +35,8 @@
     Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles lbNombre.Click
         lbNombre.Text = Names.name
     End Sub
+
+    Private Sub btnCliente_Click(sender As Object, e As EventArgs) Handles btnCliente.Click
+        FrmCliente.Show()
+    End Sub
 End Class
