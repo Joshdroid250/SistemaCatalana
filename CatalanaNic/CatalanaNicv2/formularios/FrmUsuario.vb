@@ -42,7 +42,7 @@ Public Class FrmUsuario
             UserA.Email = txtCorreo.Text
             UserA.Estado = CInt(txtEstado.Text)
             MsgBox("Usuario Agregar correctamente")
-            Me.UsuarioTableAdapter.AgregarUsuario(UserA.PrimerNombre, UserA.PrimerApellido, UserA.SegundoApellido, UserA.UserName, UserA.UserPwd, UserA.Email, UserA.Estado)
+            Me.UsuarioTableAdapter.AgregarUsuario(CatalanaDataSet.Usuario, UserA.PrimerNombre, UserA.PrimerApellido, UserA.SegundoApellido, UserA.UserName, UserA.UserPwd, UserA.Email, UserA.Estado)
             Me.UsuarioTableAdapter.Fill(Me.CatalanaDataSet.Usuario)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al agregar Usuario")
@@ -56,7 +56,7 @@ Public Class FrmUsuario
         Try
             bo.IdUsuario = CInt(txtID.Text)
             MsgBox("El Usuario se borro")
-            Me.UsuarioTableAdapter.BorrarUsuario(bo.IdUsuario)
+            Me.UsuarioTableAdapter.borrarUsuario(CatalanaDataSet.Usuario, bo.IdUsuario)
             Me.UsuarioTableAdapter.Fill(Me.CatalanaDataSet.Usuario)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al eliminar al Usuario")
@@ -76,14 +76,14 @@ Public Class FrmUsuario
             up.Email = txtCorreo.Text
             up.Estado = CInt(txtEstado.Text)
             MsgBox("Actualizacion de usuario correcta")
-            Me.UsuarioTableAdapter.ActualizarUsuario(
+            Me.UsuarioTableAdapter.actualizarUsuario(CatalanaDataSet.Usuario, up.IdUsuario,
                 up.PrimerNombre,
                 up.PrimerApellido,
                 up.SegundoApellido,
                 up.UserName,
                 up.UserPwd,
                 up.Email,
-                up.Estado, up.IdUsuario)
+                up.Estado)
             Me.UsuarioTableAdapter.Fill(Me.CatalanaDataSet.Usuario)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de actualizacion de datos")
@@ -95,8 +95,7 @@ Public Class FrmUsuario
         Dim bus As New Usuario
         Try
             bus.IdUsuario = CInt(txtID.Text)
-            Me.UsuarioTableAdapter.BuscarUsuario(CatalanaDataSet.Usuario, bus.IdUsuario)
-
+            Me.UsuarioTableAdapter.buscarUsuarioID(CatalanaDataSet.Usuario, bus.IdUsuario)
         Catch ex As Exception
 
         End Try

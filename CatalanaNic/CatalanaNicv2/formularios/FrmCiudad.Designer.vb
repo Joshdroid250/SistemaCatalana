@@ -25,11 +25,6 @@ Partial Class FrmCiudad
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CiudadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -44,14 +39,23 @@ Partial Class FrmCiudad
         Me.tlbNombre = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnReporte = New System.Windows.Forms.Button()
-        Me.CiudadTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ciudadTableAdapter()
         Me.btnMenu = New System.Windows.Forms.Button()
+        Me.IdCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoCiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CiudadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
+        Me.CiudadTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ciudadTableAdapter()
+        Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
+        Me.CiudadBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbCiudad.SuspendLayout()
+        CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CiudadBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -71,7 +75,7 @@ Partial Class FrmCiudad
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCiudadDataGridViewTextBoxColumn, Me.NombreCiudadDataGridViewTextBoxColumn, Me.EstadoCiudadDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.CiudadBindingSource
+        Me.DataGridView1.DataSource = Me.CiudadBindingSource1
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
@@ -79,37 +83,6 @@ Partial Class FrmCiudad
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(348, 378)
         Me.DataGridView1.TabIndex = 0
-        '
-        'IdCiudadDataGridViewTextBoxColumn
-        '
-        Me.IdCiudadDataGridViewTextBoxColumn.DataPropertyName = "idCiudad"
-        Me.IdCiudadDataGridViewTextBoxColumn.HeaderText = "idCiudad"
-        Me.IdCiudadDataGridViewTextBoxColumn.Name = "IdCiudadDataGridViewTextBoxColumn"
-        Me.IdCiudadDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreCiudadDataGridViewTextBoxColumn
-        '
-        Me.NombreCiudadDataGridViewTextBoxColumn.DataPropertyName = "nombreCiudad"
-        Me.NombreCiudadDataGridViewTextBoxColumn.HeaderText = "nombreCiudad"
-        Me.NombreCiudadDataGridViewTextBoxColumn.Name = "NombreCiudadDataGridViewTextBoxColumn"
-        Me.NombreCiudadDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EstadoCiudadDataGridViewTextBoxColumn
-        '
-        Me.EstadoCiudadDataGridViewTextBoxColumn.DataPropertyName = "estadoCiudad"
-        Me.EstadoCiudadDataGridViewTextBoxColumn.HeaderText = "estadoCiudad"
-        Me.EstadoCiudadDataGridViewTextBoxColumn.Name = "EstadoCiudadDataGridViewTextBoxColumn"
-        Me.EstadoCiudadDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CiudadBindingSource
-        '
-        Me.CiudadBindingSource.DataMember = "ciudad"
-        Me.CiudadBindingSource.DataSource = Me.CatalanaDataSet
-        '
-        'CatalanaDataSet
-        '
-        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PictureBox1
         '
@@ -189,6 +162,7 @@ Partial Class FrmCiudad
         '
         'txtEstado
         '
+        Me.txtEstado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CiudadBindingSource1, "estadoCiudad", True))
         Me.txtEstado.Location = New System.Drawing.Point(71, 256)
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(123, 20)
@@ -196,6 +170,7 @@ Partial Class FrmCiudad
         '
         'txtNombre
         '
+        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CiudadBindingSource1, "nombreCiudad", True))
         Me.txtNombre.Location = New System.Drawing.Point(71, 226)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(123, 20)
@@ -203,6 +178,7 @@ Partial Class FrmCiudad
         '
         'txtID
         '
+        Me.txtID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CiudadBindingSource1, "idCiudad", True))
         Me.txtID.Location = New System.Drawing.Point(71, 190)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(123, 20)
@@ -244,10 +220,6 @@ Partial Class FrmCiudad
         Me.btnReporte.Text = "Reporte"
         Me.btnReporte.UseVisualStyleBackColor = True
         '
-        'CiudadTableAdapter
-        '
-        Me.CiudadTableAdapter.ClearBeforeFill = True
-        '
         'btnMenu
         '
         Me.btnMenu.Location = New System.Drawing.Point(513, 54)
@@ -256,6 +228,51 @@ Partial Class FrmCiudad
         Me.btnMenu.TabIndex = 3
         Me.btnMenu.Text = "Menu Principal"
         Me.btnMenu.UseVisualStyleBackColor = True
+        '
+        'IdCiudadDataGridViewTextBoxColumn
+        '
+        Me.IdCiudadDataGridViewTextBoxColumn.DataPropertyName = "idCiudad"
+        Me.IdCiudadDataGridViewTextBoxColumn.HeaderText = "idCiudad"
+        Me.IdCiudadDataGridViewTextBoxColumn.Name = "IdCiudadDataGridViewTextBoxColumn"
+        Me.IdCiudadDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreCiudadDataGridViewTextBoxColumn
+        '
+        Me.NombreCiudadDataGridViewTextBoxColumn.DataPropertyName = "nombreCiudad"
+        Me.NombreCiudadDataGridViewTextBoxColumn.HeaderText = "nombreCiudad"
+        Me.NombreCiudadDataGridViewTextBoxColumn.Name = "NombreCiudadDataGridViewTextBoxColumn"
+        Me.NombreCiudadDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EstadoCiudadDataGridViewTextBoxColumn
+        '
+        Me.EstadoCiudadDataGridViewTextBoxColumn.DataPropertyName = "estadoCiudad"
+        Me.EstadoCiudadDataGridViewTextBoxColumn.HeaderText = "estadoCiudad"
+        Me.EstadoCiudadDataGridViewTextBoxColumn.Name = "EstadoCiudadDataGridViewTextBoxColumn"
+        Me.EstadoCiudadDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CiudadBindingSource
+        '
+        Me.CiudadBindingSource.DataMember = "ciudad"
+        Me.CiudadBindingSource.DataSource = Me.CatalanaDataSet
+        '
+        'CatalanaDataSet
+        '
+        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CiudadTableAdapter
+        '
+        Me.CiudadTableAdapter.ClearBeforeFill = True
+        '
+        'CatalanaDataSet1
+        '
+        Me.CatalanaDataSet1.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CiudadBindingSource1
+        '
+        Me.CiudadBindingSource1.DataMember = "ciudad"
+        Me.CiudadBindingSource1.DataSource = Me.CatalanaDataSet1
         '
         'FrmCiudad
         '
@@ -272,11 +289,13 @@ Partial Class FrmCiudad
         Me.Text = "Ciudad"
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbCiudad.ResumeLayout(False)
         Me.GbCiudad.PerformLayout()
+        CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CiudadBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -303,4 +322,6 @@ Partial Class FrmCiudad
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnReporte As Button
     Friend WithEvents btnMenu As Button
+    Friend WithEvents CatalanaDataSet1 As CatalanaDataSet
+    Friend WithEvents CiudadBindingSource1 As BindingSource
 End Class

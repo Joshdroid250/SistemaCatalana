@@ -2,18 +2,22 @@
     Private _idPro As Integer
     Private _nombreP As String
     Private _precioProducto As Integer
+    Private _iva As String
     Private _descripPro As String
+    Private _fotoProd As Byte()
     Private _estadoP As Integer
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(ByVal id As Integer, ByVal nombrePro As String, ByVal precioP As Integer, ByVal descripPro As String, ByVal estadoPro As Integer)
+    Public Sub New(ByVal id As Integer, ByVal nombrePro As String, ByVal precioP As Integer, ByVal iva As String, ByVal descripPro As String, ByVal fotoProd As Byte(), ByVal estadoPro As Integer)
         Me.IdPro = id
         Me.NombreP = nombrePro
         Me.PrecioProducto = precioP
+        Me.Iva = iva
         Me.DescripPro = descripPro
+        Me.FotoProd = fotoProd
         Me.EstadoP = estadoPro
 
     End Sub
@@ -60,6 +64,26 @@
         End Get
         Set(value As String)
             _descripPro = value
+        End Set
+    End Property
+
+
+
+    Public Property Iva As String
+        Get
+            Return _iva
+        End Get
+        Set(value As String)
+            _iva = value
+        End Set
+    End Property
+
+    Public Property FotoProd As Byte()
+        Get
+            Return _fotoProd
+        End Get
+        Set(value As Byte())
+            _fotoProd = value
         End Set
     End Property
 End Class

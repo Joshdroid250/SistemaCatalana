@@ -92,21 +92,6 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dataUsuarioDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dsProductoDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dataCiudadDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:CatalanaNicv2.CatalanaDataSet.ciudadRow">
 <summary>
 Represents strongly named DataRow class.
@@ -167,21 +152,6 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dataUsuarioRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dsProductoRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dataCiudadRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:CatalanaNicv2.CatalanaDataSet.ciudadRowChangeEvent">
 <summary>
 Row event argument class
@@ -238,21 +208,6 @@ Row event argument class
 </summary>
 </member>
 <member name="T:CatalanaNicv2.CatalanaDataSet.UsuarioRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dataUsuarioRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dsProductoRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:CatalanaNicv2.CatalanaDataSet.dataCiudadRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

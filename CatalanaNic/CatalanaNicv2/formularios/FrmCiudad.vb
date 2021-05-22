@@ -3,6 +3,8 @@ Imports Microsoft.Reporting.WinForms
 
 Public Class FrmCiudad
     Private Sub FrmCiudad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet1.ciudad' Puede moverla o quitarla según sea necesario.
+        Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet1.ciudad)
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet.ciudad' Puede moverla o quitarla según sea necesario.
         Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
 
@@ -22,7 +24,7 @@ Public Class FrmCiudad
             A.NombreC = txtNombre.Text +
             A.EstadoC = CInt(txtEstado.Text)
             MsgBox("Ciudad Agregada")
-            Me.CiudadTableAdapter.AgregarCiudad(A.NombreC, A.EstadoC)
+            Me.CiudadTableAdapter.AgregarCiudad(CatalanaDataSet.ciudad, A.NombreC, A.EstadoC)
             Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al agregar")
@@ -37,7 +39,7 @@ Public Class FrmCiudad
             bo.NombreC = txtNombre.Text
             bo.EstadoC = CInt(txtEstado.Text)
             MsgBox("Se borro la ciudad")
-            Me.CiudadTableAdapter.BorrarCiudad(bo.IdCiudad)
+            Me.CiudadTableAdapter.BorrarCiudad(CatalanaDataSet.ciudad, bo.IdCiudad)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al borrar ciudad")
         End Try
@@ -51,7 +53,7 @@ Public Class FrmCiudad
             up.NombreC = txtNombre.Text
             up.EstadoC = CInt(txtEstado.Text)
             MsgBox("Ciudad Actualizada")
-            Me.CiudadTableAdapter.ActualizarCiudad(up.NombreC, up.EstadoC, up.IdCiudad)
+            Me.CiudadTableAdapter.ActualizarCiudad(CatalanaDataSet.ciudad, up.IdCiudad, up.NombreC, up.EstadoC)
             Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al Actualizar")
@@ -63,7 +65,7 @@ Public Class FrmCiudad
         Dim bus As New Ciudad
         Try
             bus.IdCiudad = CInt(txtID.Text)
-            Me.CiudadTableAdapter.BuscarCiudad(CatalanaDataSet.ciudad, bus.IdCiudad)
+            Me.CiudadTableAdapter.BuscarCiudadID(CatalanaDataSet.ciudad, bus.IdCiudad)
             Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de  busqueda")
