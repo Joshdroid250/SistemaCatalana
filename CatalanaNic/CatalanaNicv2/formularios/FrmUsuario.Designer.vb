@@ -415,7 +415,9 @@ Partial Class FrmUsuario
         Me.Controls.Add(Me.GbUsuario)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(816, 621)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(816, 621)
         Me.Name = "FrmUsuario"
         Me.Text = "Usuario"
         Me.GroupBox1.ResumeLayout(False)

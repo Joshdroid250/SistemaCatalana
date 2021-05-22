@@ -442,6 +442,10 @@ Partial Class FrmProducto1
         Me.Controls.Add(Me.btnMenuPrin)
         Me.Controls.Add(Me.GbProductos)
         Me.Controls.Add(Me.GbProducto)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(997, 530)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(997, 530)
         Me.Name = "FrmProducto1"
         Me.Text = "Producto"
         Me.GbProducto.ResumeLayout(False)

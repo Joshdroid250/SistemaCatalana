@@ -39,4 +39,8 @@
     Private Sub btnCliente_Click(sender As Object, e As EventArgs) Handles btnCliente.Click
         FrmCliente.Show()
     End Sub
+
+    Private Sub FrmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

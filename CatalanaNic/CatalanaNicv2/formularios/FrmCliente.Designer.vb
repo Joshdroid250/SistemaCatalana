@@ -24,7 +24,11 @@ Partial Class FrmCliente
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GbCliente = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtCedu = New System.Windows.Forms.TextBox()
+        Me.ClienteBindingSource4 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
+        Me.lbNumCedu = New System.Windows.Forms.Label()
+        Me.btnBuscarName = New System.Windows.Forms.Button()
         Me.btnBuscarID = New System.Windows.Forms.Button()
         Me.lbCity = New System.Windows.Forms.Label()
         Me.CiudadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -74,8 +78,6 @@ Partial Class FrmCliente
         Me.CelClaroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CelCootelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClienteBindingSource4 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
         Me.ClienteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
@@ -84,17 +86,17 @@ Partial Class FrmCliente
         Me.ClienteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.MostrarClientesTableToolStrip = New System.Windows.Forms.ToolStrip()
         Me.MostrarClientesTableToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.txtCedu = New System.Windows.Forms.TextBox()
-        Me.lbNumCedu = New System.Windows.Forms.Label()
+        Me.btnMenuPrin = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.GbCliente.SuspendLayout()
+        CType(Me.ClienteBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBCatalana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbRegistroCliente.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClienteBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,7 +108,7 @@ Partial Class FrmCliente
         '
         Me.GbCliente.Controls.Add(Me.txtCedu)
         Me.GbCliente.Controls.Add(Me.lbNumCedu)
-        Me.GbCliente.Controls.Add(Me.Button1)
+        Me.GbCliente.Controls.Add(Me.btnBuscarName)
         Me.GbCliente.Controls.Add(Me.btnBuscarID)
         Me.GbCliente.Controls.Add(Me.lbCity)
         Me.GbCliente.Controls.Add(Me.txtNombre)
@@ -145,14 +147,41 @@ Partial Class FrmCliente
         Me.GbCliente.TabStop = False
         Me.GbCliente.Text = "Cliente"
         '
-        'Button1
+        'txtCedu
         '
-        Me.Button1.Location = New System.Drawing.Point(36, 557)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(125, 23)
-        Me.Button1.TabIndex = 31
-        Me.Button1.Text = "Buscar por Nombre"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.txtCedu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "numCedula", True))
+        Me.txtCedu.Location = New System.Drawing.Point(136, 221)
+        Me.txtCedu.Name = "txtCedu"
+        Me.txtCedu.Size = New System.Drawing.Size(121, 20)
+        Me.txtCedu.TabIndex = 33
+        '
+        'ClienteBindingSource4
+        '
+        Me.ClienteBindingSource4.DataMember = "Cliente"
+        Me.ClienteBindingSource4.DataSource = Me.CatalanaDataSet1
+        '
+        'CatalanaDataSet1
+        '
+        Me.CatalanaDataSet1.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'lbNumCedu
+        '
+        Me.lbNumCedu.AutoSize = True
+        Me.lbNumCedu.Location = New System.Drawing.Point(17, 224)
+        Me.lbNumCedu.Name = "lbNumCedu"
+        Me.lbNumCedu.Size = New System.Drawing.Size(94, 13)
+        Me.lbNumCedu.TabIndex = 32
+        Me.lbNumCedu.Text = "Numero de cedula"
+        '
+        'btnBuscarName
+        '
+        Me.btnBuscarName.Location = New System.Drawing.Point(36, 557)
+        Me.btnBuscarName.Name = "btnBuscarName"
+        Me.btnBuscarName.Size = New System.Drawing.Size(125, 23)
+        Me.btnBuscarName.TabIndex = 31
+        Me.btnBuscarName.Text = "Buscar por Nombre"
+        Me.btnBuscarName.UseVisualStyleBackColor = True
         '
         'btnBuscarID
         '
@@ -172,7 +201,6 @@ Partial Class FrmCliente
         Me.lbCity.Size = New System.Drawing.Size(10, 13)
         Me.lbCity.TabIndex = 29
         Me.lbCity.Text = "."
-        Me.lbCity.Visible = False
         '
         'CiudadBindingSource
         '
@@ -191,6 +219,7 @@ Partial Class FrmCliente
         '
         'txtNombre
         '
+        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "primerNombre", True))
         Me.txtNombre.Location = New System.Drawing.Point(136, 244)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(121, 20)
@@ -206,6 +235,7 @@ Partial Class FrmCliente
         '
         'txtEstado
         '
+        Me.txtEstado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "estado", True))
         Me.txtEstado.Location = New System.Drawing.Point(136, 512)
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(121, 20)
@@ -213,6 +243,7 @@ Partial Class FrmCliente
         '
         'txtcellCootel
         '
+        Me.txtcellCootel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "celCootel", True))
         Me.txtcellCootel.Location = New System.Drawing.Point(136, 486)
         Me.txtcellCootel.Name = "txtcellCootel"
         Me.txtcellCootel.Size = New System.Drawing.Size(121, 20)
@@ -220,6 +251,7 @@ Partial Class FrmCliente
         '
         'txtcellTigo
         '
+        Me.txtcellTigo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "celTigo", True))
         Me.txtcellTigo.Location = New System.Drawing.Point(136, 427)
         Me.txtcellTigo.Name = "txtcellTigo"
         Me.txtcellTigo.Size = New System.Drawing.Size(121, 20)
@@ -227,6 +259,7 @@ Partial Class FrmCliente
         '
         'txtcellClaro
         '
+        Me.txtcellClaro.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "celClaro", True))
         Me.txtcellClaro.Location = New System.Drawing.Point(136, 456)
         Me.txtcellClaro.Name = "txtcellClaro"
         Me.txtcellClaro.Size = New System.Drawing.Size(121, 20)
@@ -234,6 +267,7 @@ Partial Class FrmCliente
         '
         'txtCorreo
         '
+        Me.txtCorreo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "email", True))
         Me.txtCorreo.Location = New System.Drawing.Point(136, 375)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(121, 20)
@@ -241,6 +275,7 @@ Partial Class FrmCliente
         '
         'txtDomicilio
         '
+        Me.txtDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "domicilio", True))
         Me.txtDomicilio.Location = New System.Drawing.Point(136, 349)
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(121, 20)
@@ -248,6 +283,7 @@ Partial Class FrmCliente
         '
         'txtSegundoApellido
         '
+        Me.txtSegundoApellido.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "segundoApellido", True))
         Me.txtSegundoApellido.Location = New System.Drawing.Point(136, 323)
         Me.txtSegundoApellido.Name = "txtSegundoApellido"
         Me.txtSegundoApellido.Size = New System.Drawing.Size(121, 20)
@@ -255,6 +291,7 @@ Partial Class FrmCliente
         '
         'txtApellido
         '
+        Me.txtApellido.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "primerApellido", True))
         Me.txtApellido.Location = New System.Drawing.Point(136, 297)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(121, 20)
@@ -262,6 +299,7 @@ Partial Class FrmCliente
         '
         'txtSegundoName
         '
+        Me.txtSegundoName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "segundoNombre", True))
         Me.txtSegundoName.Location = New System.Drawing.Point(136, 271)
         Me.txtSegundoName.Name = "txtSegundoName"
         Me.txtSegundoName.Size = New System.Drawing.Size(121, 20)
@@ -548,16 +586,6 @@ Partial Class FrmCliente
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'ClienteBindingSource4
-        '
-        Me.ClienteBindingSource4.DataMember = "Cliente"
-        Me.ClienteBindingSource4.DataSource = Me.CatalanaDataSet1
-        '
-        'CatalanaDataSet1
-        '
-        Me.CatalanaDataSet1.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ClienteBindingSource1
         '
         Me.ClienteBindingSource1.DataMember = "Cliente"
@@ -602,43 +630,51 @@ Partial Class FrmCliente
         Me.MostrarClientesTableToolStripButton.Size = New System.Drawing.Size(121, 22)
         Me.MostrarClientesTableToolStripButton.Text = "mostrarClientesTable"
         '
-        'txtCedu
+        'btnMenuPrin
         '
-        Me.txtCedu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "numCedula", True))
-        Me.txtCedu.Location = New System.Drawing.Point(136, 221)
-        Me.txtCedu.Name = "txtCedu"
-        Me.txtCedu.Size = New System.Drawing.Size(121, 20)
-        Me.txtCedu.TabIndex = 33
+        Me.btnMenuPrin.Location = New System.Drawing.Point(1019, 31)
+        Me.btnMenuPrin.Name = "btnMenuPrin"
+        Me.btnMenuPrin.Size = New System.Drawing.Size(96, 23)
+        Me.btnMenuPrin.TabIndex = 3
+        Me.btnMenuPrin.Text = "Menu principal"
+        Me.btnMenuPrin.UseVisualStyleBackColor = True
         '
-        'lbNumCedu
+        'btnCerrar
         '
-        Me.lbNumCedu.AutoSize = True
-        Me.lbNumCedu.Location = New System.Drawing.Point(17, 224)
-        Me.lbNumCedu.Name = "lbNumCedu"
-        Me.lbNumCedu.Size = New System.Drawing.Size(94, 13)
-        Me.lbNumCedu.TabIndex = 32
-        Me.lbNumCedu.Text = "Numero de cedula"
+        Me.btnCerrar.Location = New System.Drawing.Point(1121, 31)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 4
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1211, 639)
+        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.btnMenuPrin)
         Me.Controls.Add(Me.MostrarClientesTableToolStrip)
         Me.Controls.Add(Me.GbRegistroCliente)
         Me.Controls.Add(Me.GbCliente)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1227, 678)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(1227, 678)
         Me.Name = "FrmCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmCliente"
         Me.GbCliente.ResumeLayout(False)
         Me.GbCliente.PerformLayout()
+        CType(Me.ClienteBindingSource4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CiudadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CatalanaDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBCatalana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbRegistroCliente.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClienteBindingSource4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -690,7 +726,7 @@ Partial Class FrmCliente
     Friend WithEvents lbNombre As Label
     Friend WithEvents lbID As Label
     Friend WithEvents lbCity As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBuscarName As Button
     Friend WithEvents btnBuscarID As Button
     Friend WithEvents CatalanaDataSet1 As CatalanaDataSet
     Friend WithEvents ClienteBindingSource3 As BindingSource
@@ -713,4 +749,6 @@ Partial Class FrmCliente
     Friend WithEvents MostrarClientesTableToolStripButton As ToolStripButton
     Friend WithEvents txtCedu As TextBox
     Friend WithEvents lbNumCedu As Label
+    Friend WithEvents btnMenuPrin As Button
+    Friend WithEvents btnCerrar As Button
 End Class

@@ -284,7 +284,9 @@ Partial Class FrmCiudad
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GbCiudad)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(643, 564)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(643, 564)
         Me.Name = "FrmCiudad"
         Me.Text = "Ciudad"
         Me.GroupBox2.ResumeLayout(False)

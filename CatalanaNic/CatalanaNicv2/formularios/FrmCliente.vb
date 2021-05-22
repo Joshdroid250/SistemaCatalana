@@ -100,12 +100,31 @@
         Dim busID As New Cliente
         Try
             busID.IdCliente = CInt(txtID.Text)
-            Me.ClienteTableAdapter.BuscarClientID(CatalanaDataSet1.Cliente, busID.IdCliente)
             MsgBox("Se busco Correctamente")
-            Me.ClienteTableAdapter.Fill(Me.CatalanaDataSet1.Cliente)
+            Me.ClienteTableAdapter.BuscarClientID(CatalanaDataSet1.Cliente, busID.IdCliente)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar por ID")
         End Try
-        Me.ClienteTableAdapter.Fill(Me.CatalanaDataSet1.Cliente)
+    End Sub
+
+    Private Sub btnBuscarName_Click(sender As Object, e As EventArgs) Handles btnBuscarName.Click
+        Dim busN As New Cliente
+        Try
+            busN.PrimerNombre = txtNombre.Text
+            Me.ClienteTableAdapter.buscarClientName(CatalanaDataSet1.Cliente, busN.PrimerNombre)
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar Cliente por Nombre")
+        End Try
+    End Sub
+
+    Private Sub btnMenuPrin_Click(sender As Object, e As EventArgs) Handles btnMenuPrin.Click
+        Me.Close()
+        FrmMenuPrincipal.Show()
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class
