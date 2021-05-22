@@ -21,15 +21,15 @@ Public Class FrmCiudad
         Dim A As New Ciudad
         Try
             A.IdCiudad = CInt(txtID.Text)
-            A.NombreC = txtNombre.Text +
+            A.NombreC = txtNombre.Text
             A.EstadoC = CInt(txtEstado.Text)
             MsgBox("Ciudad Agregada")
             Me.CiudadTableAdapter.AgregarCiudad(CatalanaDataSet.ciudad, A.NombreC, A.EstadoC)
-            Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
+            Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet1.ciudad)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al agregar")
         End Try
-        Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet.ciudad)
+        Me.CiudadTableAdapter.Fill(Me.CatalanaDataSet1.ciudad)
     End Sub
 
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
@@ -96,4 +96,6 @@ Public Class FrmCiudad
     Private Sub FrmCiudad_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         FrmMenuPrincipal.Show()
     End Sub
+
+
 End Class

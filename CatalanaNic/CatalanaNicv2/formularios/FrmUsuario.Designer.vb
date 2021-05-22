@@ -38,7 +38,7 @@ Partial Class FrmUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbIdUsuario = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.txtPWD = New System.Windows.Forms.TextBox()
@@ -46,9 +46,9 @@ Partial Class FrmUsuario
         Me.txtSegundoApe = New System.Windows.Forms.TextBox()
         Me.txtPrimerApe = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.UsuarioBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GbUsuario = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,10 +62,10 @@ Partial Class FrmUsuario
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbUsuario.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -226,10 +226,10 @@ Partial Class FrmUsuario
         Me.txtEstado.Size = New System.Drawing.Size(100, 20)
         Me.txtEstado.TabIndex = 8
         '
-        'UsuarioBindingSource
+        'UsuarioBindingSource1
         '
-        Me.UsuarioBindingSource.DataMember = "Usuario"
-        Me.UsuarioBindingSource.DataSource = Me.CatalanaDataSet
+        Me.UsuarioBindingSource1.DataMember = "Usuario"
+        Me.UsuarioBindingSource1.DataSource = Me.CatalanaDataSet
         '
         'CatalanaDataSet
         '
@@ -285,11 +285,6 @@ Partial Class FrmUsuario
         Me.txtNombre.Size = New System.Drawing.Size(100, 20)
         Me.txtNombre.TabIndex = 2
         '
-        'UsuarioBindingSource1
-        '
-        Me.UsuarioBindingSource1.DataMember = "Usuario"
-        Me.UsuarioBindingSource1.DataSource = Me.CatalanaDataSet
-        '
         'txtID
         '
         Me.txtID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "idUsuario", True))
@@ -308,6 +303,11 @@ Partial Class FrmUsuario
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataMember = "Usuario"
+        Me.UsuarioBindingSource.DataSource = Me.CatalanaDataSet
         '
         'GbUsuario
         '
@@ -420,10 +420,10 @@ Partial Class FrmUsuario
         Me.Text = "Usuario"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuarioBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbUsuario.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

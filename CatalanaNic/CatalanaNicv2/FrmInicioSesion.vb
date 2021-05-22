@@ -31,7 +31,5 @@ Public Class FrmInicioSesion
     Private Sub FrmInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-    Sub CapturarName(ByVal name As String)
-        txtUserName.Text = name
-    End Sub
+
 End Class

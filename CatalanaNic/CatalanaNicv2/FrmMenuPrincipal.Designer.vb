@@ -91,7 +91,7 @@ Partial Class FrmMenuPrincipal
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(338, 38)
+        Me.Button2.Location = New System.Drawing.Point(6, 198)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(135, 23)
         Me.Button2.TabIndex = 7
@@ -100,7 +100,7 @@ Partial Class FrmMenuPrincipal
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(437, 123)
+        Me.Button1.Location = New System.Drawing.Point(158, 48)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 23)
         Me.Button1.TabIndex = 6
@@ -109,7 +109,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnCliente
         '
-        Me.btnCliente.Location = New System.Drawing.Point(264, 123)
+        Me.btnCliente.Location = New System.Drawing.Point(158, 135)
         Me.btnCliente.Name = "btnCliente"
         Me.btnCliente.Size = New System.Drawing.Size(100, 23)
         Me.btnCliente.TabIndex = 5
@@ -118,7 +118,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnCerrarSesion
         '
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(543, 38)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(543, 19)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(100, 23)
         Me.btnCerrarSesion.TabIndex = 1
@@ -136,7 +136,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnCiudad
         '
-        Me.btnCiudad.Location = New System.Drawing.Point(158, 123)
+        Me.btnCiudad.Location = New System.Drawing.Point(158, 106)
         Me.btnCiudad.Name = "btnCiudad"
         Me.btnCiudad.Size = New System.Drawing.Size(100, 23)
         Me.btnCiudad.TabIndex = 3
@@ -145,7 +145,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnUsuario
         '
-        Me.btnUsuario.Location = New System.Drawing.Point(158, 38)
+        Me.btnUsuario.Location = New System.Drawing.Point(158, 19)
         Me.btnUsuario.Name = "btnUsuario"
         Me.btnUsuario.Size = New System.Drawing.Size(100, 23)
         Me.btnUsuario.TabIndex = 2
@@ -154,7 +154,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnProducto
         '
-        Me.btnProducto.Location = New System.Drawing.Point(543, 123)
+        Me.btnProducto.Location = New System.Drawing.Point(158, 77)
         Me.btnProducto.Name = "btnProducto"
         Me.btnProducto.Size = New System.Drawing.Size(100, 23)
         Me.btnProducto.TabIndex = 1
@@ -165,7 +165,7 @@ Partial Class FrmMenuPrincipal
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = Global.CatalanaNicv2.My.Resources.Resources.Icon_catalana
-        Me.PictureBox1.Location = New System.Drawing.Point(17, 10)
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 19)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(135, 136)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

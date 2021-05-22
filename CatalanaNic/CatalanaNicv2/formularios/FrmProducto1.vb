@@ -7,8 +7,7 @@ Public Class FrmProducto1
     Private Sub FrmProducto1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet1.producto' Puede moverla o quitarla según sea necesario.
         Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
-        'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet.producto' Puede moverla o quitarla según sea necesario.
-        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet.producto)
+
 
     End Sub
 
@@ -16,21 +15,20 @@ Public Class FrmProducto1
         Dim A As New Producto
         Dim im As New MemoryStream
         Try
-            Me.PicBFoto.Image.Save(im, Me.PicBFoto.Image.RawFormat)
             A.NombreP = txtNombre.Text()
             A.PrecioProducto = CInt(txtPrecio.Text)
             A.DescripPro = txtDescripcionPro.Text
             A.Iva = CInt(txtIva.Text)
             A.EstadoP = CInt(txtEstado.Text)
+            Me.PicBFoto.Image.Save(im, Me.PicBFoto.Image.RawFormat)
             A.FotoProd = im.GetBuffer
-
             Me.ProductoTableAdapter.agregarProd(CatalanaDataSet.producto, A.NombreP, A.PrecioProducto, A.Iva, A.DescripPro, A.FotoProd, A.EstadoP)
             MsgBox("Producto Guardado Correctamente")
-            Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet.producto)
+            Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al agregar productos")
         End Try
-        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet.producto)
+        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
@@ -39,6 +37,9 @@ Public Class FrmProducto1
         txtPrecio.Clear()
         txtDescripcionPro.Clear()
         txtEstado.Clear()
+        txtIva.Clear()
+        PicBFoto.Image = Nothing
+
     End Sub
 
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
@@ -46,11 +47,12 @@ Public Class FrmProducto1
         Try
             B.IdPro = CInt(txtID.Text)
             Me.ProductoTableAdapter.borrarProd(CatalanaDataSet.producto, B.IdPro)
-            Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet.producto)
+            MsgBox("Producto borrado Correctamente")
+            Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al borrar el producto")
         End Try
-        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet.producto)
+        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -66,10 +68,12 @@ Public Class FrmProducto1
             up.FotoProd = im.GetBuffer
             Me.ProductoTableAdapter.actualizarProd(CatalanaDataSet.producto, up.IdPro, up.NombreP, up.PrecioProducto, up.Iva, up.DescripPro, up.FotoProd, up.EstadoP)
             MsgBox("Tu producto fue actualizado Correctamente")
+            Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al actualizar")
         End Try
-        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet.producto)
+        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
+
     End Sub
 
     Private Sub btnMenuPrin_Click(sender As Object, e As EventArgs) Handles btnMenuPrin.Click
@@ -90,6 +94,7 @@ Public Class FrmProducto1
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar")
         End Try
+        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
 
     End Sub
 
@@ -113,11 +118,12 @@ Public Class FrmProducto1
         OpenFileDialog1.Filter = "Tipo JPG|*.jpg| Tipo GIF|*.gif|Tipo bitmaps|*.bmp|Tipo PNG|*.png"
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Me.PicBFoto.Image = Image.FromFile(Me.OpenFileDialog1.FileName)
-
         End If
     End Sub
 
     Private Sub btnBorPIC_Click(sender As Object, e As EventArgs) Handles btnBorPIC.Click
         PicBFoto.Image = Nothing
     End Sub
+
+
 End Class

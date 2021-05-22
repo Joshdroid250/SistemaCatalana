@@ -47,13 +47,7 @@ Partial Class FrmProducto1
         Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dataVProductos = New System.Windows.Forms.DataGridView()
         Me.btnMenuPrin = New System.Windows.Forms.Button()
         Me.BtnReporte = New System.Windows.Forms.Button()
         Me.ProductoTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.productoTableAdapter()
@@ -63,6 +57,13 @@ Partial Class FrmProducto1
         Me.btnAgregarFoto = New System.Windows.Forms.Button()
         Me.lbFoto = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fotoPro = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GbProducto.SuspendLayout()
         CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +71,7 @@ Partial Class FrmProducto1
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbProductos.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataVProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicBFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbfoto.SuspendLayout()
         Me.SuspendLayout()
@@ -281,28 +282,106 @@ Partial Class FrmProducto1
         '
         'GbProductos
         '
-        Me.GbProductos.Controls.Add(Me.DataGridView1)
+        Me.GbProductos.Controls.Add(Me.dataVProductos)
         Me.GbProductos.Location = New System.Drawing.Point(265, 211)
         Me.GbProductos.Name = "GbProductos"
-        Me.GbProductos.Size = New System.Drawing.Size(523, 262)
+        Me.GbProductos.Size = New System.Drawing.Size(704, 262)
         Me.GbProductos.TabIndex = 1
         Me.GbProductos.TabStop = False
         Me.GbProductos.Text = "Productos"
         '
-        'DataGridView1
+        'dataVProductos
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.NombreProdDataGridViewTextBoxColumn, Me.PrecioProdDataGridViewTextBoxColumn, Me.iva, Me.DescripProDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ProductoBindingSource1
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(517, 243)
-        Me.DataGridView1.TabIndex = 0
+        Me.dataVProductos.AllowUserToAddRows = False
+        Me.dataVProductos.AllowUserToDeleteRows = False
+        Me.dataVProductos.AutoGenerateColumns = False
+        Me.dataVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataVProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.NombreProdDataGridViewTextBoxColumn, Me.PrecioProdDataGridViewTextBoxColumn, Me.iva, Me.DescripProDataGridViewTextBoxColumn, Me.fotoPro, Me.EstadoDataGridViewTextBoxColumn})
+        Me.dataVProductos.DataSource = Me.ProductoBindingSource1
+        Me.dataVProductos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataVProductos.Location = New System.Drawing.Point(3, 16)
+        Me.dataVProductos.Name = "dataVProductos"
+        Me.dataVProductos.ReadOnly = True
+        Me.dataVProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dataVProductos.Size = New System.Drawing.Size(698, 243)
+        Me.dataVProductos.TabIndex = 0
+        '
+        'btnMenuPrin
+        '
+        Me.btnMenuPrin.Location = New System.Drawing.Point(858, 153)
+        Me.btnMenuPrin.Name = "btnMenuPrin"
+        Me.btnMenuPrin.Size = New System.Drawing.Size(108, 23)
+        Me.btnMenuPrin.TabIndex = 2
+        Me.btnMenuPrin.Text = "Menu Principal"
+        Me.btnMenuPrin.UseVisualStyleBackColor = True
+        '
+        'BtnReporte
+        '
+        Me.BtnReporte.Location = New System.Drawing.Point(858, 182)
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(108, 23)
+        Me.BtnReporte.TabIndex = 3
+        Me.BtnReporte.Text = "Reporte"
+        Me.BtnReporte.UseVisualStyleBackColor = True
+        '
+        'ProductoTableAdapter
+        '
+        Me.ProductoTableAdapter.ClearBeforeFill = True
+        '
+        'PicBFoto
+        '
+        Me.PicBFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PicBFoto.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.ProductoBindingSource1, "fotoPro", True))
+        Me.PicBFoto.Location = New System.Drawing.Point(412, 34)
+        Me.PicBFoto.Name = "PicBFoto"
+        Me.PicBFoto.Size = New System.Drawing.Size(130, 103)
+        Me.PicBFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicBFoto.TabIndex = 4
+        Me.PicBFoto.TabStop = False
+        '
+        'Gbfoto
+        '
+        Me.Gbfoto.Controls.Add(Me.btnBorPIC)
+        Me.Gbfoto.Controls.Add(Me.btnAgregarFoto)
+        Me.Gbfoto.Controls.Add(Me.lbFoto)
+        Me.Gbfoto.Controls.Add(Me.PicBFoto)
+        Me.Gbfoto.Location = New System.Drawing.Point(265, 12)
+        Me.Gbfoto.Name = "Gbfoto"
+        Me.Gbfoto.Size = New System.Drawing.Size(577, 193)
+        Me.Gbfoto.TabIndex = 5
+        Me.Gbfoto.TabStop = False
+        Me.Gbfoto.Text = "Foto"
+        '
+        'btnBorPIC
+        '
+        Me.btnBorPIC.Location = New System.Drawing.Point(183, 102)
+        Me.btnBorPIC.Name = "btnBorPIC"
+        Me.btnBorPIC.Size = New System.Drawing.Size(85, 23)
+        Me.btnBorPIC.TabIndex = 7
+        Me.btnBorPIC.Text = "Borrar Imagen"
+        Me.btnBorPIC.UseVisualStyleBackColor = True
+        '
+        'btnAgregarFoto
+        '
+        Me.btnAgregarFoto.Location = New System.Drawing.Point(183, 71)
+        Me.btnAgregarFoto.Name = "btnAgregarFoto"
+        Me.btnAgregarFoto.Size = New System.Drawing.Size(85, 23)
+        Me.btnAgregarFoto.TabIndex = 6
+        Me.btnAgregarFoto.Text = "..."
+        Me.btnAgregarFoto.UseVisualStyleBackColor = True
+        '
+        'lbFoto
+        '
+        Me.lbFoto.AutoSize = True
+        Me.lbFoto.Location = New System.Drawing.Point(116, 71)
+        Me.lbFoto.Name = "lbFoto"
+        Me.lbFoto.Size = New System.Drawing.Size(28, 13)
+        Me.lbFoto.TabIndex = 5
+        Me.lbFoto.Text = "foto:"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'IdProductoDataGridViewTextBoxColumn
         '
@@ -339,6 +418,13 @@ Partial Class FrmProducto1
         Me.DescripProDataGridViewTextBoxColumn.Name = "DescripProDataGridViewTextBoxColumn"
         Me.DescripProDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'fotoPro
+        '
+        Me.fotoPro.DataPropertyName = "fotoPro"
+        Me.fotoPro.HeaderText = "fotoPro"
+        Me.fotoPro.Name = "fotoPro"
+        Me.fotoPro.ReadOnly = True
+        '
         'EstadoDataGridViewTextBoxColumn
         '
         Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
@@ -346,86 +432,11 @@ Partial Class FrmProducto1
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'btnMenuPrin
-        '
-        Me.btnMenuPrin.Location = New System.Drawing.Point(680, 153)
-        Me.btnMenuPrin.Name = "btnMenuPrin"
-        Me.btnMenuPrin.Size = New System.Drawing.Size(108, 23)
-        Me.btnMenuPrin.TabIndex = 2
-        Me.btnMenuPrin.Text = "Menu Principal"
-        Me.btnMenuPrin.UseVisualStyleBackColor = True
-        '
-        'BtnReporte
-        '
-        Me.BtnReporte.Location = New System.Drawing.Point(680, 182)
-        Me.BtnReporte.Name = "BtnReporte"
-        Me.BtnReporte.Size = New System.Drawing.Size(108, 23)
-        Me.BtnReporte.TabIndex = 3
-        Me.BtnReporte.Text = "Reporte"
-        Me.BtnReporte.UseVisualStyleBackColor = True
-        '
-        'ProductoTableAdapter
-        '
-        Me.ProductoTableAdapter.ClearBeforeFill = True
-        '
-        'PicBFoto
-        '
-        Me.PicBFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PicBFoto.Location = New System.Drawing.Point(191, 34)
-        Me.PicBFoto.Name = "PicBFoto"
-        Me.PicBFoto.Size = New System.Drawing.Size(130, 103)
-        Me.PicBFoto.TabIndex = 4
-        Me.PicBFoto.TabStop = False
-        '
-        'Gbfoto
-        '
-        Me.Gbfoto.Controls.Add(Me.btnBorPIC)
-        Me.Gbfoto.Controls.Add(Me.btnAgregarFoto)
-        Me.Gbfoto.Controls.Add(Me.lbFoto)
-        Me.Gbfoto.Controls.Add(Me.PicBFoto)
-        Me.Gbfoto.Location = New System.Drawing.Point(265, 12)
-        Me.Gbfoto.Name = "Gbfoto"
-        Me.Gbfoto.Size = New System.Drawing.Size(355, 193)
-        Me.Gbfoto.TabIndex = 5
-        Me.Gbfoto.TabStop = False
-        Me.Gbfoto.Text = "Foto"
-        '
-        'btnBorPIC
-        '
-        Me.btnBorPIC.Location = New System.Drawing.Point(64, 96)
-        Me.btnBorPIC.Name = "btnBorPIC"
-        Me.btnBorPIC.Size = New System.Drawing.Size(85, 23)
-        Me.btnBorPIC.TabIndex = 7
-        Me.btnBorPIC.Text = "Borrar Imagen"
-        Me.btnBorPIC.UseVisualStyleBackColor = True
-        '
-        'btnAgregarFoto
-        '
-        Me.btnAgregarFoto.Location = New System.Drawing.Point(64, 66)
-        Me.btnAgregarFoto.Name = "btnAgregarFoto"
-        Me.btnAgregarFoto.Size = New System.Drawing.Size(85, 23)
-        Me.btnAgregarFoto.TabIndex = 6
-        Me.btnAgregarFoto.Text = "..."
-        Me.btnAgregarFoto.UseVisualStyleBackColor = True
-        '
-        'lbFoto
-        '
-        Me.lbFoto.AutoSize = True
-        Me.lbFoto.Location = New System.Drawing.Point(30, 71)
-        Me.lbFoto.Name = "lbFoto"
-        Me.lbFoto.Size = New System.Drawing.Size(28, 13)
-        Me.lbFoto.TabIndex = 5
-        Me.lbFoto.Text = "foto:"
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'FrmProducto1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 491)
+        Me.ClientSize = New System.Drawing.Size(981, 491)
         Me.Controls.Add(Me.Gbfoto)
         Me.Controls.Add(Me.BtnReporte)
         Me.Controls.Add(Me.btnMenuPrin)
@@ -441,7 +452,7 @@ Partial Class FrmProducto1
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbProductos.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataVProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicBFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gbfoto.ResumeLayout(False)
         Me.Gbfoto.PerformLayout()
@@ -451,7 +462,7 @@ Partial Class FrmProducto1
 
     Friend WithEvents GbProducto As GroupBox
     Friend WithEvents GbProductos As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dataVProductos As DataGridView
     Friend WithEvents CatalanaDataSet As CatalanaDataSet
     Friend WithEvents ProductoBindingSource As BindingSource
     Friend WithEvents ProductoTableAdapter As CatalanaDataSetTableAdapters.productoTableAdapter
@@ -488,5 +499,6 @@ Partial Class FrmProducto1
     Friend WithEvents PrecioProdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents iva As DataGridViewTextBoxColumn
     Friend WithEvents DescripProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents fotoPro As DataGridViewImageColumn
     Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -26,9 +26,6 @@ Partial Class FrmCliente
         Me.GbCliente = New System.Windows.Forms.GroupBox()
         Me.GbRegistroCliente = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumCedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimerNombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,10 +39,15 @@ Partial Class FrmCliente
         Me.CelClaroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CelCootelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
+        Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
+        Me.ClienteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GbRegistroCliente.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbCliente
@@ -74,27 +76,13 @@ Partial Class FrmCliente
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NumCedulaDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.SegundoNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.IdCiudadDataGridViewTextBoxColumn, Me.CelTigoDataGridViewTextBoxColumn, Me.CelClaroDataGridViewTextBoxColumn, Me.CelCootelDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ClienteBindingSource
+        Me.DataGridView1.DataSource = Me.ClienteBindingSource1
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(564, 391)
         Me.DataGridView1.TabIndex = 0
-        '
-        'CatalanaDataSet
-        '
-        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ClienteBindingSource
-        '
-        Me.ClienteBindingSource.DataMember = "Cliente"
-        Me.ClienteBindingSource.DataSource = Me.CatalanaDataSet
-        '
-        'ClienteTableAdapter
-        '
-        Me.ClienteTableAdapter.ClearBeforeFill = True
         '
         'IdClienteDataGridViewTextBoxColumn
         '
@@ -187,6 +175,25 @@ Partial Class FrmCliente
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'ClienteBindingSource
+        '
+        Me.ClienteBindingSource.DataMember = "Cliente"
+        Me.ClienteBindingSource.DataSource = Me.CatalanaDataSet
+        '
+        'CatalanaDataSet
+        '
+        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClienteTableAdapter
+        '
+        Me.ClienteTableAdapter.ClearBeforeFill = True
+        '
+        'ClienteBindingSource1
+        '
+        Me.ClienteBindingSource1.DataMember = "Cliente"
+        Me.ClienteBindingSource1.DataSource = Me.CatalanaDataSet
+        '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -198,8 +205,9 @@ Partial Class FrmCliente
         Me.Text = "FrmCliente"
         Me.GbRegistroCliente.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -223,4 +231,5 @@ Partial Class FrmCliente
     Friend WithEvents CelClaroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CelCootelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClienteBindingSource1 As BindingSource
 End Class
