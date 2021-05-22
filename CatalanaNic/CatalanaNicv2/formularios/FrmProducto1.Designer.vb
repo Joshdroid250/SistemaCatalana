@@ -25,8 +25,6 @@ Partial Class FrmProducto1
         Me.components = New System.ComponentModel.Container()
         Me.GbProducto = New System.Windows.Forms.GroupBox()
         Me.txtIva = New System.Windows.Forms.TextBox()
-        Me.ProductoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
         Me.lbIva = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.PicBLogo = New System.Windows.Forms.PictureBox()
@@ -44,36 +42,38 @@ Partial Class FrmProducto1
         Me.lbPrecio = New System.Windows.Forms.Label()
         Me.lbNombre = New System.Windows.Forms.Label()
         Me.lbID = New System.Windows.Forms.Label()
-        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
         Me.dataVProductos = New System.Windows.Forms.DataGridView()
         Me.btnMenuPrin = New System.Windows.Forms.Button()
         Me.BtnReporte = New System.Windows.Forms.Button()
-        Me.ProductoTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.productoTableAdapter()
         Me.PicBFoto = New System.Windows.Forms.PictureBox()
         Me.Gbfoto = New System.Windows.Forms.GroupBox()
         Me.btnBorPIC = New System.Windows.Forms.Button()
         Me.btnAgregarFoto = New System.Windows.Forms.Button()
         Me.lbFoto = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fotoPro = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ProductoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
         Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fotoPro = New System.Windows.Forms.DataGridViewImageColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
+        Me.ProductoTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.productoTableAdapter()
         Me.GbProducto.SuspendLayout()
-        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicBLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbProductos.SuspendLayout()
         CType(Me.dataVProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicBFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbfoto.SuspendLayout()
+        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbProducto
@@ -110,16 +110,6 @@ Partial Class FrmProducto1
         Me.txtIva.Name = "txtIva"
         Me.txtIva.Size = New System.Drawing.Size(98, 20)
         Me.txtIva.TabIndex = 17
-        '
-        'ProductoBindingSource1
-        '
-        Me.ProductoBindingSource1.DataMember = "producto"
-        Me.ProductoBindingSource1.DataSource = Me.CatalanaDataSet1
-        '
-        'CatalanaDataSet1
-        '
-        Me.CatalanaDataSet1.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'lbIva
         '
@@ -270,16 +260,6 @@ Partial Class FrmProducto1
         Me.lbID.TabIndex = 0
         Me.lbID.Text = "ID:"
         '
-        'ProductoBindingSource
-        '
-        Me.ProductoBindingSource.DataMember = "producto"
-        Me.ProductoBindingSource.DataSource = Me.CatalanaDataSet
-        '
-        'CatalanaDataSet
-        '
-        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
-        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'GbProductos
         '
         Me.GbProductos.Controls.Add(Me.dataVProductos)
@@ -323,10 +303,6 @@ Partial Class FrmProducto1
         Me.BtnReporte.TabIndex = 3
         Me.BtnReporte.Text = "Reporte"
         Me.BtnReporte.UseVisualStyleBackColor = True
-        '
-        'ProductoTableAdapter
-        '
-        Me.ProductoTableAdapter.ClearBeforeFill = True
         '
         'PicBFoto
         '
@@ -383,6 +359,30 @@ Partial Class FrmProducto1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'iva
+        '
+        Me.iva.DataPropertyName = "iva"
+        Me.iva.HeaderText = "iva"
+        Me.iva.Name = "iva"
+        Me.iva.ReadOnly = True
+        '
+        'fotoPro
+        '
+        Me.fotoPro.DataPropertyName = "fotoPro"
+        Me.fotoPro.HeaderText = "fotoPro"
+        Me.fotoPro.Name = "fotoPro"
+        Me.fotoPro.ReadOnly = True
+        '
+        'ProductoBindingSource1
+        '
+        Me.ProductoBindingSource1.DataMember = "producto"
+        Me.ProductoBindingSource1.DataSource = Me.CatalanaDataSet1
+        '
+        'CatalanaDataSet1
+        '
+        Me.CatalanaDataSet1.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'IdProductoDataGridViewTextBoxColumn
         '
         Me.IdProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto"
@@ -404,13 +404,6 @@ Partial Class FrmProducto1
         Me.PrecioProdDataGridViewTextBoxColumn.Name = "PrecioProdDataGridViewTextBoxColumn"
         Me.PrecioProdDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'iva
-        '
-        Me.iva.DataPropertyName = "iva"
-        Me.iva.HeaderText = "iva"
-        Me.iva.Name = "iva"
-        Me.iva.ReadOnly = True
-        '
         'DescripProDataGridViewTextBoxColumn
         '
         Me.DescripProDataGridViewTextBoxColumn.DataPropertyName = "descripPro"
@@ -418,19 +411,26 @@ Partial Class FrmProducto1
         Me.DescripProDataGridViewTextBoxColumn.Name = "DescripProDataGridViewTextBoxColumn"
         Me.DescripProDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'fotoPro
-        '
-        Me.fotoPro.DataPropertyName = "fotoPro"
-        Me.fotoPro.HeaderText = "fotoPro"
-        Me.fotoPro.Name = "fotoPro"
-        Me.fotoPro.ReadOnly = True
-        '
         'EstadoDataGridViewTextBoxColumn
         '
         Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
         Me.EstadoDataGridViewTextBoxColumn.HeaderText = "estado"
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductoBindingSource
+        '
+        Me.ProductoBindingSource.DataMember = "producto"
+        Me.ProductoBindingSource.DataSource = Me.CatalanaDataSet
+        '
+        'CatalanaDataSet
+        '
+        Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProductoTableAdapter
+        '
+        Me.ProductoTableAdapter.ClearBeforeFill = True
         '
         'FrmProducto1
         '
@@ -446,16 +446,16 @@ Partial Class FrmProducto1
         Me.Text = "Producto"
         Me.GbProducto.ResumeLayout(False)
         Me.GbProducto.PerformLayout()
-        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicBLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbProductos.ResumeLayout(False)
         CType(Me.dataVProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicBFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gbfoto.ResumeLayout(False)
         Me.Gbfoto.PerformLayout()
+        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
