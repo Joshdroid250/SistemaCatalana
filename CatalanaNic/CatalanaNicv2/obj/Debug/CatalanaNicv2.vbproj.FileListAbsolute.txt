@@ -90,3 +90,4 @@ C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaN
 C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.vbproj.CopyComplete
 C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.FrmProducto1.resources
 C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.vbprojAssemblyReference.cache
+C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.FrmFactura.resources

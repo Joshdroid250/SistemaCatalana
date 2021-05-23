@@ -40,7 +40,8 @@
         FrmCliente.Show()
     End Sub
 
-    Private Sub FrmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
+        FrmFactura.Show()
+        Me.Hide()
     End Sub
 End Class

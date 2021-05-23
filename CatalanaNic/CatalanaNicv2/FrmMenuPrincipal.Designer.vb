@@ -27,8 +27,8 @@ Partial Class FrmMenuPrincipal
         Me.lbNombre = New System.Windows.Forms.Label()
         Me.lbHola = New System.Windows.Forms.Label()
         Me.lbName = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnDetFactura = New System.Windows.Forms.Button()
+        Me.btnFactura = New System.Windows.Forms.Button()
         Me.btnCliente = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.lbHora = New System.Windows.Forms.Label()
@@ -46,8 +46,8 @@ Partial Class FrmMenuPrincipal
         Me.GbMenuPrincipal.Controls.Add(Me.lbNombre)
         Me.GbMenuPrincipal.Controls.Add(Me.lbHola)
         Me.GbMenuPrincipal.Controls.Add(Me.lbName)
-        Me.GbMenuPrincipal.Controls.Add(Me.Button2)
-        Me.GbMenuPrincipal.Controls.Add(Me.Button1)
+        Me.GbMenuPrincipal.Controls.Add(Me.btnDetFactura)
+        Me.GbMenuPrincipal.Controls.Add(Me.btnFactura)
         Me.GbMenuPrincipal.Controls.Add(Me.btnCliente)
         Me.GbMenuPrincipal.Controls.Add(Me.btnCerrarSesion)
         Me.GbMenuPrincipal.Controls.Add(Me.lbHora)
@@ -89,23 +89,23 @@ Partial Class FrmMenuPrincipal
         Me.lbName.Size = New System.Drawing.Size(0, 13)
         Me.lbName.TabIndex = 8
         '
-        'Button2
+        'btnDetFactura
         '
-        Me.Button2.Location = New System.Drawing.Point(6, 198)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(135, 23)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Detalle de Factura"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnDetFactura.Location = New System.Drawing.Point(6, 198)
+        Me.btnDetFactura.Name = "btnDetFactura"
+        Me.btnDetFactura.Size = New System.Drawing.Size(135, 23)
+        Me.btnDetFactura.TabIndex = 7
+        Me.btnDetFactura.Text = "Detalle de Factura"
+        Me.btnDetFactura.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnFactura
         '
-        Me.Button1.Location = New System.Drawing.Point(158, 48)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Factura"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnFactura.Location = New System.Drawing.Point(158, 48)
+        Me.btnFactura.Name = "btnFactura"
+        Me.btnFactura.Size = New System.Drawing.Size(100, 23)
+        Me.btnFactura.TabIndex = 6
+        Me.btnFactura.Text = "Factura"
+        Me.btnFactura.UseVisualStyleBackColor = True
         '
         'btnCliente
         '
@@ -205,8 +205,8 @@ Partial Class FrmMenuPrincipal
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnCliente As Button
     Friend WithEvents lbName As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnDetFactura As Button
+    Friend WithEvents btnFactura As Button
     Friend WithEvents lbHola As Label
     Friend WithEvents lbNombre As Label
 End Class
