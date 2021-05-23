@@ -99,6 +99,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CatalanaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CatalanaDataSet.vb">
+      <DependentUpon>CatalanaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="formularios\FrmCiudad.Designer.vb">
       <DependentUpon>FrmCiudad.vb</DependentUpon>
     </Compile>
@@ -158,6 +161,7 @@
     <Compile Include="modelos\Cliente.vb" />
     <Compile Include="modelos\Detfact.vb" />
     <Compile Include="modelos\Factura.vb" />
+    <Compile Include="modelos\InicioSesion.vb" />
     <Compile Include="modelos\Names.vb" />
     <Compile Include="modelos\Producto.vb" />
     <Compile Include="modelos\Usuario.vb" />

@@ -1,4 +1,6 @@
-﻿Public Class FrmCliente
+﻿Imports System.Data.SqlClient
+
+Public Class FrmCliente
     Private Sub FrmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet1.Cliente' Puede moverla o quitarla según sea necesario.
         Me.ClienteTableAdapter.Fill(Me.CatalanaDataSet1.Cliente)
@@ -8,7 +10,7 @@
 
     End Sub
 
-    Private Sub MostrarClientesTableToolStripButton_Click(sender As Object, e As EventArgs) Handles MostrarClientesTableToolStripButton.Click
+    Private Sub MostrarClientesTableToolStripButton_Click(sender As Object, e As EventArgs)
         Try
             Me.ClienteTableAdapter.mostrarClientesTable(Me.CatalanaDataSet1.Cliente)
         Catch ex As System.Exception
@@ -107,17 +109,6 @@
         End Try
     End Sub
 
-    Private Sub btnBuscarName_Click(sender As Object, e As EventArgs) Handles btnBuscarName.Click
-        Dim busN As New Cliente
-        Try
-            busN.PrimerNombre = txtNombre.Text
-            Me.ClienteTableAdapter.buscarClientName(CatalanaDataSet1.Cliente, busN.PrimerNombre)
-
-
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar Cliente por Nombre")
-        End Try
-    End Sub
 
     Private Sub btnMenuPrin_Click(sender As Object, e As EventArgs) Handles btnMenuPrin.Click
         Me.Close()
@@ -126,5 +117,24 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Dim ver As New VerReportes
+        Try
+            Dim tSql As String = "SELECT  idCliente as 'idcliente', numCedula as 'numCedula', primerNombre as 'primerNombre', segundoNombre as 'segundoNombre', primerApellido 'segundoApellido', domicilio as 'domicilio', email as 'email', idCiudad as 'idCiudad', celTigo 'celTigo', celClaro as 'celClaro', celCootel as 'celCootel'
+            FROM   Cliente"
+            Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
+            Dim da As New SqlDataAdapter(tSql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            ver.verReporte(t, "dsCliente", "Reportes\RptCliente.rdlc")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
+    End Sub
+
+    Private Sub FrmCliente_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        FrmMenuPrincipal.Show()
     End Sub
 End Class

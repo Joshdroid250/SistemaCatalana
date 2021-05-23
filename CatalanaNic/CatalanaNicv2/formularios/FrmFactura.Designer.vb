@@ -54,6 +54,7 @@ Partial Class FrmFactura
         Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
         Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.FacturaTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.FacturaTableAdapter()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.gbFactura.SuspendLayout()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -325,17 +326,27 @@ Partial Class FrmFactura
         '
         Me.FacturaTableAdapter.ClearBeforeFill = True
         '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(666, 69)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(75, 23)
+        Me.btnReporte.TabIndex = 2
+        Me.btnReporte.Text = "Reporte"
+        Me.btnReporte.UseVisualStyleBackColor = True
+        '
         'FrmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(753, 531)
+        Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.gbRegistroFactura)
         Me.Controls.Add(Me.gbFactura)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmFactura"
-        Me.Text = "FrmFactura"
+        Me.Text = "Factura"
         Me.gbFactura.ResumeLayout(False)
         Me.gbFactura.PerformLayout()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -381,4 +392,5 @@ Partial Class FrmFactura
     Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnNuevo As Button
+    Friend WithEvents btnReporte As Button
 End Class

@@ -76,7 +76,7 @@ Public Class FrmCiudad
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
         Dim ver As New VerReportes
         Try
-            Dim tSql As String = "SELECT idCiudad as 'ID', nombreCiudad as 'Ciudad'
+            Dim tSql As String = "SELECT idCiudad as 'IdCiudad', nombreCiudad as 'nombreCiudad'
             FROM  ciudad"
             Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
             Dim da As New SqlDataAdapter(tSql, conex)

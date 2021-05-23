@@ -1,4 +1,6 @@
-﻿Public Class FrmDetFactura
+﻿Imports System.Data.SqlClient
+
+Public Class FrmDetFactura
     Private Sub FrmDetFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet1.Factura' Puede moverla o quitarla según sea necesario.
         Me.FacturaTableAdapter.Fill(Me.CatalanaDataSet1.Factura)
@@ -36,7 +38,18 @@
     End Sub
 
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
-
+        Dim ver As New VerReportes
+        Try
+            Dim tSql As String = "SELECT  idDetalle as 'IdDetalle', idProducto 'IdProducto', idFactura as 'idFactura', cantidad as 'Cantidad', precio 'Precio', descuento as 'Descuento'
+            FROM   DetFactu"
+            Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
+            Dim da As New SqlDataAdapter(tSql, conex)
+            Dim t As New DataTable
+            da.Fill(t)
+            ver.verReporte(t, "dsDetFactura", "Reportes\RptDetalleFactura.rdlc")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
+        End Try
     End Sub
 
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click

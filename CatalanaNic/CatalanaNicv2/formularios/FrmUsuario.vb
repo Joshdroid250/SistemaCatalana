@@ -105,13 +105,13 @@ Public Class FrmUsuario
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
         Dim ver As New VerReportes
         Try
-            Dim tSql As String = "SELECT   idUsuario as 'ID', primerNombre as 'Nombre', primerApellido as 'Apellido', segundoApellido as 'SegundoApellido', userName 'UserName', email as 'Email', estado as 'Estado'
+            Dim tSql As String = "SELECT  idUsuario as 'idUsuario', primerNombre as 'primerNombre', primerApellido as 'primerApellido', segundoApellido as 'SegundoApellido', userName 'UserName', email as 'email'
             FROM   Usuario"
             Dim conex As New SqlConnection(My.Settings.CatalanaConnectionString)
             Dim da As New SqlDataAdapter(tSql, conex)
             Dim t As New DataTable
             da.Fill(t)
-            ver.verReporte(t, "dataUsuario", "Reportes\RptUsuario.rdlc")
+            ver.verReporte(t, "dsUsuario", "Reportes\RptUsuario.rdlc")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al cargar reporte")
         End Try

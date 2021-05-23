@@ -58,7 +58,7 @@ Partial Class FrmMenuPrincipal
         Me.GbMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GbMenuPrincipal.Location = New System.Drawing.Point(12, 12)
         Me.GbMenuPrincipal.Name = "GbMenuPrincipal"
-        Me.GbMenuPrincipal.Size = New System.Drawing.Size(649, 346)
+        Me.GbMenuPrincipal.Size = New System.Drawing.Size(416, 346)
         Me.GbMenuPrincipal.TabIndex = 0
         Me.GbMenuPrincipal.TabStop = False
         Me.GbMenuPrincipal.Text = "Menu"
@@ -68,9 +68,9 @@ Partial Class FrmMenuPrincipal
         Me.lbNombre.AutoSize = True
         Me.lbNombre.Location = New System.Drawing.Point(77, 161)
         Me.lbNombre.Name = "lbNombre"
-        Me.lbNombre.Size = New System.Drawing.Size(39, 13)
+        Me.lbNombre.Size = New System.Drawing.Size(10, 13)
         Me.lbNombre.TabIndex = 11
-        Me.lbNombre.Text = "Label1"
+        Me.lbNombre.Text = "."
         '
         'lbHola
         '
@@ -91,6 +91,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnDetFactura
         '
+        Me.btnDetFactura.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnDetFactura.Location = New System.Drawing.Point(6, 198)
         Me.btnDetFactura.Name = "btnDetFactura"
         Me.btnDetFactura.Size = New System.Drawing.Size(135, 23)
@@ -118,7 +119,7 @@ Partial Class FrmMenuPrincipal
         '
         'btnCerrarSesion
         '
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(543, 19)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(310, 317)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(100, 23)
         Me.btnCerrarSesion.TabIndex = 1
@@ -181,7 +182,7 @@ Partial Class FrmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(673, 370)
+        Me.ClientSize = New System.Drawing.Size(438, 370)
         Me.Controls.Add(Me.GbMenuPrincipal)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

@@ -6,15 +6,15 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>8.255cm</Width>
+              <Width>5.50333cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.255cm</Width>
+              <Width>5.50333cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.26587cm</Height>
+              <Height>1.21296cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -25,7 +25,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID</Value>
+                              <Value>Id Ciudad</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -55,7 +55,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre</Value>
+                              <Value>nombre Ciudad</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -79,25 +79,25 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.26587cm</Height>
+              <Height>1.21296cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ID">
+                    <Textbox Name="IdCiudad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ID.Value</Value>
+                              <Value>=Fields!IdCiudad.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ID</rd:DefaultName>
+                      <rd:DefaultName>IdCiudad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -113,21 +113,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nombre">
+                    <Textbox Name="nombreCiudad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre.Value</Value>
+                              <Value>=Fields!nombreCiudad.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombre</rd:DefaultName>
+                      <rd:DefaultName>nombreCiudad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -162,8 +162,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsCiudad</DataSetName>
-        <Height>2.53174cm</Height>
-        <Width>16.51cm</Width>
+        <Top>0.03528cm</Top>
+        <Height>2.42591cm</Height>
+        <Width>11.00667cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -174,7 +175,7 @@
     <Height>0.99675in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>4.35417in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -198,7 +199,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.45203cm</Top>
+          <Top>0.49953cm</Top>
           <Left>8.255cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -241,7 +242,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>0.92286cm</Top>
+          <Top>0.49953cm</Top>
           <Left>0.57891cm</Left>
           <Height>1.12917cm</Height>
           <Width>6.54614cm</Width>
@@ -274,7 +275,7 @@
           </Paragraphs>
           <rd:DefaultName>OverallPageNumber</rd:DefaultName>
           <Top>1.45203cm</Top>
-          <Left>12.31667cm</Left>
+          <Left>8.255cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>2</ZIndex>
@@ -333,19 +334,19 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
+        <Field Name="IdCiudad">
+          <DataField>IdCiudad</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="nombreCiudad">
+          <DataField>nombreCiudad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>CatalanaDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\CatalanaDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>dataCiudad</rd:TableName>
+        <rd:TableName>rptCiudad</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
