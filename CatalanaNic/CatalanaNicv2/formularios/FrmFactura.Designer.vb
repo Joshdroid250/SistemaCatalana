@@ -24,6 +24,7 @@ Partial Class FrmFactura
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gbFactura = New System.Windows.Forms.GroupBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.lbIdUser = New System.Windows.Forms.Label()
         Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
@@ -53,7 +54,6 @@ Partial Class FrmFactura
         Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
         Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.FacturaTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.FacturaTableAdapter()
-        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.gbFactura.SuspendLayout()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +88,15 @@ Partial Class FrmFactura
         Me.gbFactura.Size = New System.Drawing.Size(292, 501)
         Me.gbFactura.TabIndex = 0
         Me.gbFactura.TabStop = False
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(9, 429)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo.TabIndex = 18
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'lbIdUser
         '
@@ -267,6 +276,7 @@ Partial Class FrmFactura
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(429, 402)
         Me.DataGridView1.TabIndex = 0
         '
@@ -314,15 +324,6 @@ Partial Class FrmFactura
         'FacturaTableAdapter
         '
         Me.FacturaTableAdapter.ClearBeforeFill = True
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.Location = New System.Drawing.Point(9, 429)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.btnNuevo.TabIndex = 18
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'FrmFactura
         '

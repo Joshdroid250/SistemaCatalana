@@ -212,6 +212,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\RptDetalleFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\RptFactura.rdlc" />
     <EmbeddedResource Include="Reportes\RptUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\RptCiudad.rdlc" />
     <EmbeddedResource Include="Reportes\RptProducto.rdlc" />

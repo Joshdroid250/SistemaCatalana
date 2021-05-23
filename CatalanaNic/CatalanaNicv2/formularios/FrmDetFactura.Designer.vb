@@ -23,7 +23,7 @@ Partial Class FrmDetFactura
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.gb = New System.Windows.Forms.GroupBox()
+        Me.gbDetFactura = New System.Windows.Forms.GroupBox()
         Me.lbdFactu = New System.Windows.Forms.Label()
         Me.lbIdProduc = New System.Windows.Forms.Label()
         Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -48,7 +48,7 @@ Partial Class FrmDetFactura
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ProductoTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.productoTableAdapter()
         Me.gbDetRegis = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dtvDETFatura = New System.Windows.Forms.DataGridView()
         Me.IdDetalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,44 +62,69 @@ Partial Class FrmDetFactura
         Me.btnReporte = New System.Windows.Forms.Button()
         Me.btnMenuPrin = New System.Windows.Forms.Button()
         Me.txtID = New System.Windows.Forms.TextBox()
-        Me.gb.SuspendLayout()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbTablaFactura = New System.Windows.Forms.GroupBox()
+        Me.dtgProducto = New System.Windows.Forms.DataGridView()
+        Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
+        Me.ProductoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdProductoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IvaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FotoProDataGridViewImageColumn = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtvFactura = New System.Windows.Forms.DataGridView()
+        Me.FacturaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdFacturaDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gbDetFactura.SuspendLayout()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FacturaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDetRegis.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtvDETFatura, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetFactuBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetFactuBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.gbTablaFactura.SuspendLayout()
+        CType(Me.dtgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FacturaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'gb
+        'gbDetFactura
         '
-        Me.gb.Controls.Add(Me.txtID)
-        Me.gb.Controls.Add(Me.lbdFactu)
-        Me.gb.Controls.Add(Me.lbIdProduc)
-        Me.gb.Controls.Add(Me.cbFactura)
-        Me.gb.Controls.Add(Me.cbProducto)
-        Me.gb.Controls.Add(Me.btnBuscar)
-        Me.gb.Controls.Add(Me.btnActualizar)
-        Me.gb.Controls.Add(Me.btnBorrar)
-        Me.gb.Controls.Add(Me.btnAgregar)
-        Me.gb.Controls.Add(Me.btnNuevo)
-        Me.gb.Controls.Add(Me.txtDescuento)
-        Me.gb.Controls.Add(Me.txtPrecio)
-        Me.gb.Controls.Add(Me.txtCantidad)
-        Me.gb.Controls.Add(Me.lbDescuentos)
-        Me.gb.Controls.Add(Me.lbPrecio)
-        Me.gb.Controls.Add(Me.lbCantidad)
-        Me.gb.Controls.Add(Me.lbFactura)
-        Me.gb.Controls.Add(Me.lbIdProducto)
-        Me.gb.Controls.Add(Me.lbId)
-        Me.gb.Controls.Add(Me.PictureBox1)
-        Me.gb.Location = New System.Drawing.Point(12, 12)
-        Me.gb.Name = "gb"
-        Me.gb.Size = New System.Drawing.Size(294, 426)
-        Me.gb.TabIndex = 0
-        Me.gb.TabStop = False
+        Me.gbDetFactura.Controls.Add(Me.txtID)
+        Me.gbDetFactura.Controls.Add(Me.lbdFactu)
+        Me.gbDetFactura.Controls.Add(Me.lbIdProduc)
+        Me.gbDetFactura.Controls.Add(Me.cbFactura)
+        Me.gbDetFactura.Controls.Add(Me.cbProducto)
+        Me.gbDetFactura.Controls.Add(Me.btnBuscar)
+        Me.gbDetFactura.Controls.Add(Me.btnActualizar)
+        Me.gbDetFactura.Controls.Add(Me.btnBorrar)
+        Me.gbDetFactura.Controls.Add(Me.btnAgregar)
+        Me.gbDetFactura.Controls.Add(Me.btnNuevo)
+        Me.gbDetFactura.Controls.Add(Me.txtDescuento)
+        Me.gbDetFactura.Controls.Add(Me.txtPrecio)
+        Me.gbDetFactura.Controls.Add(Me.txtCantidad)
+        Me.gbDetFactura.Controls.Add(Me.lbDescuentos)
+        Me.gbDetFactura.Controls.Add(Me.lbPrecio)
+        Me.gbDetFactura.Controls.Add(Me.lbCantidad)
+        Me.gbDetFactura.Controls.Add(Me.lbFactura)
+        Me.gbDetFactura.Controls.Add(Me.lbIdProducto)
+        Me.gbDetFactura.Controls.Add(Me.lbId)
+        Me.gbDetFactura.Controls.Add(Me.PictureBox1)
+        Me.gbDetFactura.Location = New System.Drawing.Point(12, 12)
+        Me.gbDetFactura.Name = "gbDetFactura"
+        Me.gbDetFactura.Size = New System.Drawing.Size(294, 426)
+        Me.gbDetFactura.TabIndex = 0
+        Me.gbDetFactura.TabStop = False
         '
         'lbdFactu
         '
@@ -295,27 +320,28 @@ Partial Class FrmDetFactura
         '
         'gbDetRegis
         '
-        Me.gbDetRegis.Controls.Add(Me.DataGridView1)
+        Me.gbDetRegis.Controls.Add(Me.dtvDETFatura)
         Me.gbDetRegis.Location = New System.Drawing.Point(312, 81)
         Me.gbDetRegis.Name = "gbDetRegis"
-        Me.gbDetRegis.Size = New System.Drawing.Size(476, 357)
+        Me.gbDetRegis.Size = New System.Drawing.Size(391, 357)
         Me.gbDetRegis.TabIndex = 1
         Me.gbDetRegis.TabStop = False
         '
-        'DataGridView1
+        'dtvDETFatura
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDetalleDataGridViewTextBoxColumn, Me.IdProductoDataGridViewTextBoxColumn, Me.IdFacturaDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.DescuentoDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.DetFactuBindingSource1
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(470, 338)
-        Me.DataGridView1.TabIndex = 0
+        Me.dtvDETFatura.AllowUserToAddRows = False
+        Me.dtvDETFatura.AllowUserToDeleteRows = False
+        Me.dtvDETFatura.AutoGenerateColumns = False
+        Me.dtvDETFatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtvDETFatura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDetalleDataGridViewTextBoxColumn, Me.IdProductoDataGridViewTextBoxColumn, Me.IdFacturaDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.DescuentoDataGridViewTextBoxColumn})
+        Me.dtvDETFatura.DataSource = Me.DetFactuBindingSource1
+        Me.dtvDETFatura.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtvDETFatura.Location = New System.Drawing.Point(3, 16)
+        Me.dtvDETFatura.Name = "dtvDETFatura"
+        Me.dtvDETFatura.ReadOnly = True
+        Me.dtvDETFatura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtvDETFatura.Size = New System.Drawing.Size(385, 338)
+        Me.dtvDETFatura.TabIndex = 0
         '
         'IdDetalleDataGridViewTextBoxColumn
         '
@@ -379,7 +405,7 @@ Partial Class FrmDetFactura
         '
         'btnReporte
         '
-        Me.btnReporte.Location = New System.Drawing.Point(577, 52)
+        Me.btnReporte.Location = New System.Drawing.Point(773, 52)
         Me.btnReporte.Name = "btnReporte"
         Me.btnReporte.Size = New System.Drawing.Size(75, 23)
         Me.btnReporte.TabIndex = 2
@@ -388,7 +414,7 @@ Partial Class FrmDetFactura
         '
         'btnMenuPrin
         '
-        Me.btnMenuPrin.Location = New System.Drawing.Point(687, 52)
+        Me.btnMenuPrin.Location = New System.Drawing.Point(854, 52)
         Me.btnMenuPrin.Name = "btnMenuPrin"
         Me.btnMenuPrin.Size = New System.Drawing.Size(87, 23)
         Me.btnMenuPrin.TabIndex = 3
@@ -403,34 +429,185 @@ Partial Class FrmDetFactura
         Me.txtID.Size = New System.Drawing.Size(100, 20)
         Me.txtID.TabIndex = 22
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dtgProducto)
+        Me.GroupBox1.Location = New System.Drawing.Point(709, 81)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(232, 211)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Producto"
+        '
+        'gbTablaFactura
+        '
+        Me.gbTablaFactura.Controls.Add(Me.dtvFactura)
+        Me.gbTablaFactura.Location = New System.Drawing.Point(709, 301)
+        Me.gbTablaFactura.Name = "gbTablaFactura"
+        Me.gbTablaFactura.Size = New System.Drawing.Size(232, 137)
+        Me.gbTablaFactura.TabIndex = 5
+        Me.gbTablaFactura.TabStop = False
+        Me.gbTablaFactura.Text = "Factura"
+        '
+        'dtgProducto
+        '
+        Me.dtgProducto.AllowUserToAddRows = False
+        Me.dtgProducto.AllowUserToDeleteRows = False
+        Me.dtgProducto.AutoGenerateColumns = False
+        Me.dtgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn1, Me.NombreProdDataGridViewTextBoxColumn, Me.PrecioProdDataGridViewTextBoxColumn, Me.IvaDataGridViewTextBoxColumn, Me.DescripProDataGridViewTextBoxColumn, Me.FotoProDataGridViewImageColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.dtgProducto.DataSource = Me.ProductoBindingSource1
+        Me.dtgProducto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtgProducto.Location = New System.Drawing.Point(3, 16)
+        Me.dtgProducto.Name = "dtgProducto"
+        Me.dtgProducto.ReadOnly = True
+        Me.dtgProducto.Size = New System.Drawing.Size(226, 192)
+        Me.dtgProducto.TabIndex = 0
+        '
+        'CatalanaDataSet1
+        '
+        Me.CatalanaDataSet1.DataSetName = "CatalanaDataSet"
+        Me.CatalanaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProductoBindingSource1
+        '
+        Me.ProductoBindingSource1.DataMember = "producto"
+        Me.ProductoBindingSource1.DataSource = Me.CatalanaDataSet1
+        '
+        'IdProductoDataGridViewTextBoxColumn1
+        '
+        Me.IdProductoDataGridViewTextBoxColumn1.DataPropertyName = "idProducto"
+        Me.IdProductoDataGridViewTextBoxColumn1.HeaderText = "idProducto"
+        Me.IdProductoDataGridViewTextBoxColumn1.Name = "IdProductoDataGridViewTextBoxColumn1"
+        Me.IdProductoDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'NombreProdDataGridViewTextBoxColumn
+        '
+        Me.NombreProdDataGridViewTextBoxColumn.DataPropertyName = "nombreProd"
+        Me.NombreProdDataGridViewTextBoxColumn.HeaderText = "nombreProd"
+        Me.NombreProdDataGridViewTextBoxColumn.Name = "NombreProdDataGridViewTextBoxColumn"
+        Me.NombreProdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrecioProdDataGridViewTextBoxColumn
+        '
+        Me.PrecioProdDataGridViewTextBoxColumn.DataPropertyName = "PrecioProd"
+        Me.PrecioProdDataGridViewTextBoxColumn.HeaderText = "PrecioProd"
+        Me.PrecioProdDataGridViewTextBoxColumn.Name = "PrecioProdDataGridViewTextBoxColumn"
+        Me.PrecioProdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IvaDataGridViewTextBoxColumn
+        '
+        Me.IvaDataGridViewTextBoxColumn.DataPropertyName = "iva"
+        Me.IvaDataGridViewTextBoxColumn.HeaderText = "iva"
+        Me.IvaDataGridViewTextBoxColumn.Name = "IvaDataGridViewTextBoxColumn"
+        Me.IvaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescripProDataGridViewTextBoxColumn
+        '
+        Me.DescripProDataGridViewTextBoxColumn.DataPropertyName = "descripPro"
+        Me.DescripProDataGridViewTextBoxColumn.HeaderText = "descripPro"
+        Me.DescripProDataGridViewTextBoxColumn.Name = "DescripProDataGridViewTextBoxColumn"
+        Me.DescripProDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FotoProDataGridViewImageColumn
+        '
+        Me.FotoProDataGridViewImageColumn.DataPropertyName = "fotoPro"
+        Me.FotoProDataGridViewImageColumn.HeaderText = "fotoPro"
+        Me.FotoProDataGridViewImageColumn.Name = "FotoProDataGridViewImageColumn"
+        Me.FotoProDataGridViewImageColumn.ReadOnly = True
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'dtvFactura
+        '
+        Me.dtvFactura.AllowUserToAddRows = False
+        Me.dtvFactura.AllowUserToDeleteRows = False
+        Me.dtvFactura.AutoGenerateColumns = False
+        Me.dtvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtvFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdFacturaDataGridViewTextBoxColumn1, Me.IdUsuarioDataGridViewTextBoxColumn, Me.IdClienteDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn})
+        Me.dtvFactura.DataSource = Me.FacturaBindingSource1
+        Me.dtvFactura.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtvFactura.Location = New System.Drawing.Point(3, 16)
+        Me.dtvFactura.Name = "dtvFactura"
+        Me.dtvFactura.ReadOnly = True
+        Me.dtvFactura.Size = New System.Drawing.Size(226, 118)
+        Me.dtvFactura.TabIndex = 0
+        '
+        'FacturaBindingSource1
+        '
+        Me.FacturaBindingSource1.DataMember = "Factura"
+        Me.FacturaBindingSource1.DataSource = Me.CatalanaDataSet1
+        '
+        'IdFacturaDataGridViewTextBoxColumn1
+        '
+        Me.IdFacturaDataGridViewTextBoxColumn1.DataPropertyName = "idFactura"
+        Me.IdFacturaDataGridViewTextBoxColumn1.HeaderText = "idFactura"
+        Me.IdFacturaDataGridViewTextBoxColumn1.Name = "IdFacturaDataGridViewTextBoxColumn1"
+        Me.IdFacturaDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'IdUsuarioDataGridViewTextBoxColumn
+        '
+        Me.IdUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "idUsuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.Name = "IdUsuarioDataGridViewTextBoxColumn"
+        Me.IdUsuarioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdClienteDataGridViewTextBoxColumn
+        '
+        Me.IdClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente"
+        Me.IdClienteDataGridViewTextBoxColumn.HeaderText = "idCliente"
+        Me.IdClienteDataGridViewTextBoxColumn.Name = "IdClienteDataGridViewTextBoxColumn"
+        Me.IdClienteDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FechaDataGridViewTextBoxColumn
+        '
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
+        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'FrmDetFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(953, 450)
+        Me.Controls.Add(Me.gbTablaFactura)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnMenuPrin)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.gbDetRegis)
-        Me.Controls.Add(Me.gb)
+        Me.Controls.Add(Me.gbDetFactura)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmDetFactura"
         Me.Text = "Detalle Factura"
-        Me.gb.ResumeLayout(False)
-        Me.gb.PerformLayout()
+        Me.gbDetFactura.ResumeLayout(False)
+        Me.gbDetFactura.PerformLayout()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbDetRegis.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtvDETFatura, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetFactuBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetFactuBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.gbTablaFactura.ResumeLayout(False)
+        CType(Me.dtgProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtvFactura, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FacturaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents gb As GroupBox
+    Friend WithEvents gbDetFactura As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lbId As Label
     Friend WithEvents txtDescuento As TextBox
@@ -460,7 +637,7 @@ Partial Class FrmDetFactura
     Friend WithEvents FacturaTableAdapter As CatalanaDataSetTableAdapters.FacturaTableAdapter
     Friend WithEvents btnReporte As Button
     Friend WithEvents btnMenuPrin As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtvDETFatura As DataGridView
     Friend WithEvents IdDetalleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -470,4 +647,22 @@ Partial Class FrmDetFactura
     Friend WithEvents DetFactuBindingSource1 As BindingSource
     Friend WithEvents lbdFactu As Label
     Friend WithEvents txtID As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents dtgProducto As DataGridView
+    Friend WithEvents gbTablaFactura As GroupBox
+    Friend WithEvents CatalanaDataSet1 As CatalanaDataSet
+    Friend WithEvents ProductoBindingSource1 As BindingSource
+    Friend WithEvents IdProductoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents NombreProdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioProdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IvaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescripProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FotoProDataGridViewImageColumn As DataGridViewImageColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents dtvFactura As DataGridView
+    Friend WithEvents FacturaBindingSource1 As BindingSource
+    Friend WithEvents IdFacturaDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

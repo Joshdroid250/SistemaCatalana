@@ -1,5 +1,9 @@
 ﻿Public Class FrmDetFactura
     Private Sub FrmDetFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet1.Factura' Puede moverla o quitarla según sea necesario.
+        Me.FacturaTableAdapter.Fill(Me.CatalanaDataSet1.Factura)
+        'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet1.producto' Puede moverla o quitarla según sea necesario.
+        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet.Factura' Puede moverla o quitarla según sea necesario.
         Me.FacturaTableAdapter.Fill(Me.CatalanaDataSet.Factura)
         'TODO: esta línea de código carga datos en la tabla 'CatalanaDataSet.producto' Puede moverla o quitarla según sea necesario.
@@ -74,5 +78,10 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de busqueda")
         End Try
+    End Sub
+
+    Private Sub btnMenuPrin_Click(sender As Object, e As EventArgs) Handles btnMenuPrin.Click
+        FrmMenuPrincipal.Show()
+        Me.Close()
     End Sub
 End Class
