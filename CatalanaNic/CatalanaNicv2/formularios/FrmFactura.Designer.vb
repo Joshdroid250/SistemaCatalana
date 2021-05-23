@@ -32,7 +32,6 @@ Partial Class FrmFactura
         Me.cbUsuario = New System.Windows.Forms.ComboBox()
         Me.cbCliente = New System.Windows.Forms.ComboBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -54,6 +53,7 @@ Partial Class FrmFactura
         Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
         Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.FacturaTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.FacturaTableAdapter()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.gbFactura.SuspendLayout()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,12 +67,12 @@ Partial Class FrmFactura
         '
         'gbFactura
         '
+        Me.gbFactura.Controls.Add(Me.btnNuevo)
         Me.gbFactura.Controls.Add(Me.lbIdUser)
         Me.gbFactura.Controls.Add(Me.lbIdCliente)
         Me.gbFactura.Controls.Add(Me.cbUsuario)
         Me.gbFactura.Controls.Add(Me.cbCliente)
         Me.gbFactura.Controls.Add(Me.btnBuscar)
-        Me.gbFactura.Controls.Add(Me.btnNuevo)
         Me.gbFactura.Controls.Add(Me.btnActualizar)
         Me.gbFactura.Controls.Add(Me.btnBorrar)
         Me.gbFactura.Controls.Add(Me.btnAgregar)
@@ -152,15 +152,6 @@ Partial Class FrmFactura
         Me.btnBuscar.TabIndex = 13
         Me.btnBuscar.Text = "Buscar por ID"
         Me.btnBuscar.UseVisualStyleBackColor = True
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.Location = New System.Drawing.Point(9, 429)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.btnNuevo.TabIndex = 12
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
@@ -260,7 +251,7 @@ Partial Class FrmFactura
         Me.gbRegistroFactura.Controls.Add(Me.DataGridView1)
         Me.gbRegistroFactura.Location = New System.Drawing.Point(310, 98)
         Me.gbRegistroFactura.Name = "gbRegistroFactura"
-        Me.gbRegistroFactura.Size = New System.Drawing.Size(435, 403)
+        Me.gbRegistroFactura.Size = New System.Drawing.Size(435, 421)
         Me.gbRegistroFactura.TabIndex = 1
         Me.gbRegistroFactura.TabStop = False
         '
@@ -276,7 +267,7 @@ Partial Class FrmFactura
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(429, 384)
+        Me.DataGridView1.Size = New System.Drawing.Size(429, 402)
         Me.DataGridView1.TabIndex = 0
         '
         'IdFacturaDataGridViewTextBoxColumn
@@ -324,6 +315,15 @@ Partial Class FrmFactura
         '
         Me.FacturaTableAdapter.ClearBeforeFill = True
         '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(9, 429)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo.TabIndex = 18
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
+        '
         'FrmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -356,7 +356,6 @@ Partial Class FrmFactura
     Friend WithEvents cbUsuario As ComboBox
     Friend WithEvents cbCliente As ComboBox
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents btnNuevo As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnBorrar As Button
     Friend WithEvents btnAgregar As Button
@@ -380,4 +379,5 @@ Partial Class FrmFactura
     Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnNuevo As Button
 End Class

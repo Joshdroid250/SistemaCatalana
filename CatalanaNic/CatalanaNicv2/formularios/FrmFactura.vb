@@ -18,7 +18,7 @@
 
     End Sub
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) 
         txtID.Clear()
 
     End Sub
@@ -76,5 +76,9 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar")
         End Try
+    End Sub
+
+    Private Sub btnNuevo_Click_1(sender As Object, e As EventArgs) Handles btnNuevo.Click
+
     End Sub
 End Class

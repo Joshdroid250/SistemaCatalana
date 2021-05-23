@@ -8200,7 +8200,7 @@ Namespace CatalanaDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT idDetalle, idProducto, idFactura, cantidad, precio, descuento FROM dbo.Det"& _ 
@@ -8233,6 +8233,12 @@ Namespace CatalanaDataSetTableAdapters
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idDetalle", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "dbo.buscarDetfact"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idDetalle", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8441,6 +8447,40 @@ Namespace CatalanaDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetBorrarDetFat(ByVal idDetalle As Global.System.Nullable(Of Integer)) As CatalanaDataSet.DetFactuDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (idDetalle.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(idDetalle.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As CatalanaDataSet.DetFactuDataTable = New CatalanaDataSet.DetFactuDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function buscarActualizarDetFat(ByVal dataTable As CatalanaDataSet.DetFactuDataTable, ByVal idDetalle As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (idDetalle.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(idDetalle.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetActualizarDetFat(ByVal idDetalle As Global.System.Nullable(Of Integer)) As CatalanaDataSet.DetFactuDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
             If (idDetalle.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(idDetalle.Value,Integer)
             Else

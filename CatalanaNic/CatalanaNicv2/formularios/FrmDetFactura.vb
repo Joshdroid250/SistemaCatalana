@@ -8,10 +8,6 @@
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-
-    End Sub
-
-    Private Sub txtID_TextChanged(sender As Object, e As EventArgs)
         txtID.Clear()
         txtCantidad.Clear()
         txtDescuento.Clear()
@@ -24,6 +20,7 @@
             A.IDFactura = CInt(lbdFactu.Text)
             A.IDproducto = CInt(lbIdProduc.Text)
             A.Precio = CInt(txtPrecio.Text)
+            A.Cantidad = CInt(txtCantidad.Text)
             A.Descuento = CInt(txtDescuento.Text)
             Me.DetFactuTableAdapter.agregarDetFactura(CatalanaDataSet.DetFactu, A.IDproducto, A.IDFactura, A.Cantidad, A.Precio, A.Descuento)
             MsgBox("Se agrego correctamente")
@@ -44,10 +41,11 @@
             bo.IDDetFact = CInt(txtID.Text)
             Me.DetFactuTableAdapter.borrarDetFatu(CatalanaDataSet.DetFactu, bo.IDDetFact)
             MsgBox("Se borro correctamente")
-
+            Me.DetFactuTableAdapter.Fill(Me.CatalanaDataSet.DetFactu)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al borrar")
         End Try
+        Me.DetFactuTableAdapter.Fill(Me.CatalanaDataSet.DetFactu)
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -57,11 +55,24 @@
             up.IDFactura = CInt(lbdFactu.Text)
             up.IDproducto = CInt(lbIdProduc.Text)
             up.Precio = CInt(txtPrecio.Text)
+            up.Cantidad = CInt(txtCantidad.Text)
             up.Descuento = CInt(txtDescuento.Text)
+            MsgBox("Se actualizo correctamente")
             Me.DetFactuTableAdapter.actualizarDetFatu(CatalanaDataSet.DetFactu, up.IDDetFact, up.IDproducto, up.IDFactura, up.Cantidad, up.Precio, up.Descuento)
-
+            Me.DetFactuTableAdapter.Fill(Me.CatalanaDataSet.DetFactu)
         Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al actualizar")
+        End Try
+        Me.DetFactuTableAdapter.Fill(Me.CatalanaDataSet.DetFactu)
+    End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim bus As New Detfact
+        Try
+            bus.IDDetFact = CInt(txtID.Text)
+            Me.DetFactuTableAdapter.buscarActualizarDetFat(CatalanaDataSet.DetFactu, bus.IDDetFact)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error de busqueda")
         End Try
     End Sub
 End Class

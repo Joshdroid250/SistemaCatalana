@@ -1,7 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Public Class FrmInicioSesion
-    Dim cn As New SqlConnection("Server = DESKTOP-29CHVVG; database=Catalana; uid=sa;pwd=123")
+    Dim cn As New SqlConnection("Server = localhost; database=Catalana; uid=sa;pwd=123")
     Private Sub Inicio()
         Dim sql As String
         sql = "Select *from Usuario where userName= '" & txtUserName.Text & "' and userPwd = '" & txtPassword.Text & "' "
