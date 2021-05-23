@@ -59,7 +59,6 @@
             up.Fecha = CDate(Dtpfecha.Text)
             Me.FacturaTableAdapter.actualizarFactura(CatalanaDataSet.Factura, up.IdFactura, up.IdUsuario, up.IdCliente, up.Fecha)
             MsgBox("Se actulizo la factura")
-            Me.FacturaTableAdapter.Fill(Me.CatalanaDataSet.Factura)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al actualizar")
         End Try
@@ -67,5 +66,15 @@
 
     Private Sub FrmFactura_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         FrmMenuPrincipal.Show()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim sec As New Factura
+        Try
+            sec.IdFactura = CInt(txtID.Text)
+            Me.FacturaTableAdapter.buscarFactura(CatalanaDataSet.Factura, sec.IdFactura)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar")
+        End Try
     End Sub
 End Class

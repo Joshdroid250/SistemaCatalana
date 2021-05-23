@@ -111,6 +111,12 @@
     <Compile Include="formularios\FrmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formularios\FrmDetFactura.Designer.vb">
+      <DependentUpon>FrmDetFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\FrmDetFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formularios\FrmFactura.Designer.vb">
       <DependentUpon>FrmFactura.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\FrmCliente.resx">
       <DependentUpon>FrmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\FrmDetFactura.resx">
+      <DependentUpon>FrmDetFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\FrmFactura.resx">
       <DependentUpon>FrmFactura.vb</DependentUpon>

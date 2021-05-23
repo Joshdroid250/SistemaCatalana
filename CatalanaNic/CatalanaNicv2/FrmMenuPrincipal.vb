@@ -44,4 +44,8 @@
         FrmFactura.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnDetFactura_Click(sender As Object, e As EventArgs) Handles btnDetFactura.Click
+        FrmDetFactura.Show()
+    End Sub
 End Class

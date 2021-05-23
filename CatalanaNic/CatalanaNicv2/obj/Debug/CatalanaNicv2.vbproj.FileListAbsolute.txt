@@ -91,3 +91,6 @@ C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaN
 C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.FrmProducto1.resources
 C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.vbprojAssemblyReference.cache
 C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.FrmFactura.resources
+C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\CatalanaNicv2.FrmDetFactura.resources
+C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\RdlCompile.cache
+C:\Users\campo\Documents\SistemaCatalanaBD\SistemaCatalana\CatalanaNic\CatalanaNicv2\obj\Debug\RdlCompile.compiled
