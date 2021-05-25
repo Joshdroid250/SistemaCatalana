@@ -24,14 +24,13 @@ Partial Class FrmFactura
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gbFactura = New System.Windows.Forms.GroupBox()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.lbIdUser = New System.Windows.Forms.Label()
+        Me.cbUsuario = New System.Windows.Forms.ComboBox()
         Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CatalanaDataSet = New CatalanaNicv2.CatalanaDataSet()
-        Me.lbIdCliente = New System.Windows.Forms.Label()
-        Me.ClienteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.cbUsuario = New System.Windows.Forms.ComboBox()
         Me.cbCliente = New System.Windows.Forms.ComboBox()
+        Me.ClienteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnBorrar = New System.Windows.Forms.Button()
@@ -46,15 +45,14 @@ Partial Class FrmFactura
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gbRegistroFactura = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FacturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
         Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.FacturaTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.FacturaTableAdapter()
-        Me.btnReporte = New System.Windows.Forms.Button()
+        Me.IdFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbFactura.SuspendLayout()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,9 +66,8 @@ Partial Class FrmFactura
         '
         'gbFactura
         '
+        Me.gbFactura.Controls.Add(Me.btnReporte)
         Me.gbFactura.Controls.Add(Me.btnNuevo)
-        Me.gbFactura.Controls.Add(Me.lbIdUser)
-        Me.gbFactura.Controls.Add(Me.lbIdCliente)
         Me.gbFactura.Controls.Add(Me.cbUsuario)
         Me.gbFactura.Controls.Add(Me.cbCliente)
         Me.gbFactura.Controls.Add(Me.btnBuscar)
@@ -86,28 +83,37 @@ Partial Class FrmFactura
         Me.gbFactura.Controls.Add(Me.PictureBox1)
         Me.gbFactura.Location = New System.Drawing.Point(12, 12)
         Me.gbFactura.Name = "gbFactura"
-        Me.gbFactura.Size = New System.Drawing.Size(292, 501)
+        Me.gbFactura.Size = New System.Drawing.Size(460, 254)
         Me.gbFactura.TabIndex = 0
         Me.gbFactura.TabStop = False
         '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(373, 19)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(75, 23)
+        Me.btnReporte.TabIndex = 2
+        Me.btnReporte.Text = "Reporte"
+        Me.btnReporte.UseVisualStyleBackColor = True
+        '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(9, 429)
+        Me.btnNuevo.Location = New System.Drawing.Point(182, 180)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 18
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
-        'lbIdUser
+        'cbUsuario
         '
-        Me.lbIdUser.AutoSize = True
-        Me.lbIdUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource, "idUsuario", True))
-        Me.lbIdUser.Location = New System.Drawing.Point(127, 266)
-        Me.lbIdUser.Name = "lbIdUser"
-        Me.lbIdUser.Size = New System.Drawing.Size(10, 13)
-        Me.lbIdUser.TabIndex = 17
-        Me.lbIdUser.Text = "."
+        Me.cbUsuario.DataSource = Me.UsuarioBindingSource
+        Me.cbUsuario.DisplayMember = "primerNombre"
+        Me.cbUsuario.FormattingEnabled = True
+        Me.cbUsuario.Location = New System.Drawing.Point(324, 118)
+        Me.cbUsuario.Name = "cbUsuario"
+        Me.cbUsuario.Size = New System.Drawing.Size(121, 21)
+        Me.cbUsuario.TabIndex = 15
         '
         'UsuarioBindingSource
         '
@@ -119,44 +125,24 @@ Partial Class FrmFactura
         Me.CatalanaDataSet.DataSetName = "CatalanaDataSet"
         Me.CatalanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'lbIdCliente
+        'cbCliente
         '
-        Me.lbIdCliente.AutoSize = True
-        Me.lbIdCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource1, "idCliente", True))
-        Me.lbIdCliente.Location = New System.Drawing.Point(127, 239)
-        Me.lbIdCliente.Name = "lbIdCliente"
-        Me.lbIdCliente.Size = New System.Drawing.Size(10, 13)
-        Me.lbIdCliente.TabIndex = 16
-        Me.lbIdCliente.Text = "."
+        Me.cbCliente.DataSource = Me.ClienteBindingSource1
+        Me.cbCliente.DisplayMember = "idCliente"
+        Me.cbCliente.FormattingEnabled = True
+        Me.cbCliente.Location = New System.Drawing.Point(324, 91)
+        Me.cbCliente.Name = "cbCliente"
+        Me.cbCliente.Size = New System.Drawing.Size(121, 21)
+        Me.cbCliente.TabIndex = 14
         '
         'ClienteBindingSource1
         '
         Me.ClienteBindingSource1.DataMember = "Cliente"
         Me.ClienteBindingSource1.DataSource = Me.CatalanaDataSet
         '
-        'cbUsuario
-        '
-        Me.cbUsuario.DataSource = Me.UsuarioBindingSource
-        Me.cbUsuario.DisplayMember = "primerNombre"
-        Me.cbUsuario.FormattingEnabled = True
-        Me.cbUsuario.Location = New System.Drawing.Point(143, 263)
-        Me.cbUsuario.Name = "cbUsuario"
-        Me.cbUsuario.Size = New System.Drawing.Size(121, 21)
-        Me.cbUsuario.TabIndex = 15
-        '
-        'cbCliente
-        '
-        Me.cbCliente.DataSource = Me.ClienteBindingSource1
-        Me.cbCliente.DisplayMember = "idCliente"
-        Me.cbCliente.FormattingEnabled = True
-        Me.cbCliente.Location = New System.Drawing.Point(143, 236)
-        Me.cbCliente.Name = "cbCliente"
-        Me.cbCliente.Size = New System.Drawing.Size(121, 21)
-        Me.cbCliente.TabIndex = 14
-        '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(101, 429)
+        Me.btnBuscar.Location = New System.Drawing.Point(274, 180)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(171, 23)
         Me.btnBuscar.TabIndex = 13
@@ -165,7 +151,7 @@ Partial Class FrmFactura
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(197, 458)
+        Me.btnActualizar.Location = New System.Drawing.Point(370, 209)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 11
@@ -174,7 +160,7 @@ Partial Class FrmFactura
         '
         'btnBorrar
         '
-        Me.btnBorrar.Location = New System.Drawing.Point(101, 458)
+        Me.btnBorrar.Location = New System.Drawing.Point(274, 209)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(75, 23)
         Me.btnBorrar.TabIndex = 10
@@ -183,7 +169,7 @@ Partial Class FrmFactura
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(9, 458)
+        Me.btnAgregar.Location = New System.Drawing.Point(182, 209)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 9
@@ -192,7 +178,7 @@ Partial Class FrmFactura
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(143, 210)
+        Me.txtID.Location = New System.Drawing.Point(324, 65)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(121, 20)
         Me.txtID.TabIndex = 6
@@ -200,7 +186,7 @@ Partial Class FrmFactura
         'Dtpfecha
         '
         Me.Dtpfecha.CustomFormat = "dd-MM-yy"
-        Me.Dtpfecha.Location = New System.Drawing.Point(72, 290)
+        Me.Dtpfecha.Location = New System.Drawing.Point(253, 145)
         Me.Dtpfecha.Name = "Dtpfecha"
         Me.Dtpfecha.Size = New System.Drawing.Size(192, 20)
         Me.Dtpfecha.TabIndex = 5
@@ -208,7 +194,7 @@ Partial Class FrmFactura
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 297)
+        Me.Label4.Location = New System.Drawing.Point(187, 152)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 4
@@ -217,7 +203,7 @@ Partial Class FrmFactura
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 271)
+        Me.Label3.Location = New System.Drawing.Point(187, 126)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 13)
         Me.Label3.TabIndex = 3
@@ -226,7 +212,7 @@ Partial Class FrmFactura
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 243)
+        Me.Label2.Location = New System.Drawing.Point(187, 98)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 13)
         Me.Label2.TabIndex = 2
@@ -235,7 +221,7 @@ Partial Class FrmFactura
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 217)
+        Me.Label1.Location = New System.Drawing.Point(187, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(18, 13)
         Me.Label1.TabIndex = 1
@@ -244,7 +230,7 @@ Partial Class FrmFactura
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.CatalanaNicv2.My.Resources.Resources.Icon_catalana
-        Me.PictureBox1.Location = New System.Drawing.Point(51, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 15)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -259,9 +245,9 @@ Partial Class FrmFactura
         'gbRegistroFactura
         '
         Me.gbRegistroFactura.Controls.Add(Me.DataGridView1)
-        Me.gbRegistroFactura.Location = New System.Drawing.Point(310, 98)
+        Me.gbRegistroFactura.Location = New System.Drawing.Point(12, 272)
         Me.gbRegistroFactura.Name = "gbRegistroFactura"
-        Me.gbRegistroFactura.Size = New System.Drawing.Size(435, 421)
+        Me.gbRegistroFactura.Size = New System.Drawing.Size(460, 156)
         Me.gbRegistroFactura.TabIndex = 1
         Me.gbRegistroFactura.TabStop = False
         '
@@ -278,36 +264,8 @@ Partial Class FrmFactura
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(429, 402)
+        Me.DataGridView1.Size = New System.Drawing.Size(454, 137)
         Me.DataGridView1.TabIndex = 0
-        '
-        'IdFacturaDataGridViewTextBoxColumn
-        '
-        Me.IdFacturaDataGridViewTextBoxColumn.DataPropertyName = "idFactura"
-        Me.IdFacturaDataGridViewTextBoxColumn.HeaderText = "idFactura"
-        Me.IdFacturaDataGridViewTextBoxColumn.Name = "IdFacturaDataGridViewTextBoxColumn"
-        Me.IdFacturaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdUsuarioDataGridViewTextBoxColumn
-        '
-        Me.IdUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario"
-        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "idUsuario"
-        Me.IdUsuarioDataGridViewTextBoxColumn.Name = "IdUsuarioDataGridViewTextBoxColumn"
-        Me.IdUsuarioDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdClienteDataGridViewTextBoxColumn
-        '
-        Me.IdClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente"
-        Me.IdClienteDataGridViewTextBoxColumn.HeaderText = "idCliente"
-        Me.IdClienteDataGridViewTextBoxColumn.Name = "IdClienteDataGridViewTextBoxColumn"
-        Me.IdClienteDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FechaDataGridViewTextBoxColumn
-        '
-        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "fecha"
-        Me.FechaDataGridViewTextBoxColumn.HeaderText = "fecha"
-        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
-        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FacturaBindingSource
         '
@@ -326,21 +284,39 @@ Partial Class FrmFactura
         '
         Me.FacturaTableAdapter.ClearBeforeFill = True
         '
-        'btnReporte
+        'IdFacturaDataGridViewTextBoxColumn
         '
-        Me.btnReporte.Location = New System.Drawing.Point(666, 69)
-        Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(75, 23)
-        Me.btnReporte.TabIndex = 2
-        Me.btnReporte.Text = "Reporte"
-        Me.btnReporte.UseVisualStyleBackColor = True
+        Me.IdFacturaDataGridViewTextBoxColumn.DataPropertyName = "idFactura"
+        Me.IdFacturaDataGridViewTextBoxColumn.HeaderText = "ID Factura"
+        Me.IdFacturaDataGridViewTextBoxColumn.Name = "IdFacturaDataGridViewTextBoxColumn"
+        Me.IdFacturaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdUsuarioDataGridViewTextBoxColumn
+        '
+        Me.IdUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "ID Usuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.Name = "IdUsuarioDataGridViewTextBoxColumn"
+        Me.IdUsuarioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdClienteDataGridViewTextBoxColumn
+        '
+        Me.IdClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente"
+        Me.IdClienteDataGridViewTextBoxColumn.HeaderText = "ID Cliente"
+        Me.IdClienteDataGridViewTextBoxColumn.Name = "IdClienteDataGridViewTextBoxColumn"
+        Me.IdClienteDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FechaDataGridViewTextBoxColumn
+        '
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
+        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FrmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(753, 531)
-        Me.Controls.Add(Me.btnReporte)
+        Me.ClientSize = New System.Drawing.Size(480, 440)
         Me.Controls.Add(Me.gbRegistroFactura)
         Me.Controls.Add(Me.gbFactura)
         Me.MaximizeBox = False
@@ -363,8 +339,6 @@ Partial Class FrmFactura
 
     Friend WithEvents gbFactura As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents lbIdUser As Label
-    Friend WithEvents lbIdCliente As Label
     Friend WithEvents cbUsuario As ComboBox
     Friend WithEvents cbCliente As ComboBox
     Friend WithEvents btnBuscar As Button
@@ -387,10 +361,10 @@ Partial Class FrmFactura
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents FacturaBindingSource As BindingSource
     Friend WithEvents FacturaTableAdapter As CatalanaDataSetTableAdapters.FacturaTableAdapter
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents btnReporte As Button
     Friend WithEvents IdFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnNuevo As Button
-    Friend WithEvents btnReporte As Button
 End Class

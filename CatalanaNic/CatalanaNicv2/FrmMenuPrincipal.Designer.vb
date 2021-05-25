@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmMenuPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,10 @@ Partial Class FrmMenuPrincipal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GbMenuPrincipal = New System.Windows.Forms.GroupBox()
-        Me.lbNombre = New System.Windows.Forms.Label()
         Me.lbHola = New System.Windows.Forms.Label()
         Me.lbName = New System.Windows.Forms.Label()
         Me.btnDetFactura = New System.Windows.Forms.Button()
@@ -43,7 +42,6 @@ Partial Class FrmMenuPrincipal
         '
         'GbMenuPrincipal
         '
-        Me.GbMenuPrincipal.Controls.Add(Me.lbNombre)
         Me.GbMenuPrincipal.Controls.Add(Me.lbHola)
         Me.GbMenuPrincipal.Controls.Add(Me.lbName)
         Me.GbMenuPrincipal.Controls.Add(Me.btnDetFactura)
@@ -62,15 +60,6 @@ Partial Class FrmMenuPrincipal
         Me.GbMenuPrincipal.TabIndex = 0
         Me.GbMenuPrincipal.TabStop = False
         Me.GbMenuPrincipal.Text = "Menu"
-        '
-        'lbNombre
-        '
-        Me.lbNombre.AutoSize = True
-        Me.lbNombre.Location = New System.Drawing.Point(77, 161)
-        Me.lbNombre.Name = "lbNombre"
-        Me.lbNombre.Size = New System.Drawing.Size(10, 13)
-        Me.lbNombre.TabIndex = 11
-        Me.lbNombre.Text = "."
         '
         'lbHola
         '
@@ -209,5 +198,4 @@ Partial Class FrmMenuPrincipal
     Friend WithEvents btnDetFactura As Button
     Friend WithEvents btnFactura As Button
     Friend WithEvents lbHola As Label
-    Friend WithEvents lbNombre As Label
 End Class

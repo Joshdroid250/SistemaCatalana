@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,11 @@ Partial Class FrmCliente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GbCliente = New System.Windows.Forms.GroupBox()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.txtCedu = New System.Windows.Forms.TextBox()
         Me.ClienteBindingSource4 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CatalanaDataSet1 = New CatalanaNicv2.CatalanaDataSet()
@@ -64,6 +65,12 @@ Partial Class FrmCliente
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.GbRegistroCliente = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ClienteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
+        Me.ClienteBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CiudadTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ciudadTableAdapter()
+        Me.ClienteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumCedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimerNombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,16 +83,6 @@ Partial Class FrmCliente
         Me.CelTigoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CelClaroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CelCootelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClienteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClienteTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ClienteTableAdapter()
-        Me.ClienteBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CiudadTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.ciudadTableAdapter()
-        Me.ClienteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btnMenuPrin = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnReporte = New System.Windows.Forms.Button()
         Me.GbCliente.SuspendLayout()
         CType(Me.ClienteBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,6 +100,7 @@ Partial Class FrmCliente
         '
         'GbCliente
         '
+        Me.GbCliente.Controls.Add(Me.btnReporte)
         Me.GbCliente.Controls.Add(Me.txtCedu)
         Me.GbCliente.Controls.Add(Me.lbNumCedu)
         Me.GbCliente.Controls.Add(Me.btnBuscarID)
@@ -138,18 +136,27 @@ Partial Class FrmCliente
         Me.GbCliente.Controls.Add(Me.btnNuevo)
         Me.GbCliente.Location = New System.Drawing.Point(12, 12)
         Me.GbCliente.Name = "GbCliente"
-        Me.GbCliente.Size = New System.Drawing.Size(333, 615)
+        Me.GbCliente.Size = New System.Drawing.Size(752, 292)
         Me.GbCliente.TabIndex = 0
         Me.GbCliente.TabStop = False
         Me.GbCliente.Text = "Cliente"
         '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(428, 250)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(75, 23)
+        Me.btnReporte.TabIndex = 5
+        Me.btnReporte.Text = "Reporte"
+        Me.btnReporte.UseVisualStyleBackColor = True
+        '
         'txtCedu
         '
         Me.txtCedu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "numCedula", True))
-        Me.txtCedu.Location = New System.Drawing.Point(136, 221)
+        Me.txtCedu.Location = New System.Drawing.Point(308, 44)
         Me.txtCedu.Name = "txtCedu"
         Me.txtCedu.Size = New System.Drawing.Size(121, 20)
-        Me.txtCedu.TabIndex = 21
+        Me.txtCedu.TabIndex = 2
         '
         'ClienteBindingSource4
         '
@@ -164,7 +171,7 @@ Partial Class FrmCliente
         'lbNumCedu
         '
         Me.lbNumCedu.AutoSize = True
-        Me.lbNumCedu.Location = New System.Drawing.Point(17, 224)
+        Me.lbNumCedu.Location = New System.Drawing.Point(208, 47)
         Me.lbNumCedu.Name = "lbNumCedu"
         Me.lbNumCedu.Size = New System.Drawing.Size(94, 13)
         Me.lbNumCedu.TabIndex = 32
@@ -172,10 +179,10 @@ Partial Class FrmCliente
         '
         'btnBuscarID
         '
-        Me.btnBuscarID.Location = New System.Drawing.Point(48, 557)
+        Me.btnBuscarID.Location = New System.Drawing.Point(509, 250)
         Me.btnBuscarID.Name = "btnBuscarID"
         Me.btnBuscarID.Size = New System.Drawing.Size(234, 23)
-        Me.btnBuscarID.TabIndex = 33
+        Me.btnBuscarID.TabIndex = 18
         Me.btnBuscarID.Text = "Buscar por ID"
         Me.btnBuscarID.UseVisualStyleBackColor = True
         '
@@ -183,11 +190,12 @@ Partial Class FrmCliente
         '
         Me.lbCity.AutoSize = True
         Me.lbCity.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CiudadBindingSource, "idCiudad", True))
-        Me.lbCity.Location = New System.Drawing.Point(115, 404)
+        Me.lbCity.Location = New System.Drawing.Point(189, 152)
         Me.lbCity.Name = "lbCity"
         Me.lbCity.Size = New System.Drawing.Size(10, 13)
         Me.lbCity.TabIndex = 29
         Me.lbCity.Text = "."
+        Me.lbCity.Visible = False
         '
         'CiudadBindingSource
         '
@@ -207,95 +215,95 @@ Partial Class FrmCliente
         'txtNombre
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "primerNombre", True))
-        Me.txtNombre.Location = New System.Drawing.Point(136, 244)
+        Me.txtNombre.Location = New System.Drawing.Point(62, 70)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(121, 20)
-        Me.txtNombre.TabIndex = 22
+        Me.txtNombre.TabIndex = 3
         '
         'txtID
         '
         Me.txtID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "idCliente", True))
-        Me.txtID.Location = New System.Drawing.Point(136, 195)
+        Me.txtID.Location = New System.Drawing.Point(62, 44)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(121, 20)
-        Me.txtID.TabIndex = 20
+        Me.txtID.TabIndex = 1
         '
         'txtEstado
         '
         Me.txtEstado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "estado", True))
-        Me.txtEstado.Location = New System.Drawing.Point(136, 512)
+        Me.txtEstado.Location = New System.Drawing.Point(62, 204)
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(121, 20)
-        Me.txtEstado.TabIndex = 31
+        Me.txtEstado.TabIndex = 13
         '
         'txtcellCootel
         '
         Me.txtcellCootel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "celCootel", True))
-        Me.txtcellCootel.Location = New System.Drawing.Point(136, 486)
+        Me.txtcellCootel.Location = New System.Drawing.Point(62, 178)
         Me.txtcellCootel.Name = "txtcellCootel"
         Me.txtcellCootel.Size = New System.Drawing.Size(121, 20)
-        Me.txtcellCootel.TabIndex = 30
+        Me.txtcellCootel.TabIndex = 11
         '
         'txtcellTigo
         '
         Me.txtcellTigo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "celTigo", True))
-        Me.txtcellTigo.Location = New System.Drawing.Point(136, 427)
+        Me.txtcellTigo.Location = New System.Drawing.Point(308, 149)
         Me.txtcellTigo.Name = "txtcellTigo"
         Me.txtcellTigo.Size = New System.Drawing.Size(121, 20)
-        Me.txtcellTigo.TabIndex = 28
+        Me.txtcellTigo.TabIndex = 10
         '
         'txtcellClaro
         '
         Me.txtcellClaro.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "celClaro", True))
-        Me.txtcellClaro.Location = New System.Drawing.Point(136, 456)
+        Me.txtcellClaro.Location = New System.Drawing.Point(308, 175)
         Me.txtcellClaro.Name = "txtcellClaro"
         Me.txtcellClaro.Size = New System.Drawing.Size(121, 20)
-        Me.txtcellClaro.TabIndex = 29
+        Me.txtcellClaro.TabIndex = 12
         '
         'txtCorreo
         '
         Me.txtCorreo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "email", True))
-        Me.txtCorreo.Location = New System.Drawing.Point(136, 375)
+        Me.txtCorreo.Location = New System.Drawing.Point(308, 122)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(121, 20)
-        Me.txtCorreo.TabIndex = 27
+        Me.txtCorreo.TabIndex = 8
         '
         'txtDomicilio
         '
         Me.txtDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "domicilio", True))
-        Me.txtDomicilio.Location = New System.Drawing.Point(136, 349)
+        Me.txtDomicilio.Location = New System.Drawing.Point(62, 122)
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(121, 20)
-        Me.txtDomicilio.TabIndex = 26
+        Me.txtDomicilio.TabIndex = 7
         '
         'txtSegundoApellido
         '
         Me.txtSegundoApellido.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "segundoApellido", True))
-        Me.txtSegundoApellido.Location = New System.Drawing.Point(136, 323)
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(308, 96)
         Me.txtSegundoApellido.Name = "txtSegundoApellido"
         Me.txtSegundoApellido.Size = New System.Drawing.Size(121, 20)
-        Me.txtSegundoApellido.TabIndex = 25
+        Me.txtSegundoApellido.TabIndex = 6
         '
         'txtApellido
         '
         Me.txtApellido.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "primerApellido", True))
-        Me.txtApellido.Location = New System.Drawing.Point(136, 297)
+        Me.txtApellido.Location = New System.Drawing.Point(62, 96)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(121, 20)
-        Me.txtApellido.TabIndex = 24
+        Me.txtApellido.TabIndex = 5
         '
         'txtSegundoName
         '
         Me.txtSegundoName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource4, "segundoNombre", True))
-        Me.txtSegundoName.Location = New System.Drawing.Point(136, 271)
+        Me.txtSegundoName.Location = New System.Drawing.Point(308, 70)
         Me.txtSegundoName.Name = "txtSegundoName"
         Me.txtSegundoName.Size = New System.Drawing.Size(121, 20)
-        Me.txtSegundoName.TabIndex = 23
+        Me.txtSegundoName.TabIndex = 4
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(67, 515)
+        Me.Label12.Location = New System.Drawing.Point(12, 207)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(40, 13)
         Me.Label12.TabIndex = 17
@@ -304,7 +312,7 @@ Partial Class FrmCliente
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(55, 489)
+        Me.Label11.Location = New System.Drawing.Point(4, 182)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 16
@@ -313,7 +321,7 @@ Partial Class FrmCliente
         'lbClaro
         '
         Me.lbClaro.AutoSize = True
-        Me.lbClaro.Location = New System.Drawing.Point(65, 459)
+        Me.lbClaro.Location = New System.Drawing.Point(256, 178)
         Me.lbClaro.Name = "lbClaro"
         Me.lbClaro.Size = New System.Drawing.Size(46, 13)
         Me.lbClaro.TabIndex = 15
@@ -322,7 +330,7 @@ Partial Class FrmCliente
         'lbCeltigo
         '
         Me.lbCeltigo.AutoSize = True
-        Me.lbCeltigo.Location = New System.Drawing.Point(69, 430)
+        Me.lbCeltigo.Location = New System.Drawing.Point(260, 152)
         Me.lbCeltigo.Name = "lbCeltigo"
         Me.lbCeltigo.Size = New System.Drawing.Size(42, 13)
         Me.lbCeltigo.TabIndex = 14
@@ -331,7 +339,7 @@ Partial Class FrmCliente
         'lbCiudad
         '
         Me.lbCiudad.AutoSize = True
-        Me.lbCiudad.Location = New System.Drawing.Point(63, 404)
+        Me.lbCiudad.Location = New System.Drawing.Point(16, 152)
         Me.lbCiudad.Name = "lbCiudad"
         Me.lbCiudad.Size = New System.Drawing.Size(40, 13)
         Me.lbCiudad.TabIndex = 13
@@ -340,7 +348,7 @@ Partial Class FrmCliente
         'lbCorreo
         '
         Me.lbCorreo.AutoSize = True
-        Me.lbCorreo.Location = New System.Drawing.Point(69, 378)
+        Me.lbCorreo.Location = New System.Drawing.Point(266, 125)
         Me.lbCorreo.Name = "lbCorreo"
         Me.lbCorreo.Size = New System.Drawing.Size(38, 13)
         Me.lbCorreo.TabIndex = 12
@@ -349,7 +357,7 @@ Partial Class FrmCliente
         'lbDomicilio
         '
         Me.lbDomicilio.AutoSize = True
-        Me.lbDomicilio.Location = New System.Drawing.Point(63, 352)
+        Me.lbDomicilio.Location = New System.Drawing.Point(12, 125)
         Me.lbDomicilio.Name = "lbDomicilio"
         Me.lbDomicilio.Size = New System.Drawing.Size(49, 13)
         Me.lbDomicilio.TabIndex = 11
@@ -358,7 +366,7 @@ Partial Class FrmCliente
         'lbSegundoApe
         '
         Me.lbSegundoApe.AutoSize = True
-        Me.lbSegundoApe.Location = New System.Drawing.Point(23, 326)
+        Me.lbSegundoApe.Location = New System.Drawing.Point(210, 99)
         Me.lbSegundoApe.Name = "lbSegundoApe"
         Me.lbSegundoApe.Size = New System.Drawing.Size(92, 13)
         Me.lbSegundoApe.TabIndex = 10
@@ -367,7 +375,7 @@ Partial Class FrmCliente
         'lbApellido
         '
         Me.lbApellido.AutoSize = True
-        Me.lbApellido.Location = New System.Drawing.Point(69, 300)
+        Me.lbApellido.Location = New System.Drawing.Point(12, 99)
         Me.lbApellido.Name = "lbApellido"
         Me.lbApellido.Size = New System.Drawing.Size(44, 13)
         Me.lbApellido.TabIndex = 9
@@ -376,7 +384,7 @@ Partial Class FrmCliente
         'lbSegundoName
         '
         Me.lbSegundoName.AutoSize = True
-        Me.lbSegundoName.Location = New System.Drawing.Point(23, 274)
+        Me.lbSegundoName.Location = New System.Drawing.Point(210, 73)
         Me.lbSegundoName.Name = "lbSegundoName"
         Me.lbSegundoName.Size = New System.Drawing.Size(90, 13)
         Me.lbSegundoName.TabIndex = 8
@@ -385,7 +393,7 @@ Partial Class FrmCliente
         'lbNombre
         '
         Me.lbNombre.AutoSize = True
-        Me.lbNombre.Location = New System.Drawing.Point(69, 247)
+        Me.lbNombre.Location = New System.Drawing.Point(12, 73)
         Me.lbNombre.Name = "lbNombre"
         Me.lbNombre.Size = New System.Drawing.Size(44, 13)
         Me.lbNombre.TabIndex = 7
@@ -394,7 +402,7 @@ Partial Class FrmCliente
         'lbID
         '
         Me.lbID.AutoSize = True
-        Me.lbID.Location = New System.Drawing.Point(89, 198)
+        Me.lbID.Location = New System.Drawing.Point(38, 44)
         Me.lbID.Name = "lbID"
         Me.lbID.Size = New System.Drawing.Size(18, 13)
         Me.lbID.TabIndex = 6
@@ -405,43 +413,43 @@ Partial Class FrmCliente
         Me.cbCiudad.DataSource = Me.CiudadBindingSource
         Me.cbCiudad.DisplayMember = "nombreCiudad"
         Me.cbCiudad.FormattingEnabled = True
-        Me.cbCiudad.Location = New System.Drawing.Point(136, 401)
+        Me.cbCiudad.Location = New System.Drawing.Point(62, 148)
         Me.cbCiudad.Name = "cbCiudad"
         Me.cbCiudad.Size = New System.Drawing.Size(121, 21)
-        Me.cbCiudad.TabIndex = 5
+        Me.cbCiudad.TabIndex = 9
         Me.cbCiudad.ValueMember = "idCiudad"
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(248, 586)
+        Me.btnActualizar.Location = New System.Drawing.Point(347, 250)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar.TabIndex = 4
+        Me.btnActualizar.TabIndex = 17
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnBorrar
         '
-        Me.btnBorrar.Location = New System.Drawing.Point(167, 586)
+        Me.btnBorrar.Location = New System.Drawing.Point(266, 250)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBorrar.TabIndex = 3
+        Me.btnBorrar.TabIndex = 16
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(86, 586)
+        Me.btnAgregar.Location = New System.Drawing.Point(185, 250)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 2
+        Me.btnAgregar.TabIndex = 15
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'PBCatalana
         '
         Me.PBCatalana.Image = Global.CatalanaNicv2.My.Resources.Resources.Icon_catalana
-        Me.PBCatalana.Location = New System.Drawing.Point(87, 19)
+        Me.PBCatalana.Location = New System.Drawing.Point(590, 16)
         Me.PBCatalana.Name = "PBCatalana"
         Me.PBCatalana.Size = New System.Drawing.Size(149, 149)
         Me.PBCatalana.TabIndex = 1
@@ -449,19 +457,19 @@ Partial Class FrmCliente
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(5, 586)
+        Me.btnNuevo.Location = New System.Drawing.Point(104, 250)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.btnNuevo.TabIndex = 0
+        Me.btnNuevo.TabIndex = 14
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'GbRegistroCliente
         '
         Me.GbRegistroCliente.Controls.Add(Me.DataGridView1)
-        Me.GbRegistroCliente.Location = New System.Drawing.Point(351, 56)
+        Me.GbRegistroCliente.Location = New System.Drawing.Point(12, 310)
         Me.GbRegistroCliente.Name = "GbRegistroCliente"
-        Me.GbRegistroCliente.Size = New System.Drawing.Size(848, 571)
+        Me.GbRegistroCliente.Size = New System.Drawing.Size(752, 259)
         Me.GbRegistroCliente.TabIndex = 1
         Me.GbRegistroCliente.TabStop = False
         Me.GbRegistroCliente.Text = "Tabla Cliente"
@@ -472,106 +480,15 @@ Partial Class FrmCliente
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NumCedulaDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.SegundoNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.IdCiudadDataGridViewTextBoxColumn, Me.CelTigoDataGridViewTextBoxColumn, Me.CelClaroDataGridViewTextBoxColumn, Me.CelCootelDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NumCedulaDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.SegundoNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.IdCiudadDataGridViewTextBoxColumn, Me.CelTigoDataGridViewTextBoxColumn, Me.CelClaroDataGridViewTextBoxColumn, Me.CelCootelDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ClienteBindingSource4
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(842, 552)
+        Me.DataGridView1.Size = New System.Drawing.Size(746, 240)
         Me.DataGridView1.TabIndex = 0
-        '
-        'IdClienteDataGridViewTextBoxColumn
-        '
-        Me.IdClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente"
-        Me.IdClienteDataGridViewTextBoxColumn.HeaderText = "idCliente"
-        Me.IdClienteDataGridViewTextBoxColumn.Name = "IdClienteDataGridViewTextBoxColumn"
-        Me.IdClienteDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NumCedulaDataGridViewTextBoxColumn
-        '
-        Me.NumCedulaDataGridViewTextBoxColumn.DataPropertyName = "numCedula"
-        Me.NumCedulaDataGridViewTextBoxColumn.HeaderText = "numCedula"
-        Me.NumCedulaDataGridViewTextBoxColumn.Name = "NumCedulaDataGridViewTextBoxColumn"
-        Me.NumCedulaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PrimerNombreDataGridViewTextBoxColumn
-        '
-        Me.PrimerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre"
-        Me.PrimerNombreDataGridViewTextBoxColumn.HeaderText = "primerNombre"
-        Me.PrimerNombreDataGridViewTextBoxColumn.Name = "PrimerNombreDataGridViewTextBoxColumn"
-        Me.PrimerNombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SegundoNombreDataGridViewTextBoxColumn
-        '
-        Me.SegundoNombreDataGridViewTextBoxColumn.DataPropertyName = "segundoNombre"
-        Me.SegundoNombreDataGridViewTextBoxColumn.HeaderText = "segundoNombre"
-        Me.SegundoNombreDataGridViewTextBoxColumn.Name = "SegundoNombreDataGridViewTextBoxColumn"
-        Me.SegundoNombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PrimerApellidoDataGridViewTextBoxColumn
-        '
-        Me.PrimerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido"
-        Me.PrimerApellidoDataGridViewTextBoxColumn.HeaderText = "primerApellido"
-        Me.PrimerApellidoDataGridViewTextBoxColumn.Name = "PrimerApellidoDataGridViewTextBoxColumn"
-        Me.PrimerApellidoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SegundoApellidoDataGridViewTextBoxColumn
-        '
-        Me.SegundoApellidoDataGridViewTextBoxColumn.DataPropertyName = "segundoApellido"
-        Me.SegundoApellidoDataGridViewTextBoxColumn.HeaderText = "segundoApellido"
-        Me.SegundoApellidoDataGridViewTextBoxColumn.Name = "SegundoApellidoDataGridViewTextBoxColumn"
-        Me.SegundoApellidoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DomicilioDataGridViewTextBoxColumn
-        '
-        Me.DomicilioDataGridViewTextBoxColumn.DataPropertyName = "domicilio"
-        Me.DomicilioDataGridViewTextBoxColumn.HeaderText = "domicilio"
-        Me.DomicilioDataGridViewTextBoxColumn.Name = "DomicilioDataGridViewTextBoxColumn"
-        Me.DomicilioDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmailDataGridViewTextBoxColumn
-        '
-        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
-        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
-        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdCiudadDataGridViewTextBoxColumn
-        '
-        Me.IdCiudadDataGridViewTextBoxColumn.DataPropertyName = "idCiudad"
-        Me.IdCiudadDataGridViewTextBoxColumn.HeaderText = "idCiudad"
-        Me.IdCiudadDataGridViewTextBoxColumn.Name = "IdCiudadDataGridViewTextBoxColumn"
-        Me.IdCiudadDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CelTigoDataGridViewTextBoxColumn
-        '
-        Me.CelTigoDataGridViewTextBoxColumn.DataPropertyName = "celTigo"
-        Me.CelTigoDataGridViewTextBoxColumn.HeaderText = "celTigo"
-        Me.CelTigoDataGridViewTextBoxColumn.Name = "CelTigoDataGridViewTextBoxColumn"
-        Me.CelTigoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CelClaroDataGridViewTextBoxColumn
-        '
-        Me.CelClaroDataGridViewTextBoxColumn.DataPropertyName = "celClaro"
-        Me.CelClaroDataGridViewTextBoxColumn.HeaderText = "celClaro"
-        Me.CelClaroDataGridViewTextBoxColumn.Name = "CelClaroDataGridViewTextBoxColumn"
-        Me.CelClaroDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CelCootelDataGridViewTextBoxColumn
-        '
-        Me.CelCootelDataGridViewTextBoxColumn.DataPropertyName = "celCootel"
-        Me.CelCootelDataGridViewTextBoxColumn.HeaderText = "celCootel"
-        Me.CelCootelDataGridViewTextBoxColumn.Name = "CelCootelDataGridViewTextBoxColumn"
-        Me.CelCootelDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EstadoDataGridViewTextBoxColumn
-        '
-        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
-        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ClienteBindingSource1
         '
@@ -601,47 +518,99 @@ Partial Class FrmCliente
         Me.ClienteBindingSource3.DataMember = "Cliente"
         Me.ClienteBindingSource3.DataSource = Me.CatalanaDataSet1
         '
-        'btnMenuPrin
+        'IdClienteDataGridViewTextBoxColumn
         '
-        Me.btnMenuPrin.Location = New System.Drawing.Point(1019, 31)
-        Me.btnMenuPrin.Name = "btnMenuPrin"
-        Me.btnMenuPrin.Size = New System.Drawing.Size(96, 23)
-        Me.btnMenuPrin.TabIndex = 3
-        Me.btnMenuPrin.Text = "Menu principal"
-        Me.btnMenuPrin.UseVisualStyleBackColor = True
+        Me.IdClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente"
+        Me.IdClienteDataGridViewTextBoxColumn.HeaderText = "ID CLIENTE"
+        Me.IdClienteDataGridViewTextBoxColumn.Name = "IdClienteDataGridViewTextBoxColumn"
+        Me.IdClienteDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'btnCerrar
+        'NumCedulaDataGridViewTextBoxColumn
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(1121, 31)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 4
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.NumCedulaDataGridViewTextBoxColumn.DataPropertyName = "numCedula"
+        Me.NumCedulaDataGridViewTextBoxColumn.HeaderText = "Numero de Cedula"
+        Me.NumCedulaDataGridViewTextBoxColumn.Name = "NumCedulaDataGridViewTextBoxColumn"
+        Me.NumCedulaDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'btnReporte
+        'PrimerNombreDataGridViewTextBoxColumn
         '
-        Me.btnReporte.Location = New System.Drawing.Point(938, 31)
-        Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(75, 23)
-        Me.btnReporte.TabIndex = 5
-        Me.btnReporte.Text = "Reporte"
-        Me.btnReporte.UseVisualStyleBackColor = True
+        Me.PrimerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre"
+        Me.PrimerNombreDataGridViewTextBoxColumn.HeaderText = "Primer Nombre"
+        Me.PrimerNombreDataGridViewTextBoxColumn.Name = "PrimerNombreDataGridViewTextBoxColumn"
+        Me.PrimerNombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SegundoNombreDataGridViewTextBoxColumn
+        '
+        Me.SegundoNombreDataGridViewTextBoxColumn.DataPropertyName = "segundoNombre"
+        Me.SegundoNombreDataGridViewTextBoxColumn.HeaderText = "Segundo Nombre"
+        Me.SegundoNombreDataGridViewTextBoxColumn.Name = "SegundoNombreDataGridViewTextBoxColumn"
+        Me.SegundoNombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrimerApellidoDataGridViewTextBoxColumn
+        '
+        Me.PrimerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido"
+        Me.PrimerApellidoDataGridViewTextBoxColumn.HeaderText = "Primer Apellido"
+        Me.PrimerApellidoDataGridViewTextBoxColumn.Name = "PrimerApellidoDataGridViewTextBoxColumn"
+        Me.PrimerApellidoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SegundoApellidoDataGridViewTextBoxColumn
+        '
+        Me.SegundoApellidoDataGridViewTextBoxColumn.DataPropertyName = "segundoApellido"
+        Me.SegundoApellidoDataGridViewTextBoxColumn.HeaderText = "Segundo Apellido"
+        Me.SegundoApellidoDataGridViewTextBoxColumn.Name = "SegundoApellidoDataGridViewTextBoxColumn"
+        Me.SegundoApellidoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DomicilioDataGridViewTextBoxColumn
+        '
+        Me.DomicilioDataGridViewTextBoxColumn.DataPropertyName = "domicilio"
+        Me.DomicilioDataGridViewTextBoxColumn.HeaderText = "Domicilio"
+        Me.DomicilioDataGridViewTextBoxColumn.Name = "DomicilioDataGridViewTextBoxColumn"
+        Me.DomicilioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Correo"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdCiudadDataGridViewTextBoxColumn
+        '
+        Me.IdCiudadDataGridViewTextBoxColumn.DataPropertyName = "idCiudad"
+        Me.IdCiudadDataGridViewTextBoxColumn.HeaderText = "ID Ciudad"
+        Me.IdCiudadDataGridViewTextBoxColumn.Name = "IdCiudadDataGridViewTextBoxColumn"
+        Me.IdCiudadDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CelTigoDataGridViewTextBoxColumn
+        '
+        Me.CelTigoDataGridViewTextBoxColumn.DataPropertyName = "celTigo"
+        Me.CelTigoDataGridViewTextBoxColumn.HeaderText = "Cel Tigo"
+        Me.CelTigoDataGridViewTextBoxColumn.Name = "CelTigoDataGridViewTextBoxColumn"
+        Me.CelTigoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CelClaroDataGridViewTextBoxColumn
+        '
+        Me.CelClaroDataGridViewTextBoxColumn.DataPropertyName = "celClaro"
+        Me.CelClaroDataGridViewTextBoxColumn.HeaderText = "Cel Claro"
+        Me.CelClaroDataGridViewTextBoxColumn.Name = "CelClaroDataGridViewTextBoxColumn"
+        Me.CelClaroDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CelCootelDataGridViewTextBoxColumn
+        '
+        Me.CelCootelDataGridViewTextBoxColumn.DataPropertyName = "celCootel"
+        Me.CelCootelDataGridViewTextBoxColumn.HeaderText = "Cel Cootel"
+        Me.CelCootelDataGridViewTextBoxColumn.Name = "CelCootelDataGridViewTextBoxColumn"
+        Me.CelCootelDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1211, 639)
-        Me.Controls.Add(Me.btnReporte)
-        Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.btnMenuPrin)
+        Me.ClientSize = New System.Drawing.Size(767, 576)
         Me.Controls.Add(Me.GbRegistroCliente)
         Me.Controls.Add(Me.GbCliente)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1227, 678)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(1227, 678)
         Me.Name = "FrmCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cliente"
@@ -708,6 +677,9 @@ Partial Class FrmCliente
     Friend WithEvents ClienteBindingSource3 As BindingSource
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ClienteBindingSource4 As BindingSource
+    Friend WithEvents txtCedu As TextBox
+    Friend WithEvents lbNumCedu As Label
+    Friend WithEvents btnReporte As Button
     Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NumCedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrimerNombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -720,10 +692,4 @@ Partial Class FrmCliente
     Friend WithEvents CelTigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CelClaroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CelCootelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents txtCedu As TextBox
-    Friend WithEvents lbNumCedu As Label
-    Friend WithEvents btnMenuPrin As Button
-    Friend WithEvents btnCerrar As Button
-    Friend WithEvents btnReporte As Button
 End Class

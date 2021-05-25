@@ -117,8 +117,9 @@ Public Class FrmUsuario
         End Try
     End Sub
 
-    Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
+    Private Sub btnMenu_Click(sender As Object, e As EventArgs)
         Me.Close()
         FrmMenuPrincipal.Show()
     End Sub
+
 End Class

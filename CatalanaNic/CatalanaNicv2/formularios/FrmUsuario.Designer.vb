@@ -23,7 +23,8 @@ Partial Class FrmUsuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbUser = New System.Windows.Forms.GroupBox()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnBorrar = New System.Windows.Forms.Button()
@@ -49,107 +50,114 @@ Partial Class FrmUsuario
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GbUsuario = New System.Windows.Forms.GroupBox()
+        Me.GbUsuarioTable = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
         Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimerNombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimerApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SegundoApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnReporte = New System.Windows.Forms.Button()
-        Me.btnMenu = New System.Windows.Forms.Button()
-        Me.UsuarioTableAdapter = New CatalanaNicv2.CatalanaDataSetTableAdapters.UsuarioTableAdapter()
-        Me.GroupBox1.SuspendLayout()
+        Me.gbUser.SuspendLayout()
         CType(Me.UsuarioBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GbUsuario.SuspendLayout()
+        Me.GbUsuarioTable.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'GroupBox1
+        'gbUser
         '
-        Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Controls.Add(Me.btnActualizar)
-        Me.GroupBox1.Controls.Add(Me.btnBorrar)
-        Me.GroupBox1.Controls.Add(Me.btnAgregar)
-        Me.GroupBox1.Controls.Add(Me.btnNuevo)
-        Me.GroupBox1.Controls.Add(Me.lbEstado)
-        Me.GroupBox1.Controls.Add(Me.lbCorreo)
-        Me.GroupBox1.Controls.Add(Me.lbPWD)
-        Me.GroupBox1.Controls.Add(Me.lbUserName)
-        Me.GroupBox1.Controls.Add(Me.LbSegundoApellido)
-        Me.GroupBox1.Controls.Add(Me.lbPrimerApe)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.lbIdUsuario)
-        Me.GroupBox1.Controls.Add(Me.txtEstado)
-        Me.GroupBox1.Controls.Add(Me.txtCorreo)
-        Me.GroupBox1.Controls.Add(Me.txtPWD)
-        Me.GroupBox1.Controls.Add(Me.txtUserName)
-        Me.GroupBox1.Controls.Add(Me.txtSegundoApe)
-        Me.GroupBox1.Controls.Add(Me.txtPrimerApe)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Controls.Add(Me.txtID)
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(249, 558)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Usuario"
+        Me.gbUser.Controls.Add(Me.btnReporte)
+        Me.gbUser.Controls.Add(Me.btnBuscar)
+        Me.gbUser.Controls.Add(Me.btnActualizar)
+        Me.gbUser.Controls.Add(Me.btnBorrar)
+        Me.gbUser.Controls.Add(Me.btnAgregar)
+        Me.gbUser.Controls.Add(Me.btnNuevo)
+        Me.gbUser.Controls.Add(Me.lbEstado)
+        Me.gbUser.Controls.Add(Me.lbCorreo)
+        Me.gbUser.Controls.Add(Me.lbPWD)
+        Me.gbUser.Controls.Add(Me.lbUserName)
+        Me.gbUser.Controls.Add(Me.LbSegundoApellido)
+        Me.gbUser.Controls.Add(Me.lbPrimerApe)
+        Me.gbUser.Controls.Add(Me.Label2)
+        Me.gbUser.Controls.Add(Me.lbIdUsuario)
+        Me.gbUser.Controls.Add(Me.txtEstado)
+        Me.gbUser.Controls.Add(Me.txtCorreo)
+        Me.gbUser.Controls.Add(Me.txtPWD)
+        Me.gbUser.Controls.Add(Me.txtUserName)
+        Me.gbUser.Controls.Add(Me.txtSegundoApe)
+        Me.gbUser.Controls.Add(Me.txtPrimerApe)
+        Me.gbUser.Controls.Add(Me.txtNombre)
+        Me.gbUser.Controls.Add(Me.txtID)
+        Me.gbUser.Controls.Add(Me.PictureBox1)
+        Me.gbUser.Location = New System.Drawing.Point(12, 12)
+        Me.gbUser.Name = "gbUser"
+        Me.gbUser.Size = New System.Drawing.Size(604, 239)
+        Me.gbUser.TabIndex = 0
+        Me.gbUser.TabStop = False
+        Me.gbUser.Text = "Usuario"
+        '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(34, 192)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(102, 23)
+        Me.btnReporte.TabIndex = 14
+        Me.btnReporte.Text = "Reporte Usuario"
+        Me.btnReporte.UseVisualStyleBackColor = True
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(87, 489)
+        Me.btnBuscar.Location = New System.Drawing.Point(438, 174)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(156, 23)
-        Me.btnBuscar.TabIndex = 21
+        Me.btnBuscar.TabIndex = 10
         Me.btnBuscar.Text = "Buscar por ID"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(168, 518)
+        Me.btnActualizar.Location = New System.Drawing.Point(519, 203)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar.TabIndex = 20
+        Me.btnActualizar.TabIndex = 13
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnBorrar
         '
-        Me.btnBorrar.Location = New System.Drawing.Point(87, 518)
+        Me.btnBorrar.Location = New System.Drawing.Point(438, 203)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBorrar.TabIndex = 19
+        Me.btnBorrar.TabIndex = 12
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(6, 518)
+        Me.btnAgregar.Location = New System.Drawing.Point(357, 203)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 18
+        Me.btnAgregar.TabIndex = 11
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(6, 489)
+        Me.btnNuevo.Location = New System.Drawing.Point(357, 174)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.btnNuevo.TabIndex = 17
+        Me.btnNuevo.TabIndex = 9
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'lbEstado
         '
         Me.lbEstado.AutoSize = True
-        Me.lbEstado.Location = New System.Drawing.Point(47, 396)
+        Me.lbEstado.Location = New System.Drawing.Point(414, 120)
         Me.lbEstado.Name = "lbEstado"
         Me.lbEstado.Size = New System.Drawing.Size(40, 13)
         Me.lbEstado.TabIndex = 16
@@ -158,7 +166,7 @@ Partial Class FrmUsuario
         'lbCorreo
         '
         Me.lbCorreo.AutoSize = True
-        Me.lbCorreo.Location = New System.Drawing.Point(47, 364)
+        Me.lbCorreo.Location = New System.Drawing.Point(185, 115)
         Me.lbCorreo.Name = "lbCorreo"
         Me.lbCorreo.Size = New System.Drawing.Size(38, 13)
         Me.lbCorreo.TabIndex = 15
@@ -167,7 +175,7 @@ Partial Class FrmUsuario
         'lbPWD
         '
         Me.lbPWD.AutoSize = True
-        Me.lbPWD.Location = New System.Drawing.Point(31, 338)
+        Me.lbPWD.Location = New System.Drawing.Point(393, 96)
         Me.lbPWD.Name = "lbPWD"
         Me.lbPWD.Size = New System.Drawing.Size(61, 13)
         Me.lbPWD.TabIndex = 14
@@ -176,7 +184,7 @@ Partial Class FrmUsuario
         'lbUserName
         '
         Me.lbUserName.AutoSize = True
-        Me.lbUserName.Location = New System.Drawing.Point(32, 311)
+        Me.lbUserName.Location = New System.Drawing.Point(163, 91)
         Me.lbUserName.Name = "lbUserName"
         Me.lbUserName.Size = New System.Drawing.Size(60, 13)
         Me.lbUserName.TabIndex = 13
@@ -185,7 +193,7 @@ Partial Class FrmUsuario
         'LbSegundoApellido
         '
         Me.LbSegundoApellido.AutoSize = True
-        Me.LbSegundoApellido.Location = New System.Drawing.Point(2, 284)
+        Me.LbSegundoApellido.Location = New System.Drawing.Point(364, 68)
         Me.LbSegundoApellido.Name = "LbSegundoApellido"
         Me.LbSegundoApellido.Size = New System.Drawing.Size(90, 13)
         Me.LbSegundoApellido.TabIndex = 12
@@ -194,7 +202,7 @@ Partial Class FrmUsuario
         'lbPrimerApe
         '
         Me.lbPrimerApe.AutoSize = True
-        Me.lbPrimerApe.Location = New System.Drawing.Point(19, 257)
+        Me.lbPrimerApe.Location = New System.Drawing.Point(378, 40)
         Me.lbPrimerApe.Name = "lbPrimerApe"
         Me.lbPrimerApe.Size = New System.Drawing.Size(76, 13)
         Me.lbPrimerApe.TabIndex = 11
@@ -203,7 +211,7 @@ Partial Class FrmUsuario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(48, 233)
+        Me.Label2.Location = New System.Drawing.Point(179, 65)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 10
@@ -212,7 +220,7 @@ Partial Class FrmUsuario
         'lbIdUsuario
         '
         Me.lbIdUsuario.AutoSize = True
-        Me.lbIdUsuario.Location = New System.Drawing.Point(74, 203)
+        Me.lbIdUsuario.Location = New System.Drawing.Point(205, 39)
         Me.lbIdUsuario.Name = "lbIdUsuario"
         Me.lbIdUsuario.Size = New System.Drawing.Size(18, 13)
         Me.lbIdUsuario.TabIndex = 9
@@ -221,7 +229,7 @@ Partial Class FrmUsuario
         'txtEstado
         '
         Me.txtEstado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "estado", True))
-        Me.txtEstado.Location = New System.Drawing.Point(103, 390)
+        Me.txtEstado.Location = New System.Drawing.Point(460, 117)
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(100, 20)
         Me.txtEstado.TabIndex = 8
@@ -239,7 +247,7 @@ Partial Class FrmUsuario
         'txtCorreo
         '
         Me.txtCorreo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "email", True))
-        Me.txtCorreo.Location = New System.Drawing.Point(103, 364)
+        Me.txtCorreo.Location = New System.Drawing.Point(229, 115)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(100, 20)
         Me.txtCorreo.TabIndex = 7
@@ -247,7 +255,7 @@ Partial Class FrmUsuario
         'txtPWD
         '
         Me.txtPWD.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "userPwd", True))
-        Me.txtPWD.Location = New System.Drawing.Point(103, 338)
+        Me.txtPWD.Location = New System.Drawing.Point(460, 91)
         Me.txtPWD.Name = "txtPWD"
         Me.txtPWD.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPWD.Size = New System.Drawing.Size(100, 20)
@@ -256,7 +264,7 @@ Partial Class FrmUsuario
         'txtUserName
         '
         Me.txtUserName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "userName", True))
-        Me.txtUserName.Location = New System.Drawing.Point(103, 311)
+        Me.txtUserName.Location = New System.Drawing.Point(229, 89)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(100, 20)
         Me.txtUserName.TabIndex = 5
@@ -264,7 +272,7 @@ Partial Class FrmUsuario
         'txtSegundoApe
         '
         Me.txtSegundoApe.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "segundoApellido", True))
-        Me.txtSegundoApe.Location = New System.Drawing.Point(103, 284)
+        Me.txtSegundoApe.Location = New System.Drawing.Point(460, 65)
         Me.txtSegundoApe.Name = "txtSegundoApe"
         Me.txtSegundoApe.Size = New System.Drawing.Size(100, 20)
         Me.txtSegundoApe.TabIndex = 4
@@ -272,23 +280,23 @@ Partial Class FrmUsuario
         'txtPrimerApe
         '
         Me.txtPrimerApe.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "primerApellido", True))
-        Me.txtPrimerApe.Location = New System.Drawing.Point(103, 257)
+        Me.txtPrimerApe.Location = New System.Drawing.Point(460, 36)
         Me.txtPrimerApe.Name = "txtPrimerApe"
         Me.txtPrimerApe.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrimerApe.TabIndex = 3
+        Me.txtPrimerApe.TabIndex = 2
         '
         'txtNombre
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "primerNombre", True))
-        Me.txtNombre.Location = New System.Drawing.Point(103, 230)
+        Me.txtNombre.Location = New System.Drawing.Point(229, 58)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(100, 20)
-        Me.txtNombre.TabIndex = 2
+        Me.txtNombre.TabIndex = 3
         '
         'txtID
         '
         Me.txtID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuarioBindingSource1, "idUsuario", True))
-        Me.txtID.Location = New System.Drawing.Point(103, 203)
+        Me.txtID.Location = New System.Drawing.Point(229, 32)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(100, 20)
         Me.txtID.TabIndex = 1
@@ -297,7 +305,7 @@ Partial Class FrmUsuario
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = Global.CatalanaNicv2.My.Resources.Resources.Icon_catalana
-        Me.PictureBox1.Location = New System.Drawing.Point(53, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 19)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(152, 152)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -309,15 +317,15 @@ Partial Class FrmUsuario
         Me.UsuarioBindingSource.DataMember = "Usuario"
         Me.UsuarioBindingSource.DataSource = Me.CatalanaDataSet
         '
-        'GbUsuario
+        'GbUsuarioTable
         '
-        Me.GbUsuario.Controls.Add(Me.DataGridView1)
-        Me.GbUsuario.Location = New System.Drawing.Point(267, 71)
-        Me.GbUsuario.Name = "GbUsuario"
-        Me.GbUsuario.Size = New System.Drawing.Size(521, 499)
-        Me.GbUsuario.TabIndex = 1
-        Me.GbUsuario.TabStop = False
-        Me.GbUsuario.Text = "Tabla de usuarios"
+        Me.GbUsuarioTable.Controls.Add(Me.DataGridView1)
+        Me.GbUsuarioTable.Location = New System.Drawing.Point(12, 257)
+        Me.GbUsuarioTable.Name = "GbUsuarioTable"
+        Me.GbUsuarioTable.Size = New System.Drawing.Size(604, 313)
+        Me.GbUsuarioTable.TabIndex = 1
+        Me.GbUsuarioTable.TabStop = False
+        Me.GbUsuarioTable.Text = "Tabla de usuarios"
         '
         'DataGridView1
         '
@@ -325,116 +333,87 @@ Partial Class FrmUsuario
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.PrimerNombreDataGridViewTextBoxColumn, Me.PrimerApellidoDataGridViewTextBoxColumn, Me.SegundoApellidoDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.UsuarioBindingSource1
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(515, 480)
+        Me.DataGridView1.Size = New System.Drawing.Size(598, 294)
         Me.DataGridView1.TabIndex = 0
+        '
+        'UsuarioTableAdapter
+        '
+        Me.UsuarioTableAdapter.ClearBeforeFill = True
         '
         'IdUsuarioDataGridViewTextBoxColumn
         '
         Me.IdUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario"
-        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "idUsuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "ID Usuario"
         Me.IdUsuarioDataGridViewTextBoxColumn.Name = "IdUsuarioDataGridViewTextBoxColumn"
         Me.IdUsuarioDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PrimerNombreDataGridViewTextBoxColumn
         '
         Me.PrimerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre"
-        Me.PrimerNombreDataGridViewTextBoxColumn.HeaderText = "primerNombre"
+        Me.PrimerNombreDataGridViewTextBoxColumn.HeaderText = "Primer Nombre"
         Me.PrimerNombreDataGridViewTextBoxColumn.Name = "PrimerNombreDataGridViewTextBoxColumn"
         Me.PrimerNombreDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PrimerApellidoDataGridViewTextBoxColumn
         '
         Me.PrimerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido"
-        Me.PrimerApellidoDataGridViewTextBoxColumn.HeaderText = "primerApellido"
+        Me.PrimerApellidoDataGridViewTextBoxColumn.HeaderText = "Primer Apellido"
         Me.PrimerApellidoDataGridViewTextBoxColumn.Name = "PrimerApellidoDataGridViewTextBoxColumn"
         Me.PrimerApellidoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'SegundoApellidoDataGridViewTextBoxColumn
         '
         Me.SegundoApellidoDataGridViewTextBoxColumn.DataPropertyName = "segundoApellido"
-        Me.SegundoApellidoDataGridViewTextBoxColumn.HeaderText = "segundoApellido"
+        Me.SegundoApellidoDataGridViewTextBoxColumn.HeaderText = "Segundo Apellido"
         Me.SegundoApellidoDataGridViewTextBoxColumn.Name = "SegundoApellidoDataGridViewTextBoxColumn"
         Me.SegundoApellidoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'UserNameDataGridViewTextBoxColumn
         '
         Me.UserNameDataGridViewTextBoxColumn.DataPropertyName = "userName"
-        Me.UserNameDataGridViewTextBoxColumn.HeaderText = "userName"
+        Me.UserNameDataGridViewTextBoxColumn.HeaderText = "User Name"
         Me.UserNameDataGridViewTextBoxColumn.Name = "UserNameDataGridViewTextBoxColumn"
         Me.UserNameDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmailDataGridViewTextBoxColumn
         '
         Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Correo"
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EstadoDataGridViewTextBoxColumn
-        '
-        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
-        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'btnReporte
-        '
-        Me.btnReporte.Location = New System.Drawing.Point(683, 42)
-        Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(102, 23)
-        Me.btnReporte.TabIndex = 2
-        Me.btnReporte.Text = "Reporte Usuario"
-        Me.btnReporte.UseVisualStyleBackColor = True
-        '
-        'btnMenu
-        '
-        Me.btnMenu.Location = New System.Drawing.Point(683, 13)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(105, 23)
-        Me.btnMenu.TabIndex = 3
-        Me.btnMenu.Text = "Menu Principal"
-        Me.btnMenu.UseVisualStyleBackColor = True
-        '
-        'UsuarioTableAdapter
-        '
-        Me.UsuarioTableAdapter.ClearBeforeFill = True
         '
         'FrmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 582)
-        Me.Controls.Add(Me.btnMenu)
-        Me.Controls.Add(Me.btnReporte)
-        Me.Controls.Add(Me.GbUsuario)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(625, 582)
+        Me.Controls.Add(Me.GbUsuarioTable)
+        Me.Controls.Add(Me.gbUser)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(816, 621)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(816, 621)
         Me.Name = "FrmUsuario"
         Me.Text = "Usuario"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.gbUser.ResumeLayout(False)
+        Me.gbUser.PerformLayout()
         CType(Me.UsuarioBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CatalanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GbUsuario.ResumeLayout(False)
+        Me.GbUsuarioTable.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GbUsuario As GroupBox
+    Friend WithEvents gbUser As GroupBox
+    Friend WithEvents GbUsuarioTable As GroupBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents CatalanaDataSet As CatalanaDataSet
     Friend WithEvents UsuarioBindingSource As BindingSource
@@ -462,13 +441,11 @@ Partial Class FrmUsuario
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnReporte As Button
-    Friend WithEvents btnMenu As Button
+    Friend WithEvents UsuarioBindingSource1 As BindingSource
     Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrimerNombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrimerApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SegundoApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UserNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents UsuarioBindingSource1 As BindingSource
 End Class

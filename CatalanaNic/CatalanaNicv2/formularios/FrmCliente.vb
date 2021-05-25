@@ -45,7 +45,7 @@ Public Class FrmCliente
             A.SegundoApellido = txtSegundoApellido.Text
             A.Domicilio = txtDomicilio.Text
             A.Correo = txtCorreo.Text
-            A.IdCiudad = CInt(lbCity.Text)
+            A.IdCiudad = cbCiudad.SelectedValue
             A.CelTigo = CInt(txtcellTigo.Text)
             A.CelClaro = CInt(txtcellClaro.Text)
             A.CelCootel = CInt(txtcellCootel.Text)
@@ -83,7 +83,7 @@ Public Class FrmCliente
             up.SegundoApellido = txtSegundoApellido.Text
             up.Domicilio = txtDomicilio.Text
             up.Correo = txtCorreo.Text
-            up.IdCiudad = CInt(lbCity.Text)
+            up.IdCiudad = cbCiudad.SelectedValue
             up.CelTigo = CInt(txtcellTigo.Text)
             up.CelClaro = CInt(txtcellClaro.Text)
             up.CelCootel = CInt(txtcellCootel.Text)
@@ -110,12 +110,12 @@ Public Class FrmCliente
     End Sub
 
 
-    Private Sub btnMenuPrin_Click(sender As Object, e As EventArgs) Handles btnMenuPrin.Click
+    Private Sub btnMenuPrin_Click(sender As Object, e As EventArgs)
         Me.Close()
         FrmMenuPrincipal.Show()
     End Sub
 
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -136,5 +136,32 @@ Public Class FrmCliente
 
     Private Sub FrmCliente_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         FrmMenuPrincipal.Show()
+    End Sub
+
+    Private Sub MostrarClientesTableToolStripButton_Click_1(sender As Object, e As EventArgs)
+        Try
+            Me.ClienteTableAdapter.mostrarClientesTable(Me.CatalanaDataSet1.Cliente)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub MostrarClientesTableToolStripButton1_Click(sender As Object, e As EventArgs)
+        Try
+            Me.ClienteTableAdapter.mostrarClientesTable(Me.CatalanaDataSet.Cliente)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub MostrarClientesTableToolStripButton2_Click(sender As Object, e As EventArgs)
+        Try
+            Me.ClienteTableAdapter.mostrarClientesTable(Me.CatalanaDataSet.Cliente)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class

@@ -22,7 +22,7 @@ Public Class FrmProducto1
             A.EstadoP = CInt(txtEstado.Text)
             Me.PicBFoto.Image.Save(im, Me.PicBFoto.Image.RawFormat)
             A.FotoProd = im.GetBuffer
-            Me.ProductoTableAdapter.agregarProd(CatalanaDataSet.producto, A.NombreP, A.PrecioProducto, A.Iva, A.DescripPro, A.FotoProd, A.EstadoP)
+            Me.ProductoTableAdapter.agregarProd(CatalanaDataSet1.producto, A.NombreP, A.PrecioProducto, A.Iva, A.DescripPro, A.FotoProd, A.EstadoP)
             MsgBox("Producto Guardado Correctamente")
             Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         Catch ex As Exception
@@ -46,7 +46,7 @@ Public Class FrmProducto1
         Dim B As New Producto
         Try
             B.IdPro = CInt(txtID.Text)
-            Me.ProductoTableAdapter.borrarProd(CatalanaDataSet.producto, B.IdPro)
+            Me.ProductoTableAdapter.borrarProd(CatalanaDataSet1.producto, B.IdPro)
             MsgBox("Producto borrado Correctamente")
             Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         Catch ex As Exception
@@ -66,7 +66,7 @@ Public Class FrmProducto1
             up.DescripPro = txtDescripcionPro.Text()
             up.EstadoP = txtEstado.Text
             up.FotoProd = im.GetBuffer
-            Me.ProductoTableAdapter.actualizarProd(CatalanaDataSet.producto, up.IdPro, up.NombreP, up.PrecioProducto, up.Iva, up.DescripPro, up.FotoProd, up.EstadoP)
+            Me.ProductoTableAdapter.actualizarProd(CatalanaDataSet1.producto, up.IdPro, up.NombreP, up.PrecioProducto, up.Iva, up.DescripPro, up.FotoProd, up.EstadoP)
             MsgBox("Tu producto fue actualizado Correctamente")
             Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
         Catch ex As Exception
@@ -89,13 +89,10 @@ Public Class FrmProducto1
         Dim bus As New Producto
         Try
             bus.IdPro = CInt(txtID.Text)
-            Me.ProductoTableAdapter.buscarProdID(CatalanaDataSet.producto, bus.IdPro)
-
+            Me.ProductoTableAdapter.buscarProdID(CatalanaDataSet1.producto, bus.IdPro)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al buscar")
         End Try
-        Me.ProductoTableAdapter.Fill(Me.CatalanaDataSet1.producto)
-
     End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
@@ -124,6 +121,5 @@ Public Class FrmProducto1
     Private Sub btnBorPIC_Click(sender As Object, e As EventArgs) Handles btnBorPIC.Click
         PicBFoto.Image = Nothing
     End Sub
-
 
 End Class

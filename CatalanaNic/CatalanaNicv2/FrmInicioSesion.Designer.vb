@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmInicioSesion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmInicioSesion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnIniciarSesion = New System.Windows.Forms.Button()
@@ -29,7 +29,6 @@ Partial Class FrmInicioSesion
         Me.lbPassword = New System.Windows.Forms.Label()
         Me.txtUserName = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,21 +93,11 @@ Partial Class FrmInicioSesion
         Me.txtPassword.Size = New System.Drawing.Size(117, 20)
         Me.txtPassword.TabIndex = 6
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(322, 346)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Hecho por Joshua"
-        '
         'FrmInicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(428, 368)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUserName)
         Me.Controls.Add(Me.lbPassword)
@@ -133,5 +122,4 @@ Partial Class FrmInicioSesion
     Friend WithEvents lbPassword As Label
     Friend WithEvents txtUserName As TextBox
     Friend WithEvents txtPassword As TextBox
-    Friend WithEvents Label1 As Label
 End Class

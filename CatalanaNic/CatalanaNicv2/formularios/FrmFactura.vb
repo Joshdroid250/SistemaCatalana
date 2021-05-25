@@ -28,8 +28,8 @@ Public Class FrmFactura
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim A As New Factura
         Try
-            A.IdUsuario = CInt(lbIdUser.Text)
-            A.IdCliente = CInt(lbIdCliente.Text)
+            A.IdUsuario = cbUsuario.SelectedValue
+            A.IdCliente = cbCliente.SelectedValue
             A.Fecha = CDate(Dtpfecha.Text)
             Me.FacturaTableAdapter.agregarFactura(CatalanaDataSet.Factura, A.IdUsuario, A.IdCliente, A.Fecha)
             MsgBox("Se agrego la factura")
@@ -56,8 +56,8 @@ Public Class FrmFactura
         Dim up As New Factura
         Try
             up.IdFactura = CInt(txtID.Text)
-            up.IdCliente = CInt(lbIdCliente.Text)
-            up.IdUsuario = CInt(lbIdUser.Text)
+            up.IdCliente = cbCliente.SelectedValue
+            up.IdUsuario = cbUsuario.SelectedValue
             up.Fecha = CDate(Dtpfecha.Text)
             Me.FacturaTableAdapter.actualizarFactura(CatalanaDataSet.Factura, up.IdFactura, up.IdUsuario, up.IdCliente, up.Fecha)
             MsgBox("Se actulizo la factura")

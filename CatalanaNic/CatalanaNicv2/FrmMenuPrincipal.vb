@@ -32,10 +32,6 @@
         lbHora.Text = DateTime.Now()
     End Sub
 
-    Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles lbNombre.Click
-
-    End Sub
-
     Private Sub btnCliente_Click(sender As Object, e As EventArgs) Handles btnCliente.Click
         FrmCliente.Show()
     End Sub
@@ -47,13 +43,5 @@
 
     Private Sub btnDetFactura_Click(sender As Object, e As EventArgs) Handles btnDetFactura.Click
         FrmDetFactura.Show()
-    End Sub
-
-    Sub verLabel()
-        lbNombre.Text = Names.name
-    End Sub
-
-    Private Sub FrmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        verLabel()
     End Sub
 End Class
